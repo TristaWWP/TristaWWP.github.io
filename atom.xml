@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-10-21T09:15:32.744Z</updated>
+  <updated>2019-10-21T09:39:33.375Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,36 +21,12 @@
     <link href="http://yoursite.com/2019/10/20/%E4%B8%A4%E5%B0%8F%E6%97%B6%E4%B8%80%E8%B5%B7%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"/>
     <id>http://yoursite.com/2019/10/20/两小时一起快速搭建个人博客/</id>
     <published>2019-10-20T12:26:00.000Z</published>
-    <updated>2019-10-21T09:15:32.744Z</updated>
+    <updated>2019-10-21T09:39:33.375Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;两个小时的时间我一般用来鉴赏影片，不过搭一个博客刚好也OK。&lt;/p&gt;&lt;p&gt;搭建一个自己的博客需三部曲：&lt;strong&gt;&lt;em&gt;下载安装包，部署环境，美化博客页面&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;&lt;h2 id=&quot;一、下载安装包&quot;&gt;&lt;a href=&quot;#一、下载安装包&quot; class=&quot;headerlink&quot; title=&quot;一、下载安装包&quot;&gt;&lt;/a&gt;一、下载安装包&lt;/h2&gt;&lt;p&gt;本文用的博客是使用Hexo + Github，需要安装以下内容：&lt;/p&gt;&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;安装Node.js，安装地址：&lt;a href=&quot;https://www.runoob.com/nodejs/nodejs-install-setup.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Node.js下载链接&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;安装Git，安装地址：&lt;a href=&quot;http://git-scm.com/download/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Git下载地址&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;对于以上两个安装Mac建议从Homebrew安装node和git，那需要先安装Homebrew。&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;首先打开官网&lt;a href=&quot;https://brew.sh/，你会在官网主页看到如下所示的内容，`/usr/bin/ruby&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://brew.sh/，你会在官网主页看到如下所示的内容，`/usr/bin/ruby&lt;/a&gt; -e “$(curl -fsSL &lt;a href=&quot;https://raw.githubusercontent.com/Homebrew/install/master/install)`&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://raw.githubusercontent.com/Homebrew/install/master/install)`&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;打开终端，输入上述命令， &lt;code&gt;/usr/bin/ruby -e &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;点击回车&lt;/li&gt;
-&lt;li&gt;输入电脑密码，等待安装&lt;/li&gt;
-&lt;li&gt;显示Installation successful!表示安装成功&lt;/li&gt;
-&lt;li&gt;开始使用命令行安装node和git，&lt;code&gt;brew install node&lt;/code&gt; 和&lt;code&gt;brew install git&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;安装Hexo，使用npm安装，建议用root权限，不然会有权限问题。&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;输入命令&lt;code&gt;sudo npm install -g hexo-cli&lt;/code&gt;开始安装&lt;/li&gt;
-&lt;li&gt;初始化blog文件夹&lt;code&gt;hexo init blog&lt;/code&gt;,这里会从npm源安装，很容易卡住，建议使用淘宝的npm镜像，安装速度很快，依次输入以下命令&lt;code&gt;npm config set registry https://registry.npm.taobao.org&lt;/code&gt;和&lt;code&gt;npm info express&lt;/code&gt;,第二个命令是看看npm是否装好，此时再初始化blog文件夹（ATTENTION:如果你刚刚init过程失败，你要把生成的blog删除，再执行&lt;code&gt;hexo init blog&lt;/code&gt;）&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;cd blog&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;npm install&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;hexo g&lt;/code&gt;这个命令是生成网页的静态文件，会生成一个public的文件&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;hexo s&lt;/code&gt;这个是启动本地服务，这样你就可以在&lt;a href=&quot;http://localhost:4000中预览你的博客&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://localhost:4000中预览你的博客&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;至此已经完成了搭建博客的三分之一了。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
+      &lt;p&gt;两个小时的时间我一般用来鉴赏影片，不过搭一个博客刚好也OK。&lt;/p&gt;
+&lt;p&gt;搭建一个自己的博客需三部曲：&lt;strong&gt;&lt;em&gt;下载安装包，部署环境，美化博客页面&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
     
     </summary>
     
