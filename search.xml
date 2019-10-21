@@ -9,19 +9,17 @@
   <entry>
     <title>两小时一起快速搭建个人博客</title>
     <url>/2019/10/20/%E4%B8%A4%E5%B0%8F%E6%97%B6%E4%B8%80%E8%B5%B7%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</url>
-    <content><![CDATA[<p>两个小时的时间我一般用来鉴赏影片，不过搭一个博客刚好也OK。</p>
-<p>搭建一个自己的博客需三部曲：<strong><em>下载安装包，部署环境，美化博客页面</em></strong></p>
+    <content><![CDATA[<p>两个小时的时间我一般用来鉴赏影片，不过搭一个博客刚好也OK。<br>搭建一个自己的博客需三部曲：<strong><em>下载安装包，部署环境，美化博客页面</em></strong></p>
 <a id="more"></a>
 
-<h2 id="一、下载安装包"><a href="#一、下载安装包" class="headerlink" title="一、下载安装包"></a>一、下载安装包</h2><p>本文用的博客是使用Hexo + Github，需要安装以下内容：</p>
+<h2 id="下载安装包"><a href="#下载安装包" class="headerlink" title="下载安装包"></a>下载安装包</h2><p>本文用的博客是使用Hexo + Github，需要安装以下内容：</p>
 <ol>
 <li><p>安装Node.js，安装地址：<a href="https://www.runoob.com/nodejs/nodejs-install-setup.html" target="_blank" rel="noopener">Node.js下载链接</a></p>
 </li>
-<li><p>安装Git，安装地址：<a href="http://git-scm.com/download/" target="_blank" rel="noopener">Git下载地址</a></p>
-<p>对于以上两个安装Mac建议从Homebrew安装node和git，那需要先安装Homebrew。</p>
+<li><p>安装Git，安装地址：<a href="http://git-scm.com/download/" target="_blank" rel="noopener">Git下载地址</a><br>对于以上两个安装Mac建议从Homebrew安装node和git，那需要先安装Homebrew。</p>
 <ol>
-<li>首先打开官网<a href="https://brew.sh/，你会在官网主页看到如下所示的内容，`/usr/bin/ruby" target="_blank" rel="noopener">https://brew.sh/，你会在官网主页看到如下所示的内容，`/usr/bin/ruby</a> -e “$(curl -fsSL <a href="https://raw.githubusercontent.com/Homebrew/install/master/install)`" target="_blank" rel="noopener">https://raw.githubusercontent.com/Homebrew/install/master/install)`</a></li>
-<li>打开终端，输入上述命令， <code>/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</code></li>
+<li>首先打开官网 <a href="https://brew.sh/" target="_blank" rel="noopener">https://brew.sh/</a> ，你会在官网主页看到如下所示的内容， <code>/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</code></li>
+<li>打开终端，输入上述命令，  即： <code>/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</code></li>
 <li>点击回车</li>
 <li>输入电脑密码，等待安装</li>
 <li>显示Installation successful!表示安装成功</li>
@@ -35,26 +33,23 @@
 <li><code>cd blog</code></li>
 <li><code>npm install</code></li>
 <li><code>hexo g</code>这个命令是生成网页的静态文件，会生成一个public的文件</li>
-<li><code>hexo s</code>这个是启动本地服务，这样你就可以在<a href="http://localhost:4000中预览你的博客" target="_blank" rel="noopener">http://localhost:4000中预览你的博客</a></li>
+<li><code>hexo s</code>这个是启动本地服务，这样你就可以在 <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> 中预览你的博客</li>
 </ol>
 <p>至此已经完成了搭建博客的三分之一了。</p>
 </li>
 </ol>
-<h2 id="二、部署环境"><a href="#二、部署环境" class="headerlink" title="二、部署环境"></a>二、部署环境</h2><ol>
+<h2 id="部署环境"><a href="#部署环境" class="headerlink" title="部署环境"></a>部署环境</h2><ol>
 <li><p>git的创建，首先你需要一个github的账号，默认已有，然后在你的git主页创建一个新的仓库，点击New repository。填入创建仓库的名称，必须是Yournsername.github.io这很关键，也就是你后面博客的网址。最后直接点击最下面的创建按钮，其他什么都不要动。</p>
 </li>
 <li><p>hexo关联到Github，打开blog文件夹，里面有一个名为_config.yml的文件，用文本编辑器打开并编辑他，在文档最后deploy，输入以下信息</p>
-<p><code>deploy</code>:</p>
-<p><code>type: git</code></p>
-<p> <code>repo: https://github.com/TristaWWP/TristaWWP.github.io.git</code></p>
-<p><code>branch: master</code></p>
+<p><code>deploy</code>:<br><code>type: git</code><br><code>repo: https://github.com/TristaWWP/TristaWWP.github.io.git</code><br><code>branch: master</code></p>
 </li>
 <li><p>安装扩展<code>npm install hexo-deployer-git --save</code></p>
 </li>
 <li><p>完成部署<code>hexo d</code>，期间会输入你的用户名和密码。</p>
 </li>
 </ol>
-<h2 id="三、美化博客页面"><a href="#三、美化博客页面" class="headerlink" title="三、美化博客页面"></a>三、美化博客页面</h2><p>俗语说：人靠衣装，确实，我就很喜欢好看的衣服，同样博客也要靠主题的装扮，虽然博客中自带了主题，但是越好看的主题越能展现一个人的个性。你可以进入<a href="https://hexo.io/themes/" target="_blank" rel="noopener">Hexo官网</a>选择自己喜欢的主题，我一开始选的next主题，后来感觉这个貌似超多人用，于是在官网选购一番，耗时半小时之久都没选到喜欢的，还是用回了next，在这里我太佩服前端和UI的小伙伴了。</p>
+<h2 id="美化博客页面"><a href="#美化博客页面" class="headerlink" title="美化博客页面"></a>美化博客页面</h2><p>俗语说：人靠衣装，确实，我就很喜欢好看的衣服，同样博客也要靠主题的装扮，虽然博客中自带了主题，但是越好看的主题越能展现一个人的个性。你可以进入<a href="https://hexo.io/themes/" target="_blank" rel="noopener">Hexo官网</a>选择自己喜欢的主题，我一开始选的next主题，后来感觉这个貌似超多人用，于是在官网选购一番，耗时半小时之久都没选到喜欢的，还是用回了next，在这里我太佩服前端和UI的小伙伴了。</p>
 <ol>
 <li>进入主题文件夹 <code>cd blog</code></li>
 <li>下载主题 <code>git clone https://github.com/theme-next/hexo-theme-next themes/next</code></li>
@@ -63,7 +58,7 @@
 <li>然后就可以创建一篇新的博客<code>hexo new &quot;博客标题&quot;</code>，会产生一个md文件，用文本编辑器打开，并且在里面任意发挥开始你的第一篇博客吧。</li>
 <li>简单两行完成发布文章，以后每次这样进行就可以更新博客了<code>hexo g</code>  <code>hexo d</code></li>
 </ol>
-<p>对于网速实在很差的实验室来说，应该刚好两个小时搞定，不过写这篇博文又用了两个小时:cry:。。。</p>
+<p>对于网速实在很差的实验室来说，应该刚好两个小时搞定，不过写这篇博文又用了两个小时。。。</p>
 ]]></content>
       <tags>
         <tag>软件类使用</tag>
