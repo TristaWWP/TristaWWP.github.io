@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://TristaWWP.github.io/"/>
-  <updated>2019-10-26T06:42:34.151Z</updated>
+  <updated>2019-10-26T10:57:49.342Z</updated>
   <id>http://TristaWWP.github.io/</id>
   
   <author>
@@ -17,11 +17,30 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>W老师语录</title>
+    <link href="http://TristaWWP.github.io/posts/4c3f0d3b.html"/>
+    <id>http://TristaWWP.github.io/posts/4c3f0d3b.html</id>
+    <published>2019-10-26T10:44:30.000Z</published>
+    <updated>2019-10-26T10:57:49.342Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;研究生进入我们实验室，并受到了W老师学习上和思想上的多次教导，受益匪浅。&lt;br&gt;特此记录，以勉励自己未来继续努力。&lt;br&gt;W老师是我见过最好的老师，最棒的老师，真正的科研思维。&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="“随笔”" scheme="http://TristaWWP.github.io/tags/%E2%80%9C%E9%9A%8F%E7%AC%94%E2%80%9D/"/>
+    
+  </entry>
+  
+  <entry>
     <title>写在嘉陵江畔</title>
     <link href="http://TristaWWP.github.io/posts/2bc0ac71.html"/>
     <id>http://TristaWWP.github.io/posts/2bc0ac71.html</id>
     <published>2019-10-21T11:16:20.000Z</published>
-    <updated>2019-10-26T06:42:34.151Z</updated>
+    <updated>2019-10-26T10:57:39.372Z</updated>
     
     <summary type="html">
     
@@ -29,6 +48,8 @@
     
     </summary>
     
+    
+      <category term="随笔" scheme="http://TristaWWP.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
     
     
   </entry>
