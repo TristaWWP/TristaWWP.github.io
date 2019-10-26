@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://TristaWWP.github.io/"/>
-  <updated>2019-10-26T10:57:49.342Z</updated>
+  <updated>2019-10-26T11:03:52.313Z</updated>
   <id>http://TristaWWP.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://TristaWWP.github.io/posts/4c3f0d3b.html"/>
     <id>http://TristaWWP.github.io/posts/4c3f0d3b.html</id>
     <published>2019-10-26T10:44:30.000Z</published>
-    <updated>2019-10-26T10:57:49.342Z</updated>
+    <updated>2019-10-26T11:03:52.313Z</updated>
     
     <summary type="html">
     
@@ -29,6 +29,8 @@
     
     </summary>
     
+    
+      <category term="随笔" scheme="http://TristaWWP.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
     
     
       <category term="“随笔”" scheme="http://TristaWWP.github.io/tags/%E2%80%9C%E9%9A%8F%E7%AC%94%E2%80%9D/"/>
@@ -59,7 +61,7 @@
     <link href="http://TristaWWP.github.io/posts/8f145c5e.html"/>
     <id>http://TristaWWP.github.io/posts/8f145c5e.html</id>
     <published>2019-10-20T12:26:00.000Z</published>
-    <updated>2019-10-25T14:15:28.349Z</updated>
+    <updated>2019-10-26T11:04:01.720Z</updated>
     
     <summary type="html">
     
@@ -67,6 +69,8 @@
     
     </summary>
     
+    
+      <category term="软件类使用" scheme="http://TristaWWP.github.io/categories/%E8%BD%AF%E4%BB%B6%E7%B1%BB%E4%BD%BF%E7%94%A8/"/>
     
     
       <category term="软件类使用" scheme="http://TristaWWP.github.io/tags/%E8%BD%AF%E4%BB%B6%E7%B1%BB%E4%BD%BF%E7%94%A8/"/>
