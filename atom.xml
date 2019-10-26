@@ -5,9 +5,9 @@
   <subtitle>王文平的个人博客</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
-  <updated>2019-10-25T09:24:17.674Z</updated>
-  <id>http://yoursite.com/</id>
+  <link href="http://TristaWWP.github.io/"/>
+  <updated>2019-10-25T14:15:28.350Z</updated>
+  <id>http://TristaWWP.github.io/</id>
   
   <author>
     <name>Wenping WANG</name>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>写在嘉陵江畔</title>
-    <link href="http://yoursite.com/posts/2bc0ac71.html"/>
-    <id>http://yoursite.com/posts/2bc0ac71.html</id>
+    <link href="http://TristaWWP.github.io/posts/2bc0ac71.html"/>
+    <id>http://TristaWWP.github.io/posts/2bc0ac71.html</id>
     <published>2019-10-21T11:16:20.000Z</published>
-    <updated>2019-10-25T09:24:17.674Z</updated>
+    <updated>2019-10-25T14:15:28.350Z</updated>
     
     <summary type="html">
     
@@ -35,10 +35,10 @@
   
   <entry>
     <title>两小时一起快速搭建个人博客</title>
-    <link href="http://yoursite.com/posts/8f145c5e.html"/>
-    <id>http://yoursite.com/posts/8f145c5e.html</id>
+    <link href="http://TristaWWP.github.io/posts/8f145c5e.html"/>
+    <id>http://TristaWWP.github.io/posts/8f145c5e.html</id>
     <published>2019-10-20T12:26:00.000Z</published>
-    <updated>2019-10-21T11:37:53.319Z</updated>
+    <updated>2019-10-25T14:15:28.349Z</updated>
     
     <summary type="html">
     
@@ -48,7 +48,7 @@
     
     
     
-      <category term="软件类使用" scheme="http://yoursite.com/tags/%E8%BD%AF%E4%BB%B6%E7%B1%BB%E4%BD%BF%E7%94%A8/"/>
+      <category term="软件类使用" scheme="http://TristaWWP.github.io/tags/%E8%BD%AF%E4%BB%B6%E7%B1%BB%E4%BD%BF%E7%94%A8/"/>
     
   </entry>
   
