@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>python之字符串、列表、字典和元组</title>
+    <url>/posts/2ccc3457.html</url>
+    <content><![CDATA[<p>python学习第一步了解四大数据结构，他们分别为list、tuple、dict、set，初级目标是了解基本用法，进阶学习是了解底层如何实现。BUT 在这之前</p>
+<a id="more"></a>
+<p> 在学习四大数据结构之前先来回顾下python的基本数据类型，简单回顾下数字、字符串、布尔类型三种。</p>
+<h3 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h3><h4 id="数字"><a href="#数字" class="headerlink" title="数字"></a>数字</h4><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> age = <span class="number">20</span>;</span><br></pre></td></tr></table></figure>
+
+
+
+<p> ####字符串</p>
+<p> ####布尔类型</p>
+<p> ###列表LIST</p>
+<p> ###元组tuple</p>
+<p> ###字典dict</p>
+<p> ###集合set</p>
+]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+  </entry>
+  <entry>
     <title>W老师语录</title>
     <url>/posts/4c3f0d3b.html</url>
     <content><![CDATA[<p>研究生进入我们实验室，并受到了W老师学习上和思想上的多次教导，受益匪浅。<br>特此记录，以勉励自己未来继续努力。<br>W老师是我见过最好的老师，最棒的老师，真正的科研思维。</p>

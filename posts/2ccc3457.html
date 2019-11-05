@@ -53,16 +53,17 @@
   };
 </script>
 
-  <meta name="description" content="热爱生活                 立志成为一名时代的建设者">
-<meta property="og:type" content="website">
-<meta property="og:title" content="美美、瓶子和鱼">
-<meta property="og:url" content="http:&#x2F;&#x2F;tristawwp.github.io&#x2F;archives&#x2F;index.html">
+  <meta name="description" content="python学习第一步了解四大数据结构，他们分别为list、tuple、dict、set，初级目标是了解基本用法，进阶学习是了解底层如何实现。BUT 在这之前">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python之字符串、列表、字典和元组">
+<meta property="og:url" content="http:&#x2F;&#x2F;tristawwp.github.io&#x2F;posts&#x2F;2ccc3457.html">
 <meta property="og:site_name" content="美美、瓶子和鱼">
-<meta property="og:description" content="热爱生活                 立志成为一名时代的建设者">
+<meta property="og:description" content="python学习第一步了解四大数据结构，他们分别为list、tuple、dict、set，初级目标是了解基本用法，进阶学习是了解底层如何实现。BUT 在这之前">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-11-05T02:56:20.572Z">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://tristawwp.github.io/archives/">
+<link rel="canonical" href="http://tristawwp.github.io/posts/2ccc3457.html">
 
 
 <script id="page-configurations">
@@ -70,13 +71,13 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: false,
+    isPost: true,
     isPage: false,
-    isArchive: true
+    isArchive: false
   };
 </script>
 
-  <title>归档 | 美美、瓶子和鱼</title>
+  <title>python之字符串、列表、字典和元组 | 美美、瓶子和鱼</title>
   
 
 
@@ -212,109 +213,156 @@
           <div class="content">
             
 
+  <div class="posts-expand">
+      
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共计 4 篇日志。 继续努力。</span>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://TristaWWP.github.io/posts/2ccc3457.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Wenping WANG">
+      <meta itemprop="description" content="热爱生活                 立志成为一名时代的建设者">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="美美、瓶子和鱼">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          python之字符串、列表、字典和元组
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2019-11-05 09:58:34 / 修改时间：10:56:20" itemprop="dateCreated datePublished" datetime="2019-11-05T09:58:34+08:00">2019-11-05</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>197</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <h1 class="collection-header">2019</h1>
-    </div>
+        <p>python学习第一步了解四大数据结构，他们分别为list、tuple、dict、set，初级目标是了解基本用法，进阶学习是了解底层如何实现。BUT 在这之前</p>
+<a id="more"></a>
+<p> 在学习四大数据结构之前先来回顾下python的基本数据类型，简单回顾下数字、字符串、布尔类型三种。</p>
+<h3 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h3><h4 id="数字"><a href="#数字" class="headerlink" title="数字"></a>数字</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> age = <span class="number">20</span>;</span><br></pre></td></tr></table></figure>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-11-05T09:58:34+08:00"
-              content="2019-11-05">
-          11-05
-        </time>
-      </div>
 
-      <h2 class="post-title">
-          <a class="post-title-link" href="/posts/2ccc3457.html" itemprop="url">
-            <span itemprop="name">python之字符串、列表、字典和元组</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-10-26T18:44:30+08:00"
-              content="2019-10-26">
-          10-26
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/posts/4c3f0d3b.html" itemprop="url">
-            <span itemprop="name">W老师语录</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-10-21T19:16:20+08:00"
-              content="2019-10-21">
-          10-21
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/posts/2bc0ac71.html" itemprop="url">
-            <span itemprop="name">写在嘉陵江畔</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-10-20T20:26:00+08:00"
-              content="2019-10-20">
-          10-20
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/posts/8f145c5e.html" itemprop="url">
-            <span itemprop="name">两小时一起快速搭建个人博客</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
+<p> ####字符串</p>
+<p> ####布尔类型</p>
+<p> ###列表LIST</p>
+<p> ###元组tuple</p>
+<p> ###字典dict</p>
+<p> ###集合set</p>
 
     </div>
+
+    
+    
+    
+      
+        <div class="reward-container">
+  <div>休息一下，喝杯咖啡，继续创作</div>
+  <button disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="Wenping WANG 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.png" alt="Wenping WANG 支付宝">
+        <p>支付宝</p>
+      </div>
+
   </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Wenping WANG
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://tristawwp.github.io/posts/2ccc3457.html" title="python之字符串、列表、字典和元组">http://tristawwp.github.io/posts/2ccc3457.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/null" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/posts/4c3f0d3b.html" rel="next" title="W老师语录">
+                  <i class="fa fa-chevron-left"></i> W老师语录
+                </a>
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+            </div>
+          </div>
+      </footer>
+    
+  </article>
   
   
   
 
-  
-
+  </div>
 
 
           </div>
@@ -343,6 +391,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本数据类型"><span class="nav-number">1.</span> <span class="nav-text">基本数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数字"><span class="nav-number">1.1.</span> <span class="nav-text">数字</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

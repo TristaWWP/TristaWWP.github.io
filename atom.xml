@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://TristaWWP.github.io/"/>
-  <updated>2019-10-31T01:56:45.873Z</updated>
+  <updated>2019-11-05T02:56:20.572Z</updated>
   <id>http://TristaWWP.github.io/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>python之字符串、列表、字典和元组</title>
+    <link href="http://TristaWWP.github.io/posts/2ccc3457.html"/>
+    <id>http://TristaWWP.github.io/posts/2ccc3457.html</id>
+    <published>2019-11-05T01:58:34.000Z</published>
+    <updated>2019-11-05T02:56:20.572Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;python学习第一步了解四大数据结构，他们分别为list、tuple、dict、set，初级目标是了解基本用法，进阶学习是了解底层如何实现。BUT 在这之前&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="python" scheme="http://TristaWWP.github.io/categories/python/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>W老师语录</title>
