@@ -60,7 +60,7 @@
 <meta property="og:site_name" content="美美、瓶子和鱼">
 <meta property="og:description" content="python学习第一步了解四大数据结构，他们分别为list、tuple、dict、set，初级目标是了解基本用法，进阶学习是了解底层如何实现。BUT 在这之前">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-05T09:29:14.638Z">
+<meta property="og:updated_time" content="2019-11-06T03:14:44.586Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://tristawwp.github.io/posts/2ccc3457.html">
@@ -240,10 +240,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2019-11-05 09:58:34 / 修改时间：17:29:14" itemprop="dateCreated datePublished" datetime="2019-11-05T09:58:34+08:00">2019-11-05</time>
+              <time title="创建时间：2019-11-05 09:58:34" itemprop="dateCreated datePublished" datetime="2019-11-05T09:58:34+08:00">2019-11-05</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-11-06 11:14:44" itemprop="dateModified" datetime="2019-11-06T11:14:44+08:00">2019-11-06</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -262,7 +268,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>442</span>
+              <span>1k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -286,20 +292,12 @@
 <p> 在学习四大数据结构之前先来回顾下python的基本数据类型，简单回顾下数字、字符串、布尔类型三种。</p>
 <h3 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h3><p>知其然更要知其所以然，语言的对比学习往往会让人更为深刻。python较C++更为简洁，比如声明一个变量，C++中常用的就是 数据类型 变量名，如下：<br><code>int age = 20;</code><br>python中声明的变量是直接： 变量名 = 变量值，如下：<br><code>age = 20</code></p>
 <h4 id="数字"><a href="#数字" class="headerlink" title="数字"></a>数字</h4><p>C系语言中的整数类型有很多，如int，long，long long等，使用时应明确标出。<br>python中不需要明确类型，并且没有限制长整数的数值大小，如果发生溢出，会自动转换为长整数。python中的整数类型都是int，没有long</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">age = <span class="number">20</span></span><br><span class="line">type(age) <span class="comment">#查看数据类型的方法</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-<p> ####字符串</p>
-<p> ####布尔类型</p>
-<p> ###列表LIST</p>
-<p> ###元组tuple</p>
-<p> ###字典dict</p>
-<p> ###集合set</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">age = <span class="number">20</span></span><br><span class="line">print(type(age)) <span class="comment">#查看数据类型的方法</span></span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">int</span>'&gt; #运行结果</span></span><br></pre></td></tr></table></figure>
+<p> ####字符串<br>python中加了引号的都是字符串，而且多种形式的引号单独使用没有差别，只有在引号中嵌套引号才有些许差别，三引号的作用时换行和注释</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="string">'wwp'</span> <span class="comment">#单引号</span></span><br><span class="line">name = <span class="string">"wwp"</span> <span class="comment">#双引号</span></span><br><span class="line">name = <span class="string">'''wwp'''</span> <span class="comment">#三引号</span></span><br><span class="line">name = <span class="string">"What's ur name?"</span> <span class="comment">#单双引号混用</span></span><br><span class="line">name = <span class="string">'''</span></span><br><span class="line"><span class="string">第一行</span></span><br><span class="line"><span class="string">第二行</span></span><br><span class="line"><span class="string">第三行</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="comment">#pyhton中的字符串可以相加（字符串拼接）和相乘（字符串复制）</span></span><br><span class="line">name = <span class="string">'wwp'</span>*<span class="number">3</span> <span class="comment">#字符串和数字相乘表示输出几遍，‘wwpwwpwwp’</span></span><br></pre></td></tr></table></figure>
+<p>字符串中其他的常用操作如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="string">"ada"</span></span><br><span class="line">name.title()<span class="comment">#首字母大写显示每个单词</span></span><br><span class="line">name.upper()<span class="comment">#全部大写</span></span><br><span class="line">name.lower()<span class="comment">#全部小写</span></span><br><span class="line"><span class="comment">#\n 换行符</span></span><br><span class="line"><span class="comment">#\t制表符（大空格）</span></span><br><span class="line">name.rstrip()<span class="comment">#暂时删除变量末尾(右边right)的空格</span></span><br><span class="line">print(name)<span class="comment">#依然有空格</span></span><br><span class="line"><span class="comment">#想要永久删除空格就必须将删除后的结果存回到变量中</span></span><br><span class="line">name.lstrip()<span class="comment">#暂时删除变量前面（左边left）的空格</span></span><br><span class="line">name.strip()<span class="comment">#暂时删除变量两端的空格</span></span><br><span class="line">age = <span class="number">23</span></span><br><span class="line">str(age)<span class="comment">#把非字符串转化为字符串</span></span><br></pre></td></tr></table></figure>
+<p>####布尔类型<br>true &amp; flase<br>###列表LIST<br>###元组tuple<br>###字典dict<br>###集合set</p>
 
     </div>
 
