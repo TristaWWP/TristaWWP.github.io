@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://TristaWWP.github.io/"/>
-  <updated>2019-11-06T03:14:44.586Z</updated>
+  <updated>2019-11-07T09:30:44.087Z</updated>
   <id>http://TristaWWP.github.io/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>python编码规范</title>
+    <link href="http://TristaWWP.github.io/posts/62c2e1c5.html"/>
+    <id>http://TristaWWP.github.io/posts/62c2e1c5.html</id>
+    <published>2019-11-06T04:16:00.000Z</published>
+    <updated>2019-11-07T09:30:44.087Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;目标：写出优雅的代码&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="python" scheme="http://TristaWWP.github.io/categories/python/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>python之字符串、列表、字典和元组</title>

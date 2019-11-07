@@ -53,18 +53,17 @@
   };
 </script>
 
-  <meta name="description" content="两个小时的时间我一般用来鉴赏影片，不过搭一个博客刚好也OK。搭建一个自己的博客需三部曲：下载安装包，部署环境，美化博客页面">
-<meta name="keywords" content="软件类使用">
+  <meta name="description" content="目标：写出优雅的代码">
 <meta property="og:type" content="article">
-<meta property="og:title" content="两小时一起快速搭建个人博客">
-<meta property="og:url" content="http:&#x2F;&#x2F;tristawwp.github.io&#x2F;posts&#x2F;8f145c5e.html">
+<meta property="og:title" content="python编码规范">
+<meta property="og:url" content="http:&#x2F;&#x2F;tristawwp.github.io&#x2F;posts&#x2F;62c2e1c5.html">
 <meta property="og:site_name" content="美美、瓶子和鱼">
-<meta property="og:description" content="两个小时的时间我一般用来鉴赏影片，不过搭一个博客刚好也OK。搭建一个自己的博客需三部曲：下载安装包，部署环境，美化博客页面">
+<meta property="og:description" content="目标：写出优雅的代码">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-06T02:33:19.231Z">
+<meta property="og:updated_time" content="2019-11-07T09:30:44.087Z">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://tristawwp.github.io/posts/8f145c5e.html">
+<link rel="canonical" href="http://tristawwp.github.io/posts/62c2e1c5.html">
 
 
 <script id="page-configurations">
@@ -78,7 +77,7 @@
   };
 </script>
 
-  <title>两小时一起快速搭建个人博客 | 美美、瓶子和鱼</title>
+  <title>python编码规范 | 美美、瓶子和鱼</title>
   
 
 
@@ -219,7 +218,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://TristaWWP.github.io/posts/8f145c5e.html">
+    <link itemprop="mainEntityOfPage" href="http://TristaWWP.github.io/posts/62c2e1c5.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -232,7 +231,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          两小时一起快速搭建个人博客
+          python编码规范
         </h1>
 
         <div class="post-meta">
@@ -242,14 +241,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-10-20 20:26:00" itemprop="dateCreated datePublished" datetime="2019-10-20T20:26:00+08:00">2019-10-20</time>
+              <time title="创建时间：2019-11-06 12:16:00" itemprop="dateCreated datePublished" datetime="2019-11-06T12:16:00+08:00">2019-11-06</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-11-06 10:33:19" itemprop="dateModified" datetime="2019-11-06T10:33:19+08:00">2019-11-06</time>
+                <time title="修改时间：2019-11-07 17:30:44" itemprop="dateModified" datetime="2019-11-07T17:30:44+08:00">2019-11-07</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -257,8 +256,8 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%BD%AF%E4%BB%B6%E7%B1%BB%E4%BD%BF%E7%94%A8/" itemprop="url" rel="index">
-                    <span itemprop="name">软件类使用</span>
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
                   </a>
                 </span>
             </span>
@@ -269,14 +268,14 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.8k</span>
+              <span>930</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
+              <span>1 分钟</span>
             </span>
 
         </div>
@@ -288,36 +287,55 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>两个小时的时间我一般用来鉴赏影片，不过搭一个博客刚好也OK。<br>搭建一个自己的博客需三部曲：<strong><em>下载安装包，部署环境，美化博客页面</em></strong></p>
+        <p>目标：写出优雅的代码</p>
 <a id="more"></a>
 
-<h2 id="下载安装包"><a href="#下载安装包" class="headerlink" title="下载安装包"></a>下载安装包</h2><p>本文用的博客是使用Hexo + Github，需要安装以下内容：</p>
-<ol>
-<li><p>安装Node.js，安装地址：<a href="https://www.runoob.com/nodejs/nodejs-install-setup.html" target="_blank" rel="noopener">Node.js下载链接</a></p>
-</li>
-<li><p>安装Git，安装地址：<a href="http://git-scm.com/download/" target="_blank" rel="noopener">Git下载地址</a><br>对于以上两个安装Mac建议从Homebrew安装node和git，那需要先安装Homebrew。<br>a. 首先打开官网 <a href="https://brew.sh/" target="_blank" rel="noopener">https://brew.sh/</a> ，你会在官网主页看到如下所示的内容:<br><code>/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</code><br>b. 打开终端，输入上述命令,  即：<br><code>/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</code><br>c. 点击回车<br>d. 输入电脑密码，等待安装<br>e. 显示Installation successful!表示安装成功<br>f. 开始使用命令行安装node和git，<code>brew install node</code> 和<code>brew install git</code></p>
-</li>
-<li><p>安装Hexo，使用npm安装，建议用root权限，不然会有权限问题。<br>a. 输入命令<code>sudo npm install -g hexo-cli</code>开始安装<br>b. 初始化blog文件夹<code>hexo init blog</code>,这里会从npm源安装，很容易卡住，建议使用淘宝的npm镜像，安装速度很快，依次输入以下命令<code>npm config set registry https://registry.npm.taobao.org</code>和<code>npm info express</code>,第二个命令是看看npm是否装好，此时再初始化blog文件夹（ATTENTION:如果你刚刚init过程失败，你要把生成的blog删除，再执行<code>hexo init blog</code>）<br>c. <code>cd blog</code><br>d. <code>npm install</code><br>e. <code>hexo g</code>这个命令是生成网页的静态文件，会生成一个public的文件<br>f. <code>hexo s</code>这个是启动本地服务，这样你就可以在 <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> 中预览你的博客</p>
-<p>至此已经完成了搭建博客的三分之一了。</p>
-</li>
+<h4 id="PEP8编码规范"><a href="#PEP8编码规范" class="headerlink" title="PEP8编码规范"></a>PEP8编码规范</h4><h5 id="命名规范"><a href="#命名规范" class="headerlink" title="命名规范"></a>命名规范</h5><ol>
+<li>模块命名尽量短小，使用全部小写的方式，可以使用下划线</li>
+<li>函数命名使用全部小写，可以使用下划线，私有函数一般在前面加个下划线</li>
+<li>常量命名使用全部大写，可以使用下划线</li>
+<li>类的属性（方法和变量）使用全部小写，可以使用下划线</li>
+<li>包命名尽量短小，使用全部小写，不可以使用下划线</li>
+<li>避免使用混淆字母，如‘l’、‘o’等</li>
+<li>类命名使用AaBb的格式驼峰法，模块内部采用_AaBb的格式</li>
+<li>异常命名AaBb+Error的方式</li>
+<li>全局变量尽量只在模块内有效，好像C的static，一种实现方式是_all_机制，一种是前缀一个下划线</li>
+<li>类的属性鱼关键字冲突，可以后缀下划线，不要使用缩略</li>
+<li>为了避免与子类属性命名冲突，可以前缀两个下划线。</li>
+<li>类的方法的第一个参数必须是self，而静态方法第一个参数必须是cls</li>
 </ol>
-<h2 id="部署环境"><a href="#部署环境" class="headerlink" title="部署环境"></a>部署环境</h2><ol>
-<li>git的创建，首先你需要一个github的账号，默认已有，然后在你的git主页创建一个新的仓库，点击New repository。填入创建仓库的名称，必须是Yournsername.github.io这很关键，也就是你后面博客的网址。最后直接点击最下面的创建按钮，其他什么都不要动。</li>
-<li>hexo关联到Github，打开blog文件夹，里面有一个名为_config.yml的文件，用文本编辑器打开并编辑他，在文档最后deploy，输入以下信息<br><code>deploy</code>:<br><code>type: git</code><br><code>repo: https://github.com/TristaWWP/TristaWWP.github.io.git</code><br><code>branch: master</code></li>
-<li>安装扩展<code>npm install hexo-deployer-git --save</code></li>
-<li>完成部署<code>hexo d</code>，期间会输入你的用户名和密码。</li>
+<h5 id="代码规范"><a href="#代码规范" class="headerlink" title="代码规范"></a>代码规范</h5><ol>
+<li>缩进，四个空格，不要使用Tap</li>
+<li>每行代码由长度限制，不宜太长，换行最好使用圆括号，谨慎使用反斜杠</li>
+<li>类中的方法定义之间空一行；类和顶层函数定义之间空两行；函数内逻辑无关段落空一行，其他地方不空行</li>
+<li>不要用分号将两条命令放在同一行，一行写一条命令</li>
+<li>尽量使用is/is not取代‘==’</li>
+<li>异常中不要使用裸露的except，except后跟具体的exeptions</li>
+<li>异常中try的代码要少</li>
+<li>使用startswith() and endswith()代替切片进行序列的前缀或后缀检查</li>
+<li>使用isinstance()比较对象的类型</li>
+<li>二进制数据判断使用 if boolvalue</li>
 </ol>
-<h2 id="美化博客页面"><a href="#美化博客页面" class="headerlink" title="美化博客页面"></a>美化博客页面</h2><p>俗语说：人靠衣装，确实，我就很喜欢好看的衣服，同样博客也要靠主题的装扮，虽然博客中自带了主题，但是越好看的主题越能展现一个人的个性。你可以进入<a href="https://hexo.io/themes/" target="_blank" rel="noopener">Hexo官网</a>选择自己喜欢的主题，我一开始选的next主题，后来感觉这个貌似超多人用，于是在官网选购一番，耗时半小时之久都没选到喜欢的，还是用回了next，在这里我太佩服前端和UI的小伙伴了。</p>
-<ol>
-<li>进入主题文件夹 <code>cd blog</code></li>
-<li>下载主题 <code>git clone https://github.com/theme-next/hexo-theme-next themes/next</code></li>
-<li>修改主题的配置文件_config.yml中的theme属性，设置为next</li>
-<li>然后进行一系列的美化页面效果，请参看这位老哥的文章，十分全面，<a href="https://segmentfault.com/a/1190000009544924" target="_blank" rel="noopener">Next主题的个性化教程</a></li>
-<li>然后就可以创建一篇新的博客<code>hexo new &quot;博客标题&quot;</code>，会产生一个md文件，用文本编辑器打开，并且在里面任意发挥开始你的第一篇博客吧。</li>
-<li>简单两行完成发布文章，以后每次这样进行就可以更新博客了<code>hexo g</code>  <code>hexo d</code></li>
-</ol>
-<p>对于网速实在很差的实验室来说，应该刚好两个小时搞定，不过写这篇博文又用了两个小时。。。</p>
+<h5 id="文档规范"><a href="#文档规范" class="headerlink" title="文档规范"></a>文档规范</h5><ol>
+<li><p>模块内容的顺序</p>
+</li>
+<li><p>每个import语句只导入一个模块，尽量避免一次导入多个模块，从大到小，顺序为：标准库、相关主包、特定应用</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> sys</span><br></pre></td></tr></table></figure>
 
+</li>
+</ol>
+<h5 id="空格"><a href="#空格" class="headerlink" title="空格"></a>空格</h5><ol>
+<li>右括号、逗号、冒号、分号前面不要空格</li>
+<li>函数和序列的左括号前不要空格，list[2]</li>
+<li>操作符的左右各加一个空格，如 + ，‘*，=’两边不空格，</li>
+<li>if/for/while语句中需要另起一行</li>
+</ol>
+<h5 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h5><ol>
+<li>最好是英文注释，完整的句子，首字母大写，句后有结束符</li>
+<li>尽量多使用块注释，在一段代码前增加注释，#后面加一个空格，减少行注释和不必要注释</li>
+<li>为所有的共有模块、函数、类、方法写docstrings，私有的不一写，但可以在def后提供一个块注释说明</li>
+</ol>
+<h4 id="Flake8、Pylint代码风格检查工具"><a href="#Flake8、Pylint代码风格检查工具" class="headerlink" title="Flake8、Pylint代码风格检查工具"></a>Flake8、Pylint代码风格检查工具</h4>
     </div>
 
     
@@ -353,7 +371,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://tristawwp.github.io/posts/8f145c5e.html" title="两小时一起快速搭建个人博客">http://tristawwp.github.io/posts/8f145c5e.html</a>
+    <a href="http://tristawwp.github.io/posts/62c2e1c5.html" title="python编码规范">http://tristawwp.github.io/posts/62c2e1c5.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/null" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -363,22 +381,19 @@
 
 
       <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/%E8%BD%AF%E4%BB%B6%E7%B1%BB%E4%BD%BF%E7%94%A8/" rel="tag"><i class="fa fa-tag"></i> 软件类使用</a>
-          </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
+                <a href="/posts/2ccc3457.html" rel="next" title="python之字符串、列表、字典和元组">
+                  <i class="fa fa-chevron-left"></i> python之字符串、列表、字典和元组
+                </a>
             </div>
 
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-                <a href="/posts/2bc0ac71.html" rel="prev" title="写在嘉陵江畔">
-                  写在嘉陵江畔 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
       </footer>
@@ -417,7 +432,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#下载安装包"><span class="nav-number">1.</span> <span class="nav-text">下载安装包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#部署环境"><span class="nav-number">2.</span> <span class="nav-text">部署环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#美化博客页面"><span class="nav-number">3.</span> <span class="nav-text">美化博客页面</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#PEP8编码规范"><span class="nav-number">1.</span> <span class="nav-text">PEP8编码规范</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#命名规范"><span class="nav-number">1.1.</span> <span class="nav-text">命名规范</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#代码规范"><span class="nav-number">1.2.</span> <span class="nav-text">代码规范</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#文档规范"><span class="nav-number">1.3.</span> <span class="nav-text">文档规范</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#空格"><span class="nav-number">1.4.</span> <span class="nav-text">空格</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#注释"><span class="nav-number">1.5.</span> <span class="nav-text">注释</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Flake8、Pylint代码风格检查工具"><span class="nav-number">2.</span> <span class="nav-text">Flake8、Pylint代码风格检查工具</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

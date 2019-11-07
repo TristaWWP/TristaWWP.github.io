@@ -1,6 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>python编码规范</title>
+    <url>/posts/62c2e1c5.html</url>
+    <content><![CDATA[<p>目标：写出优雅的代码</p>
+<a id="more"></a>
+
+<h4 id="PEP8编码规范"><a href="#PEP8编码规范" class="headerlink" title="PEP8编码规范"></a>PEP8编码规范</h4><h5 id="命名规范"><a href="#命名规范" class="headerlink" title="命名规范"></a>命名规范</h5><ol>
+<li>模块命名尽量短小，使用全部小写的方式，可以使用下划线</li>
+<li>函数命名使用全部小写，可以使用下划线，私有函数一般在前面加个下划线</li>
+<li>常量命名使用全部大写，可以使用下划线</li>
+<li>类的属性（方法和变量）使用全部小写，可以使用下划线</li>
+<li>包命名尽量短小，使用全部小写，不可以使用下划线</li>
+<li>避免使用混淆字母，如‘l’、‘o’等</li>
+<li>类命名使用AaBb的格式驼峰法，模块内部采用_AaBb的格式</li>
+<li>异常命名AaBb+Error的方式</li>
+<li>全局变量尽量只在模块内有效，好像C的static，一种实现方式是_all_机制，一种是前缀一个下划线</li>
+<li>类的属性鱼关键字冲突，可以后缀下划线，不要使用缩略</li>
+<li>为了避免与子类属性命名冲突，可以前缀两个下划线。</li>
+<li>类的方法的第一个参数必须是self，而静态方法第一个参数必须是cls</li>
+</ol>
+<h5 id="代码规范"><a href="#代码规范" class="headerlink" title="代码规范"></a>代码规范</h5><ol>
+<li>缩进，四个空格，不要使用Tap</li>
+<li>每行代码由长度限制，不宜太长，换行最好使用圆括号，谨慎使用反斜杠</li>
+<li>类中的方法定义之间空一行；类和顶层函数定义之间空两行；函数内逻辑无关段落空一行，其他地方不空行</li>
+<li>不要用分号将两条命令放在同一行，一行写一条命令</li>
+<li>尽量使用is/is not取代‘==’</li>
+<li>异常中不要使用裸露的except，except后跟具体的exeptions</li>
+<li>异常中try的代码要少</li>
+<li>使用startswith() and endswith()代替切片进行序列的前缀或后缀检查</li>
+<li>使用isinstance()比较对象的类型</li>
+<li>二进制数据判断使用 if boolvalue</li>
+</ol>
+<h5 id="文档规范"><a href="#文档规范" class="headerlink" title="文档规范"></a>文档规范</h5><ol>
+<li><p>模块内容的顺序</p>
+</li>
+<li><p>每个import语句只导入一个模块，尽量避免一次导入多个模块，从大到小，顺序为：标准库、相关主包、特定应用</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> sys</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h5 id="空格"><a href="#空格" class="headerlink" title="空格"></a>空格</h5><ol>
+<li>右括号、逗号、冒号、分号前面不要空格</li>
+<li>函数和序列的左括号前不要空格，list[2]</li>
+<li>操作符的左右各加一个空格，如 + ，‘*，=’两边不空格，</li>
+<li>if/for/while语句中需要另起一行</li>
+</ol>
+<h5 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h5><ol>
+<li>最好是英文注释，完整的句子，首字母大写，句后有结束符</li>
+<li>尽量多使用块注释，在一段代码前增加注释，#后面加一个空格，减少行注释和不必要注释</li>
+<li>为所有的共有模块、函数、类、方法写docstrings，私有的不一写，但可以在def后提供一个块注释说明</li>
+</ol>
+<h4 id="Flake8、Pylint代码风格检查工具"><a href="#Flake8、Pylint代码风格检查工具" class="headerlink" title="Flake8、Pylint代码风格检查工具"></a>Flake8、Pylint代码风格检查工具</h4>]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+  </entry>
+  <entry>
     <title>python之字符串、列表、字典和元组</title>
     <url>/posts/2ccc3457.html</url>
     <content><![CDATA[<p>python学习第一步了解四大数据结构，他们分别为list、tuple、dict、set，初级目标是了解基本用法，进阶学习是了解底层如何实现。BUT 在这之前</p>
