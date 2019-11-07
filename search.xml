@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>python之内存管理和垃圾回收机制</title>
+    <url>/posts/b7597a18.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>python之闭包函数、装饰器</title>
+    <url>/posts/304d49b3.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>python之迭代器、生成器</title>
+    <url>/posts/6d39ca9a.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>python编码规范</title>
     <url>/posts/62c2e1c5.html</url>
     <content><![CDATA[<p>目标：写出优雅的代码</p>
@@ -69,8 +84,50 @@
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">name = <span class="string">'wwp'</span> <span class="comment">#单引号</span></span><br><span class="line">name = <span class="string">"wwp"</span> <span class="comment">#双引号</span></span><br><span class="line">name = <span class="string">'''wwp'''</span> <span class="comment">#三引号</span></span><br><span class="line">name = <span class="string">"What's ur name?"</span> <span class="comment">#单双引号混用</span></span><br><span class="line">name = <span class="string">'''</span></span><br><span class="line"><span class="string">第一行</span></span><br><span class="line"><span class="string">第二行</span></span><br><span class="line"><span class="string">第三行</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="comment">#pyhton中的字符串可以相加（字符串拼接）和相乘（字符串复制）</span></span><br><span class="line">name = <span class="string">'wwp'</span>*<span class="number">3</span> <span class="comment">#字符串和数字相乘表示输出几遍，‘wwpwwpwwp’</span></span><br></pre></td></tr></table></figure>
 <p>字符串中其他的常用操作如下：</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">name = <span class="string">"ada"</span></span><br><span class="line">name.title()<span class="comment">#首字母大写显示每个单词</span></span><br><span class="line">name.upper()<span class="comment">#全部大写</span></span><br><span class="line">name.lower()<span class="comment">#全部小写</span></span><br><span class="line"><span class="comment">#\n 换行符</span></span><br><span class="line"><span class="comment">#\t制表符（大空格）</span></span><br><span class="line">name.rstrip()<span class="comment">#暂时删除变量末尾(右边right)的空格</span></span><br><span class="line">print(name)<span class="comment">#依然有空格</span></span><br><span class="line"><span class="comment">#想要永久删除空格就必须将删除后的结果存回到变量中</span></span><br><span class="line">name.lstrip()<span class="comment">#暂时删除变量前面（左边left）的空格</span></span><br><span class="line">name.strip()<span class="comment">#暂时删除变量两端的空格</span></span><br><span class="line">age = <span class="number">23</span></span><br><span class="line">str(age)<span class="comment">#把非字符串转化为字符串</span></span><br></pre></td></tr></table></figure>
-<p>####布尔类型<br>true &amp; flase<br>###列表LIST<br>###元组tuple<br>###字典dict<br>###集合set</p>
-]]></content>
+<p>####布尔类型<br>true &amp; flase<br>###列表LIST</p>
+<ul>
+<li>List是由一系列特定顺序排列的元素组成—–有序的（与set相对）</li>
+<li>用[]表示列表，并用逗号分隔其中的元素，列表的名称常定义为复数，</li>
+<li>适用于存储在程序运行期间可能变化的数据集，是可以修改的—-元素可变（与tuple相对）</li>
+<li>容纳python的任何对象（与字典相对）</li>
+</ul>
+<h4 id="访问列表元素"><a href="#访问列表元素" class="headerlink" title="访问列表元素"></a>访问列表元素</h4><p>索引访问，下标从0开始。（==C++数组和vector也是索引访问，还记得数组和链表及vector的区别吗==）</p>
+<p>注意：python访问最后一个列表元素，使用索引-1，返回列表的最后一个元素，常用于不知道列表长度的情况下，当然倒数第二个元素类推-2，-3，-4(不过列表为空时不能这样使用，会出错)</p>
+<h4 id="修改、增加和删除元素"><a href="#修改、增加和删除元素" class="headerlink" title="修改、增加和删除元素"></a>修改、增加和删除元素</h4><p><strong>修改元素</strong>：给列表中的某元素赋新值，重新print即修改</p>
+<p><strong>增加元素</strong>：</p>
+<ol>
+<li><p>列表末尾添加元素</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">names = [<span class="string">'Mary'</span>, <span class="string">'Tom'</span>] </span><br><span class="line">names.append(<span class="string">'Jack'</span>)</span><br><span class="line">print(names)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>python中可以使用append动态的创建列表，如先创建一个空列表，再使用一系列的append()语句添加元素，类似建立一个空的vector，然后不断的push_back()元素</p>
+<p>​            2.列表中插入，insert(索引值，新元素值)可以在任何位置添加新元素</p>
+<p><strong>删除元素</strong>：</p>
+<ol>
+<li>根据索引删除元素，元素后期不再使用</li>
+</ol>
+<p><code>del names[0]</code> </p>
+<p>​          2.删除列表末尾的元素，并继续使用存入变量，names.pop(),类似栈的弹出</p>
+<p>​          3.删除任何位置的元素，并存入变量，names.pop(索引)</p>
+<p>​          4.根据值删除元素，names.remove(‘Mary’),remove只是删除第一个出现的值，如果某元素重复出现多次，应该循环判断是否删除完毕</p>
+<h4 id="组织列表"><a href="#组织列表" class="headerlink" title="组织列表"></a>组织列表</h4><ol>
+<li>永久性排序，不可恢复，names.sort(),/names.sort(reverse=True)逆序</li>
+<li>临时显示特定排序，不影响列表的原始顺序，print(sorted(names))</li>
+<li>反转列表的排列顺序，names.reverse(),逆序，如果需要恢复，再次reverse</li>
+<li>求列表长度len(names)</li>
+</ol>
+<h4 id="数值列表"><a href="#数值列表" class="headerlink" title="数值列表"></a>数值列表</h4><ol>
+<li>range(start，end)函数，输出从start开始的数字，到end结束（不包括end）</li>
+<li>list(range(start, end))函数，把range的结束直接转换为列表</li>
+<li>range(start, end, step)可以指定步长增加直到end</li>
+</ol>
+<h4 id="切片-部分元素"><a href="#切片-部分元素" class="headerlink" title="切片(部分元素)"></a>切片(部分元素)</h4><ol>
+<li>指定开始和结尾索引，在结尾索引前停止(不包括结尾处)</li>
+<li>没有指定开始索引代表从列表头开始，没有制定结束索引，代表从列表尾结束</li>
+<li>复制列表，同时省略起始索引</li>
+</ol>
+<h3 id="元组tuple"><a href="#元组tuple" class="headerlink" title="元组tuple"></a>元组tuple</h3><h3 id="字典dict"><a href="#字典dict" class="headerlink" title="字典dict"></a>字典dict</h3><h3 id="集合set"><a href="#集合set" class="headerlink" title="集合set"></a>集合set</h3>]]></content>
       <categories>
         <category>python</category>
       </categories>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://TristaWWP.github.io/"/>
-  <updated>2019-11-07T09:30:44.087Z</updated>
+  <updated>2019-11-07T13:09:17.308Z</updated>
   <id>http://TristaWWP.github.io/</id>
   
   <author>
@@ -17,11 +17,56 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>python之内存管理和垃圾回收机制</title>
+    <link href="http://TristaWWP.github.io/posts/b7597a18.html"/>
+    <id>http://TristaWWP.github.io/posts/b7597a18.html</id>
+    <published>2019-11-07T13:09:17.000Z</published>
+    <updated>2019-11-07T13:09:17.308Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>python之闭包函数、装饰器</title>
+    <link href="http://TristaWWP.github.io/posts/304d49b3.html"/>
+    <id>http://TristaWWP.github.io/posts/304d49b3.html</id>
+    <published>2019-11-07T13:09:01.000Z</published>
+    <updated>2019-11-07T13:09:01.671Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>python之迭代器、生成器</title>
+    <link href="http://TristaWWP.github.io/posts/6d39ca9a.html"/>
+    <id>http://TristaWWP.github.io/posts/6d39ca9a.html</id>
+    <published>2019-11-07T13:08:35.000Z</published>
+    <updated>2019-11-07T13:08:35.910Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>python编码规范</title>
     <link href="http://TristaWWP.github.io/posts/62c2e1c5.html"/>
     <id>http://TristaWWP.github.io/posts/62c2e1c5.html</id>
     <published>2019-11-06T04:16:00.000Z</published>
-    <updated>2019-11-07T09:30:44.087Z</updated>
+    <updated>2019-11-07T09:30:58.945Z</updated>
     
     <summary type="html">
     
@@ -40,7 +85,7 @@
     <link href="http://TristaWWP.github.io/posts/2ccc3457.html"/>
     <id>http://TristaWWP.github.io/posts/2ccc3457.html</id>
     <published>2019-11-05T01:58:34.000Z</published>
-    <updated>2019-11-06T03:14:44.586Z</updated>
+    <updated>2019-11-07T13:46:51.559Z</updated>
     
     <summary type="html">
     
