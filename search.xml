@@ -127,7 +127,22 @@
 <li>没有指定开始索引代表从列表头开始，没有制定结束索引，代表从列表尾结束</li>
 <li>复制列表，同时省略起始索引</li>
 </ol>
-<h3 id="元组tuple"><a href="#元组tuple" class="headerlink" title="元组tuple"></a>元组tuple</h3><h3 id="字典dict"><a href="#字典dict" class="headerlink" title="字典dict"></a>字典dict</h3><h3 id="集合set"><a href="#集合set" class="headerlink" title="集合set"></a>集合set</h3>]]></content>
+<h3 id="元组tuple"><a href="#元组tuple" class="headerlink" title="元组tuple"></a>元组tuple</h3><p>不可修改的不可变的列表，使用圆括号（）表示，同样使用索引访问元组，即可查询不可修改的列表</p>
+<h3 id="字典dict"><a href="#字典dict" class="headerlink" title="字典dict"></a>字典dict</h3><ul>
+<li>花括号表示{key:value},元素是key与value的对应关系组，通过key访问value</li>
+<li>key键不能重复，但是值可以重复</li>
+<li>字典中的key键是不可变的，无法修改的，但是值value是可变的可修改的，可以是任何对象</li>
+<li>无序存储，python对key进行哈希数字运算，根据计算结果决定value的地址，所以是无序，所以key需要是能被哈希的，即必须是不可变类型，数字字符串元组</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 还记得C++的map吗</span></span><br><span class="line"><span class="comment"># 添加单个键值对</span></span><br><span class="line">students = &#123;&#125;</span><br><span class="line">students[<span class="string">'Mary'</span>] = <span class="number">5</span> <span class="comment">#增加一个键值对Mary-5</span></span><br><span class="line"><span class="comment"># 添加多个键值对</span></span><br><span class="line"><span class="comment"># 删除元素</span></span><br><span class="line"><span class="keyword">del</span> students[<span class="string">'Mary'</span>]<span class="comment">#删除时要指定字典名和要删除的键</span></span><br><span class="line"><span class="comment"># 遍历字典</span></span><br><span class="line"><span class="keyword">for</span> key，value <span class="keyword">in</span> students.items()</span><br><span class="line"><span class="comment"># 遍历所有的键</span></span><br><span class="line"><span class="keyword">for</span> name <span class="keyword">in</span> students.keys():<span class="comment">#方法key（）可以省略，但是加上更好，key返回一个包含字典中所有键的列表</span></span><br><span class="line"><span class="comment"># 遍历所有的值</span></span><br><span class="line"><span class="keyword">for</span> age <span class="keyword">in</span> students.values():<span class="comment">#方法values（）返回一个包含字典中所有值的列表</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="集合set"><a href="#集合set" class="headerlink" title="集合set"></a>集合set</h3><ul>
+<li>花括号表示{}，无序的，不重复的，任意的元素，是不是跟C++的set很像</li>
+<li>一般用set去掉重复元素</li>
+<li>集合不能切片也不能使用索引，毕竟是无序的</li>
+</ul>
+<p>总结：每个数据结构应该处理哪些数据，应用在哪些场景中</p>
+]]></content>
       <categories>
         <category>python</category>
       </categories>

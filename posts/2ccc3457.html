@@ -60,7 +60,7 @@
 <meta property="og:site_name" content="美美、瓶子和鱼">
 <meta property="og:description" content="python学习第一步了解四大数据结构，他们分别为list、tuple、dict、set，初级目标是了解基本用法，进阶学习是了解底层如何实现。BUT 在这之前">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-07T13:46:51.559Z">
+<meta property="og:updated_time" content="2019-11-08T03:12:43.337Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://tristawwp.github.io/posts/2ccc3457.html">
@@ -248,7 +248,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-11-07 21:46:51" itemprop="dateModified" datetime="2019-11-07T21:46:51+08:00">2019-11-07</time>
+                <time title="修改时间：2019-11-08 11:12:43" itemprop="dateModified" datetime="2019-11-08T11:12:43+08:00">2019-11-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -268,7 +268,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.1k</span>
+              <span>2.7k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -340,7 +340,22 @@
 <li>没有指定开始索引代表从列表头开始，没有制定结束索引，代表从列表尾结束</li>
 <li>复制列表，同时省略起始索引</li>
 </ol>
-<h3 id="元组tuple"><a href="#元组tuple" class="headerlink" title="元组tuple"></a>元组tuple</h3><h3 id="字典dict"><a href="#字典dict" class="headerlink" title="字典dict"></a>字典dict</h3><h3 id="集合set"><a href="#集合set" class="headerlink" title="集合set"></a>集合set</h3>
+<h3 id="元组tuple"><a href="#元组tuple" class="headerlink" title="元组tuple"></a>元组tuple</h3><p>不可修改的不可变的列表，使用圆括号（）表示，同样使用索引访问元组，即可查询不可修改的列表</p>
+<h3 id="字典dict"><a href="#字典dict" class="headerlink" title="字典dict"></a>字典dict</h3><ul>
+<li>花括号表示{key:value},元素是key与value的对应关系组，通过key访问value</li>
+<li>key键不能重复，但是值可以重复</li>
+<li>字典中的key键是不可变的，无法修改的，但是值value是可变的可修改的，可以是任何对象</li>
+<li>无序存储，python对key进行哈希数字运算，根据计算结果决定value的地址，所以是无序，所以key需要是能被哈希的，即必须是不可变类型，数字字符串元组</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 还记得C++的map吗</span></span><br><span class="line"><span class="comment"># 添加单个键值对</span></span><br><span class="line">students = &#123;&#125;</span><br><span class="line">students[<span class="string">'Mary'</span>] = <span class="number">5</span> <span class="comment">#增加一个键值对Mary-5</span></span><br><span class="line"><span class="comment"># 添加多个键值对</span></span><br><span class="line"><span class="comment"># 删除元素</span></span><br><span class="line"><span class="keyword">del</span> students[<span class="string">'Mary'</span>]<span class="comment">#删除时要指定字典名和要删除的键</span></span><br><span class="line"><span class="comment"># 遍历字典</span></span><br><span class="line"><span class="keyword">for</span> key，value <span class="keyword">in</span> students.items()</span><br><span class="line"><span class="comment"># 遍历所有的键</span></span><br><span class="line"><span class="keyword">for</span> name <span class="keyword">in</span> students.keys():<span class="comment">#方法key（）可以省略，但是加上更好，key返回一个包含字典中所有键的列表</span></span><br><span class="line"><span class="comment"># 遍历所有的值</span></span><br><span class="line"><span class="keyword">for</span> age <span class="keyword">in</span> students.values():<span class="comment">#方法values（）返回一个包含字典中所有值的列表</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="集合set"><a href="#集合set" class="headerlink" title="集合set"></a>集合set</h3><ul>
+<li>花括号表示{}，无序的，不重复的，任意的元素，是不是跟C++的set很像</li>
+<li>一般用set去掉重复元素</li>
+<li>集合不能切片也不能使用索引，毕竟是无序的</li>
+</ul>
+<p>总结：每个数据结构应该处理哪些数据，应用在哪些场景中</p>
+
     </div>
 
     
