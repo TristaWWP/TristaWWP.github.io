@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://TristaWWP.github.io/"/>
-  <updated>2019-11-07T13:47:21.907Z</updated>
+  <updated>2019-11-17T08:14:17.779Z</updated>
   <id>http://TristaWWP.github.io/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>python进阶之列表、元组、字典、集合</title>
+    <link href="http://TristaWWP.github.io/posts/a2f2547f.html"/>
+    <id>http://TristaWWP.github.io/posts/a2f2547f.html</id>
+    <published>2019-11-17T08:12:23.000Z</published>
+    <updated>2019-11-17T08:14:17.779Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本文旨在分析python四大数据结构list、tuple、dict、set的原理和操作时间复杂度，以便在实际场景中按照需求做出正确的选择。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="python" scheme="http://TristaWWP.github.io/categories/python/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>python之内存管理和垃圾回收机制</title>
