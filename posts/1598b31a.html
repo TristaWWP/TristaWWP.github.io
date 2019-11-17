@@ -53,17 +53,17 @@
   };
 </script>
 
-  <meta name="description" content="本文旨在分析python四大数据结构list、tuple、dict、set的原理和操作时间复杂度，以便在实际场景中按照需求做出正确的选择。">
+  <meta name="description" content="python的简单了解，关于条件、循环、函数和模块，本文均为基础知识">
 <meta property="og:type" content="article">
-<meta property="og:title" content="python进阶之列表、元组、字典、集合">
-<meta property="og:url" content="http:&#x2F;&#x2F;tristawwp.github.io&#x2F;posts&#x2F;a2f2547f.html">
+<meta property="og:title" content="python入门之条件、循环、函数、模块">
+<meta property="og:url" content="http:&#x2F;&#x2F;tristawwp.github.io&#x2F;posts&#x2F;1598b31a.html">
 <meta property="og:site_name" content="美美、瓶子和鱼">
-<meta property="og:description" content="本文旨在分析python四大数据结构list、tuple、dict、set的原理和操作时间复杂度，以便在实际场景中按照需求做出正确的选择。">
+<meta property="og:description" content="python的简单了解，关于条件、循环、函数和模块，本文均为基础知识">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-17T08:14:27.289Z">
+<meta property="og:updated_time" content="2019-11-17T08:52:11.806Z">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://tristawwp.github.io/posts/a2f2547f.html">
+<link rel="canonical" href="http://tristawwp.github.io/posts/1598b31a.html">
 
 
 <script id="page-configurations">
@@ -77,7 +77,7 @@
   };
 </script>
 
-  <title>python进阶之列表、元组、字典、集合 | 美美、瓶子和鱼</title>
+  <title>python入门之条件、循环、函数、模块 | 美美、瓶子和鱼</title>
   
 
 
@@ -218,7 +218,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://TristaWWP.github.io/posts/a2f2547f.html">
+    <link itemprop="mainEntityOfPage" href="http://TristaWWP.github.io/posts/1598b31a.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -231,7 +231,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          python进阶之列表、元组、字典、集合
+          python入门之条件、循环、函数、模块
         </h1>
 
         <div class="post-meta">
@@ -242,7 +242,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2019-11-17 16:12:23 / 修改时间：16:14:27" itemprop="dateCreated datePublished" datetime="2019-11-17T16:12:23+08:00">2019-11-17</time>
+              <time title="创建时间：2019-11-17 16:37:13 / 修改时间：16:52:11" itemprop="dateCreated datePublished" datetime="2019-11-17T16:37:13+08:00">2019-11-17</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -265,8 +265,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/posts/a2f2547f.html#comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/posts/a2f2547f.html" itemprop="commentCount"></span>
+    <a title="valine" href="/posts/1598b31a.html#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/posts/1598b31a.html" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -276,7 +276,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.1k</span>
+              <span>1.4k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -295,159 +295,46 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>本文旨在分析python四大数据结构list、tuple、dict、set的原理和操作时间复杂度，以便在实际场景中按照需求做出正确的选择。</p>
+        <p>python的简单了解，关于条件、循环、函数和模块，本文均为基础知识</p>
 <a id="more"></a>
 
-<h3 id="List"><a href="#List" class="headerlink" title="List"></a>List</h3><p>列表(list)是python中最常用的数据结构之一，基于数组实现，区别于静态数组的是其动态增长的特性使其非常灵活，比如</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1</span>, <span class="number">2</span>]</span><br><span class="line">a.append(<span class="number">3</span>)</span><br><span class="line"><span class="keyword">del</span> a[<span class="number">2</span>]</span><br></pre></td></tr></table></figure>
+<h4 id="条件"><a href="#条件" class="headerlink" title="条件"></a>条件</h4><p>C++:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(条件):</span><br><span class="line">    执行代码</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(条件):</span><br><span class="line">    执行代码</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    执行代码</span><br></pre></td></tr></table></figure>
 
-<p>当其初始化的内存大小不能满足append新元素的需求时，会为它进行扩容。</p>
-<p>其最大的时间开销为最坏情况下的delete和insert操作，以及超过当前长度重新分配内存区域时。</p>
-<table>
-<thead>
-<tr>
-<th>Operation</th>
-<th>平均情况时间复杂度</th>
-<th>最坏情况时间复杂度</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>append</td>
-<td>O(1)</td>
-<td>O(1)</td>
-</tr>
-<tr>
-<td>insert</td>
-<td>O(n)</td>
-<td>O(n)</td>
-</tr>
-<tr>
-<td>index</td>
-<td>O(1)</td>
-<td>O(1)</td>
-</tr>
-<tr>
-<td>delete</td>
-<td>O(n)</td>
-<td>O(n)</td>
-</tr>
-<tr>
-<td>for i in list</td>
-<td>O(n)</td>
-<td>O(n)</td>
-</tr>
-<tr>
-<td>len(list)</td>
-<td>O(1)</td>
-<td>O(1)</td>
-</tr>
-<tr>
-<td>sort</td>
-<td>O(nlogn)</td>
-<td>O($n^2$)</td>
-</tr>
-<tr>
-<td>pop</td>
-<td>O(1)</td>
-<td>O(1)</td>
-</tr>
-</tbody></table>
-<h3 id="Tuple"><a href="#Tuple" class="headerlink" title="Tuple"></a>Tuple</h3><p>tuple元组是不可变的list类型，不能进行增删改操作</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = (<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>)</span><br><span class="line">b = (<span class="number">5</span>, <span class="number">6</span>)</span><br><span class="line">c = a + b</span><br></pre></td></tr></table></figure>
+<p>python：不需要括号，并且第二个为elif</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> 条件：</span><br><span class="line">    执行代码</span><br><span class="line"><span class="keyword">elif</span> 条件：</span><br><span class="line">    执行代码</span><br><span class="line"><span class="keyword">else</span>：</span><br><span class="line">    执行代码</span><br></pre></td></tr></table></figure>
 
-<p>注意此时c引用的是新的对象</p>
-<table>
-<thead>
-<tr>
-<th>Operation</th>
-<th>平均情况时间复杂度</th>
-<th>最坏情况时间复杂度</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>index</td>
-<td>O(1)</td>
-<td>O(1)</td>
-</tr>
-<tr>
-<td>count(tuple)</td>
-<td>O(n)</td>
-<td>O(n)</td>
-</tr>
-<tr>
-<td>len(tuple)</td>
-<td>O(1)</td>
-<td>O(1)</td>
-</tr>
-<tr>
-<td>for i in tuple</td>
-<td>O(n)</td>
-<td>O(n)</td>
-</tr>
-</tbody></table>
-<h3 id="Dict"><a href="#Dict" class="headerlink" title="Dict"></a>Dict</h3><p>dict采用了hash表实现，key通过hash函数映射为一个int，对元素个数取模后得到对应的数组index，通过index即可访问到value，注意key是不可更改的，但value可更改。</p>
-<p>dict解决hash冲突的方式：开放定址法，在发生冲突时，假设当前位置为A，那么继续探测A+1处是否冲突，直到不冲突为止，将value放进该处。</p>
-<table>
-<thead>
-<tr>
-<th>Operation</th>
-<th>平均情况时间复杂度</th>
-<th>最坏情况时间复杂度</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>index</td>
-<td>O(1)</td>
-<td>O(n)</td>
-</tr>
-<tr>
-<td>delete</td>
-<td>O(1)</td>
-<td>O(n)</td>
-</tr>
-<tr>
-<td>for k,v in d.items()</td>
-<td>O(n)</td>
-<td>O(n)</td>
-</tr>
-<tr>
-<td>len(dict)</td>
-<td>O(1)</td>
-<td>O(1)</td>
-</tr>
-</tbody></table>
-<h3 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h3><p>set集合的实现也为hash表，与dict相似，key仍然是通过hash函数映射为一个int，对元素个数取模后得到对应的数组index，但value为空。set实现了大部分的集合运算，如求交集、并集等，但不支持通过下标访问。</p>
-<table>
-<thead>
-<tr>
-<th>Operation</th>
-<th>平均情况时间复杂度</th>
-<th>最坏情况时间复杂度</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>for i in set</td>
-<td>O(n)</td>
-<td>O(n)</td>
-</tr>
-<tr>
-<td>s | t</td>
-<td>O(len(s)+len(t))</td>
-<td>O(len(s)+len(t))</td>
-</tr>
-<tr>
-<td>s &amp; t</td>
-<td>O(min(len(s), len(t))</td>
-<td>O(len(s)*len(t))</td>
-</tr>
-<tr>
-<td>s - t</td>
-<td>O(len(s))</td>
-<td>O(len(s))</td>
-</tr>
-</tbody></table>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>本文对python四大数据结构做了初步的分析，其中部分api的性能有待补充。</p>
+<p>C++用{}表示一个程序块，python代码结构由：和 缩进表示同为一个程序块<br>python中检查多个条件是否为true用and连接（类比C++中&amp;&amp;）<br>检查是否有一个相等or（类比||）<br>检查是否包含在列表中使用in，不包含使用not in</p>
+<h4 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h4><p>C++</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i)<span class="comment">//用n控制循环</span></span><br><span class="line">&#123;&#125;</span><br></pre></td></tr></table></figure>
 
+<p>python</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range://采用序列的方式控制循环</span><br></pre></td></tr></table></figure>
+
+<h4 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h4><h5 id="函数定义"><a href="#函数定义" class="headerlink" title="函数定义"></a>函数定义</h5><p>关键字def定义一个函数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">greet_user</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="string">"""显示简单的问候语"""</span><span class="comment">#该行为docstring，文档字符串的注释，描述函数做什么的</span></span><br><span class="line">    print(<span class="string">"hello"</span>)     <span class="comment">#该行为函数体</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="传递实参"><a href="#传递实参" class="headerlink" title="传递实参"></a>传递实参</h5><ul>
+<li><p>位置实参：实参和形参的传递顺序相同，就是类似普通的参数传递</p>
+</li>
+<li><p>关键字实参：在实参中将名称和值关联起来，这样在传递的过程不会混淆,无序考虑函数调用中的实参顺序</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">describe_pet</span><span class="params">(animal_type, pet_name)</span>:</span></span><br><span class="line">    XXXXXXX</span><br><span class="line">describe_pet(animal_type=<span class="string">'hamster'</span>, pet_name=<span class="string">'harry'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>默认值，给形参指定默认值，使用默认值时，在形参列表中必须先列出没有默认值的形参，再列出有默认值的实参。这让Python依然能够正确地解读位置实参</p>
+</li>
+</ul>
+<h5 id="禁止函数修改列表"><a href="#禁止函数修改列表" class="headerlink" title="禁止函数修改列表"></a>禁止函数修改列表</h5><p>方法：向函数传递列表的副本而不是原件，这样函数的任何修改都只是影响副本，不影响原件。切片表示法[:]是创建列表的副本。<br><code>function_name(list_name[:]) #传递列表的副本</code></p>
+<p>BUT一般还是要传递原始列表给函数，因为原始列表可以避免花费时间和内存创建副本，从而提高效率，处理大型列表更要如此。</p>
+<h5 id="传递任意数量的实参"><a href="#传递任意数量的实参" class="headerlink" title="传递任意数量的实参"></a>传递任意数量的实参</h5><p>形参名 * XXX中的 * 是创建一个名为XXX的空元组，并把收到的所有值都封装到这个元组中。注意：python将实参封装到一个元组中，即便函数只收到一个值也是如此。** XXX中的** 是创建一个空字典，这样就可以使用关键字形参了（键值对形式）</p>
+<h5 id="函数接受任意数量的实参和位置实参混合使用"><a href="#函数接受任意数量的实参和位置实参混合使用" class="headerlink" title="函数接受任意数量的实参和位置实参混合使用"></a>函数接受任意数量的实参和位置实参混合使用</h5><p>要把接受任意数量的实参的形参放在最后，函数接收参数时，先匹配位置实参和关键字实参，最后再将余下实参都放到最后一个形参中。</p>
+<h4 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h4><p>模块是扩展名为.py的文件，包含要导入到程序的代码。一般将函数存储在模块的独立文件中，再将模块导入到主程序中</p>
+<h5 id="直接导入模块"><a href="#直接导入模块" class="headerlink" title="直接导入模块"></a>直接导入模块</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> module_name</span><br><span class="line">mudule_name.func   <span class="comment">#调用函数方法</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="导入特定函数"><a href="#导入特定函数" class="headerlink" title="导入特定函数"></a>导入特定函数</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> module_name <span class="keyword">import</span> func_1,func_2.......</span><br><span class="line">func_1() <span class="comment">#直接调用函数</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="使用as给函数起别名，防止命名冲突或函数名太长，也可用as给模块指定别名，方法同前"><a href="#使用as给函数起别名，防止命名冲突或函数名太长，也可用as给模块指定别名，方法同前" class="headerlink" title="使用as给函数起别名，防止命名冲突或函数名太长，也可用as给模块指定别名，方法同前"></a>使用as给函数起别名，防止命名冲突或函数名太长，也可用as给模块指定别名，方法同前</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> module_name <span class="keyword">import</span> func <span class="keyword">as</span> ff</span><br><span class="line">ff() <span class="comment">#直接使用函数的别名</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="使用-带入模块中的所有函数-不过如果不是自己写的大型模块，尽量不用"><a href="#使用-带入模块中的所有函数-不过如果不是自己写的大型模块，尽量不用" class="headerlink" title="使用*带入模块中的所有函数,不过如果不是自己写的大型模块，尽量不用"></a>使用*带入模块中的所有函数,不过如果不是自己写的大型模块，尽量不用</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> module_name <span class="keyword">import</span> *</span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -483,7 +370,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://tristawwp.github.io/posts/a2f2547f.html" title="python进阶之列表、元组、字典、集合">http://tristawwp.github.io/posts/a2f2547f.html</a>
+    <a href="http://tristawwp.github.io/posts/1598b31a.html" title="python入门之条件、循环、函数、模块">http://tristawwp.github.io/posts/1598b31a.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/null" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -498,17 +385,14 @@
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
-                <a href="/posts/b7597a18.html" rel="next" title="python之内存管理和垃圾回收机制">
-                  <i class="fa fa-chevron-left"></i> python之内存管理和垃圾回收机制
+                <a href="/posts/a2f2547f.html" rel="next" title="python进阶之列表、元组、字典、集合">
+                  <i class="fa fa-chevron-left"></i> python进阶之列表、元组、字典、集合
                 </a>
             </div>
 
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-                <a href="/posts/1598b31a.html" rel="prev" title="python入门之条件、循环、函数、模块">
-                  python入门之条件、循环、函数、模块 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
       </footer>
@@ -548,7 +432,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#List"><span class="nav-number">1.</span> <span class="nav-text">List</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Tuple"><span class="nav-number">2.</span> <span class="nav-text">Tuple</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Dict"><span class="nav-number">3.</span> <span class="nav-text">Dict</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Set"><span class="nav-number">4.</span> <span class="nav-text">Set</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#条件"><span class="nav-number">1.</span> <span class="nav-text">条件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#循环"><span class="nav-number">2.</span> <span class="nav-text">循环</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数"><span class="nav-number">3.</span> <span class="nav-text">函数</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#函数定义"><span class="nav-number">3.1.</span> <span class="nav-text">函数定义</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#传递实参"><span class="nav-number">3.2.</span> <span class="nav-text">传递实参</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#禁止函数修改列表"><span class="nav-number">3.3.</span> <span class="nav-text">禁止函数修改列表</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#传递任意数量的实参"><span class="nav-number">3.4.</span> <span class="nav-text">传递任意数量的实参</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#函数接受任意数量的实参和位置实参混合使用"><span class="nav-number">3.5.</span> <span class="nav-text">函数接受任意数量的实参和位置实参混合使用</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#模块"><span class="nav-number">4.</span> <span class="nav-text">模块</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#直接导入模块"><span class="nav-number">4.1.</span> <span class="nav-text">直接导入模块</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#导入特定函数"><span class="nav-number">4.2.</span> <span class="nav-text">导入特定函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#使用as给函数起别名，防止命名冲突或函数名太长，也可用as给模块指定别名，方法同前"><span class="nav-number">4.3.</span> <span class="nav-text">使用as给函数起别名，防止命名冲突或函数名太长，也可用as给模块指定别名，方法同前</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#使用-带入模块中的所有函数-不过如果不是自己写的大型模块，尽量不用"><span class="nav-number">4.4.</span> <span class="nav-text">使用*带入模块中的所有函数,不过如果不是自己写的大型模块，尽量不用</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

@@ -1,6 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>python入门之条件、循环、函数、模块</title>
+    <url>/posts/1598b31a.html</url>
+    <content><![CDATA[<p>python的简单了解，关于条件、循环、函数和模块，本文均为基础知识</p>
+<a id="more"></a>
+
+<h4 id="条件"><a href="#条件" class="headerlink" title="条件"></a>条件</h4><p>C++:</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(条件):</span><br><span class="line">    执行代码</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(条件):</span><br><span class="line">    执行代码</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    执行代码</span><br></pre></td></tr></table></figure>
+
+<p>python：不需要括号，并且第二个为elif</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> 条件：</span><br><span class="line">    执行代码</span><br><span class="line"><span class="keyword">elif</span> 条件：</span><br><span class="line">    执行代码</span><br><span class="line"><span class="keyword">else</span>：</span><br><span class="line">    执行代码</span><br></pre></td></tr></table></figure>
+
+<p>C++用{}表示一个程序块，python代码结构由：和 缩进表示同为一个程序块<br>python中检查多个条件是否为true用and连接（类比C++中&amp;&amp;）<br>检查是否有一个相等or（类比||）<br>检查是否包含在列表中使用in，不包含使用not in</p>
+<h4 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h4><p>C++</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i)<span class="comment">//用n控制循环</span></span><br><span class="line">&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>python</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range://采用序列的方式控制循环</span><br></pre></td></tr></table></figure>
+
+<h4 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h4><h5 id="函数定义"><a href="#函数定义" class="headerlink" title="函数定义"></a>函数定义</h5><p>关键字def定义一个函数</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">greet_user</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="string">"""显示简单的问候语"""</span><span class="comment">#该行为docstring，文档字符串的注释，描述函数做什么的</span></span><br><span class="line">    print(<span class="string">"hello"</span>)     <span class="comment">#该行为函数体</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="传递实参"><a href="#传递实参" class="headerlink" title="传递实参"></a>传递实参</h5><ul>
+<li><p>位置实参：实参和形参的传递顺序相同，就是类似普通的参数传递</p>
+</li>
+<li><p>关键字实参：在实参中将名称和值关联起来，这样在传递的过程不会混淆,无序考虑函数调用中的实参顺序</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">describe_pet</span><span class="params">(animal_type, pet_name)</span>:</span></span><br><span class="line">    XXXXXXX</span><br><span class="line">describe_pet(animal_type=<span class="string">'hamster'</span>, pet_name=<span class="string">'harry'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>默认值，给形参指定默认值，使用默认值时，在形参列表中必须先列出没有默认值的形参，再列出有默认值的实参。这让Python依然能够正确地解读位置实参</p>
+</li>
+</ul>
+<h5 id="禁止函数修改列表"><a href="#禁止函数修改列表" class="headerlink" title="禁止函数修改列表"></a>禁止函数修改列表</h5><p>方法：向函数传递列表的副本而不是原件，这样函数的任何修改都只是影响副本，不影响原件。切片表示法[:]是创建列表的副本。<br><code>function_name(list_name[:]) #传递列表的副本</code></p>
+<p>BUT一般还是要传递原始列表给函数，因为原始列表可以避免花费时间和内存创建副本，从而提高效率，处理大型列表更要如此。</p>
+<h5 id="传递任意数量的实参"><a href="#传递任意数量的实参" class="headerlink" title="传递任意数量的实参"></a>传递任意数量的实参</h5><p>形参名 * XXX中的 * 是创建一个名为XXX的空元组，并把收到的所有值都封装到这个元组中。注意：python将实参封装到一个元组中，即便函数只收到一个值也是如此。** XXX中的** 是创建一个空字典，这样就可以使用关键字形参了（键值对形式）</p>
+<h5 id="函数接受任意数量的实参和位置实参混合使用"><a href="#函数接受任意数量的实参和位置实参混合使用" class="headerlink" title="函数接受任意数量的实参和位置实参混合使用"></a>函数接受任意数量的实参和位置实参混合使用</h5><p>要把接受任意数量的实参的形参放在最后，函数接收参数时，先匹配位置实参和关键字实参，最后再将余下实参都放到最后一个形参中。</p>
+<h4 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h4><p>模块是扩展名为.py的文件，包含要导入到程序的代码。一般将函数存储在模块的独立文件中，再将模块导入到主程序中</p>
+<h5 id="直接导入模块"><a href="#直接导入模块" class="headerlink" title="直接导入模块"></a>直接导入模块</h5><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> module_name</span><br><span class="line">mudule_name.func   <span class="comment">#调用函数方法</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="导入特定函数"><a href="#导入特定函数" class="headerlink" title="导入特定函数"></a>导入特定函数</h5><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> module_name <span class="keyword">import</span> func_1,func_2.......</span><br><span class="line">func_1() <span class="comment">#直接调用函数</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="使用as给函数起别名，防止命名冲突或函数名太长，也可用as给模块指定别名，方法同前"><a href="#使用as给函数起别名，防止命名冲突或函数名太长，也可用as给模块指定别名，方法同前" class="headerlink" title="使用as给函数起别名，防止命名冲突或函数名太长，也可用as给模块指定别名，方法同前"></a>使用as给函数起别名，防止命名冲突或函数名太长，也可用as给模块指定别名，方法同前</h5><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> module_name <span class="keyword">import</span> func <span class="keyword">as</span> ff</span><br><span class="line">ff() <span class="comment">#直接使用函数的别名</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="使用-带入模块中的所有函数-不过如果不是自己写的大型模块，尽量不用"><a href="#使用-带入模块中的所有函数-不过如果不是自己写的大型模块，尽量不用" class="headerlink" title="使用*带入模块中的所有函数,不过如果不是自己写的大型模块，尽量不用"></a>使用*带入模块中的所有函数,不过如果不是自己写的大型模块，尽量不用</h5><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> module_name <span class="keyword">import</span> *</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+  </entry>
+  <entry>
     <title>python进阶之列表、元组、字典、集合</title>
     <url>/posts/a2f2547f.html</url>
     <content><![CDATA[<p>本文旨在分析python四大数据结构list、tuple、dict、set的原理和操作时间复杂度，以便在实际场景中按照需求做出正确的选择。</p>
