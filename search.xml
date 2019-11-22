@@ -1,6 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>python之装饰器和闭包</title>
+    <url>/posts/33412124.html</url>
+    <content><![CDATA[<p>装饰器与闭包的学习</p>
+<a id="more"></a>
+<h2 id="装饰器"><a href="#装饰器" class="headerlink" title="装饰器"></a>装饰器</h2><h3 id="初识装饰器"><a href="#初识装饰器" class="headerlink" title="初识装饰器"></a>初识装饰器</h3><p>装饰器(decorator)实际上是一个函数，用来改变其他函数的功能，如果我们有一个函数，功能为打印一句话</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f1</span><span class="params">()</span>:</span></span><br><span class="line">		print(<span class="string">"hello, I am f1."</span>)</span><br></pre></td></tr></table></figure>
+
+<p>现在我们需要改变打印的内容，但是不能修改此函数中的打印语句，那么我们可以添加一个函数，修改f1这个引用指向的对象为新的函数</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">decorator</span><span class="params">(func)</span>:</span></span><br><span class="line">		<span class="function"><span class="keyword">def</span> <span class="title">inner</span><span class="params">()</span>:</span></span><br><span class="line">				print(<span class="string">"hello, I am NOT f1."</span>)</span><br><span class="line">		<span class="keyword">return</span> inner</span><br><span class="line">f1 = decorator(f1)</span><br></pre></td></tr></table></figure>
+
+<p>运行f1，得到的结果如下</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>f1()</span><br><span class="line">hello, I am NOT f1.</span><br></pre></td></tr></table></figure>
+
+<p>可以看到，我们成功地改变了原函数的打印语句，上面的decorator函数即为python中的<strong>装饰器</strong>，我们可以使用语法糖@将上面的python代码简化</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">@decorator</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f1</span><span class="params">()</span>:</span></span><br><span class="line">		print(<span class="string">"hello, I am f1."</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Python何时执行装饰器"><a href="#Python何时执行装饰器" class="headerlink" title="Python何时执行装饰器"></a>Python何时执行装饰器</h3><p>装饰器在模块导入时即执行，而不是显示调用被装饰的函数时才执行，下面我们来看一个例子</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">registry = []</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">register</span><span class="params">(func)</span>:</span></span><br><span class="line">  	print(<span class="string">'running register(%s)'</span> % func)</span><br><span class="line">    registry.append(func)</span><br><span class="line">		<span class="keyword">return</span> func</span><br><span class="line">  </span><br><span class="line"><span class="meta">@register</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f1</span><span class="params">()</span>:</span></span><br><span class="line">  print(<span class="string">'running f1'</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">@register</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f2</span><span class="params">()</span>:</span></span><br><span class="line">  print(<span class="string">'running f2'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">  	f1()</span><br><span class="line">    f2()</span><br></pre></td></tr></table></figure>
+
+<p>如果上面的py文件当做脚本运行，那么可以得到结果：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">running register(&lt;function f1 at <span class="number">0x100f962a8</span>&gt;)</span><br><span class="line">running register(&lt;function f2 at <span class="number">0x100f961b8</span>&gt;)</span><br><span class="line">running f1</span><br><span class="line">running f2</span><br></pre></td></tr></table></figure>
+
+<p>如果是当做模块导入，那么结果为：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">running register(&lt;function f1 at <span class="number">0x100f962a8</span>&gt;)</span><br><span class="line">running register(&lt;function f2 at <span class="number">0x100f961b8</span>&gt;)</span><br></pre></td></tr></table></figure>
+
+<p>这也证实了装饰器在模块导入时运行</p>
+<h3 id="装饰器的功能"><a href="#装饰器的功能" class="headerlink" title="装饰器的功能"></a>装饰器的功能</h3><p>从上面的例子可以看到，我们可以将工程中的register函数定义为装饰器，其他功能函数在使用之前必须要经过装饰器注册后才能使用，在需要临时取消某些函数功能时，只需要去掉语法糖”@”即可，功能强大且非常灵活、</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">registry = []</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">register</span><span class="params">(func)</span>:</span></span><br><span class="line">  	print(<span class="string">'running register(%s)'</span> % func)</span><br><span class="line">    registry.append(func)</span><br><span class="line">		<span class="keyword">return</span> func</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启用f1</span></span><br><span class="line"><span class="meta">@register</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f1</span><span class="params">()</span>:</span></span><br><span class="line">  print(<span class="string">'running f1'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启用f2</span></span><br><span class="line"><span class="meta">@register</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f2</span><span class="params">()</span>:</span></span><br><span class="line">  print(<span class="string">'running f2'</span>)</span><br><span class="line">  </span><br><span class="line"><span class="comment"># 禁用f3</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f3</span><span class="params">()</span>:</span></span><br><span class="line">  print(<span class="string">'running f3'</span>)</span><br><span class="line">    </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">manager</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">for</span> func <span class="keyword">in</span> registry:</span><br><span class="line">    	<span class="string">"""do something"""</span></span><br><span class="line">    	<span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+
+<p>在上面的例子中，f1和f2两个功能函数启用，f3被禁用，manager函数实现对所有启用的函数进行操作。</p>
+<h3 id="Python变量的作用域"><a href="#Python变量的作用域" class="headerlink" title="Python变量的作用域"></a>Python变量的作用域</h3><p>python变量遵循”LEGB”原则，L(local)，E(enclosing)，G(global)，B(built-in)，即解释器在寻找变量时，会现在函数内部(local)里寻找，如果找不到，去外层函数(enclosing)中寻找，最后去全局变量(global)和内建(built-in)中寻找，下面看一个例子</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">b = <span class="number">1</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f1</span><span class="params">(a)</span>:</span></span><br><span class="line">  	print(a)</span><br><span class="line">    print(b)</span><br><span class="line">f1(<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+
+<p>显然，最终的输出结果为</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<p>这是因为解释器把b当做了全局变量打印，现在我们稍作修改</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">b = <span class="number">1</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f1</span><span class="params">(a)</span>:</span></span><br><span class="line">  	print(a)</span><br><span class="line">  	b = <span class="number">3</span></span><br><span class="line">    print(b)</span><br><span class="line">f1(<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+
+<p>现在的输出结果为</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">3</span></span><br></pre></td></tr></table></figure>
+
+<p>现在的变量b是局部(local)变量，解释器优先在local里寻找，而不是global，我们再加修改</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">b = <span class="number">1</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f1</span><span class="params">(a)</span>:</span></span><br><span class="line">  	print(a)</span><br><span class="line">    print(b)</span><br><span class="line">    b = <span class="number">3</span></span><br><span class="line">f1(<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+
+<p>输出结果为</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="number">3</span></span><br><span class="line">UnboundLocalError: local variable <span class="string">'b'</span> referenced before assignment</span><br></pre></td></tr></table></figure>
+
+<p>这是因为此时的b在编译阶段被确认为局部变量，但是我们未经赋值就进行使用，所以会报错！</p>
+<h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2>]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Python从入门到实践习题参考</title>
+    <url>/posts/5c354b05.html</url>
+    <content><![CDATA[<p>好记性不如烂笔头，虽然习题简单，还是需要操作的<br>如下：<a href="https://github.com/TristaWWP/Python-programming-reference-/tree/master" target="_blank" rel="noopener">Python从入门到实践习题参考</a></p>
+]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+  </entry>
+  <entry>
     <title>python入门之条件、循环、函数、模块</title>
     <url>/posts/1598b31a.html</url>
     <content><![CDATA[<p>python的简单了解，关于条件、循环、函数和模块，本文均为基础知识</p>
@@ -210,11 +276,6 @@
   <entry>
     <title>python之内存管理和垃圾回收机制</title>
     <url>/posts/b7597a18.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>python之闭包函数、装饰器</title>
-    <url>/posts/304d49b3.html</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>

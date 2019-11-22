@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://TristaWWP.github.io/"/>
-  <updated>2019-11-17T08:52:11.806Z</updated>
+  <updated>2019-11-22T11:54:34.464Z</updated>
   <id>http://TristaWWP.github.io/</id>
   
   <author>
@@ -17,11 +17,55 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>python之装饰器和闭包</title>
+    <link href="http://TristaWWP.github.io/posts/33412124.html"/>
+    <id>http://TristaWWP.github.io/posts/33412124.html</id>
+    <published>2019-11-22T11:49:09.000Z</published>
+    <updated>2019-11-22T11:54:34.464Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;装饰器与闭包的学习&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="python" scheme="http://TristaWWP.github.io/categories/python/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Python从入门到实践习题参考</title>
+    <link href="http://TristaWWP.github.io/posts/5c354b05.html"/>
+    <id>http://TristaWWP.github.io/posts/5c354b05.html</id>
+    <published>2019-11-22T11:39:01.000Z</published>
+    <updated>2019-11-22T11:48:02.704Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;好记性不如烂笔头，虽然习题简单，还是需要操作的&lt;br&gt;如下：&lt;a href=&quot;https://github.com/TristaWWP/Python-programming-reference-/tree/master&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="python" scheme="http://TristaWWP.github.io/categories/python/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>python入门之条件、循环、函数、模块</title>
     <link href="http://TristaWWP.github.io/posts/1598b31a.html"/>
     <id>http://TristaWWP.github.io/posts/1598b31a.html</id>
     <published>2019-11-17T08:37:13.000Z</published>
-    <updated>2019-11-17T08:52:11.806Z</updated>
+    <updated>2019-11-17T08:53:06.007Z</updated>
     
     <summary type="html">
     
@@ -59,21 +103,6 @@
     <link href="http://TristaWWP.github.io/posts/b7597a18.html"/>
     <id>http://TristaWWP.github.io/posts/b7597a18.html</id>
     <published>2019-11-07T13:09:17.000Z</published>
-    <updated>2019-11-07T13:47:21.907Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>python之闭包函数、装饰器</title>
-    <link href="http://TristaWWP.github.io/posts/304d49b3.html"/>
-    <id>http://TristaWWP.github.io/posts/304d49b3.html</id>
-    <published>2019-11-07T13:09:01.000Z</published>
     <updated>2019-11-07T13:47:21.907Z</updated>
     
     <summary type="html">
