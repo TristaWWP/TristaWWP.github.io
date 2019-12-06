@@ -30,7 +30,7 @@
   <entry>
     <title>git的简单命令</title>
     <url>/posts/f99dd8d6.html</url>
-    <content><![CDATA[<h3 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h3><p>Git 有几个概念哈，工作区，暂存区，版本库</p>
+    <content><![CDATA[<p>Git 有几个概念哈，工作区，暂存区，版本库</p>
 <a id="more"></a>
 <p>首先对一个文件夹进行git初始化: git init，会生成一个.git文件，这就是版本库，git会自动在版本库里创建一个master分支和一个暂存区</p>
 <p><strong>工作区</strong>：该文件夹</p>
@@ -76,6 +76,12 @@
 <h6 id="其它命令"><a href="#其它命令" class="headerlink" title="其它命令"></a>其它命令</h6><p>git diff顾名思义就是查看difference</p>
 <p>git status命令可以让我们时刻掌握仓库当前的状态</p>
 <p>git reset版本回退</p>
+<p>git log –author=”author”查看某人提交的版本</p>
+<p>git log –stat查看提交历史</p>
+<p>git checkout -b dev//创建并切换分支</p>
+<p>git merge <name>//合并某分支到当前的分支</name></p>
+<p>git branch -d <name>//删除分支</name></p>
+<p>git blame filename可以查看文件修改的详细信息，谁修改了哪些内容，看到提交时间以及作者，适合团队合作，看到文件的各个区域的最近提交的人是谁</p>
 <h6 id="使用git在团队中的协作"><a href="#使用git在团队中的协作" class="headerlink" title="使用git在团队中的协作"></a>使用git在团队中的协作</h6><ol>
 <li>整个团队的最终分支是master</li>
 <li>然后每个开发都有一个dev的开发分支</li>
