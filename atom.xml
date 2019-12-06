@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://TristaWWP.github.io/"/>
-  <updated>2019-12-06T07:15:33.813Z</updated>
+  <updated>2019-12-06T07:29:52.019Z</updated>
   <id>http://TristaWWP.github.io/</id>
   
   <author>
@@ -15,6 +15,21 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>git的简单命令</title>
+    <link href="http://TristaWWP.github.io/posts/f99dd8d6.html"/>
+    <id>http://TristaWWP.github.io/posts/f99dd8d6.html</id>
+    <published>2019-12-06T07:29:52.000Z</published>
+    <updated>2019-12-06T07:29:52.019Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>python之文件和异常</title>
@@ -40,7 +55,7 @@
     <link href="http://TristaWWP.github.io/posts/6d39ca9a.html"/>
     <id>http://TristaWWP.github.io/posts/6d39ca9a.html</id>
     <published>2019-12-06T07:05:32.000Z</published>
-    <updated>2019-12-06T07:19:39.232Z</updated>
+    <updated>2019-12-06T07:35:24.269Z</updated>
     
     <summary type="html">
     
@@ -59,7 +74,7 @@
     <link href="http://TristaWWP.github.io/posts/33412124.html"/>
     <id>http://TristaWWP.github.io/posts/33412124.html</id>
     <published>2019-11-22T11:49:09.000Z</published>
-    <updated>2019-12-06T07:15:13.369Z</updated>
+    <updated>2019-12-06T07:25:33.607Z</updated>
     
     <summary type="html">
     

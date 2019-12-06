@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>git的简单命令</title>
+    <url>/posts/f99dd8d6.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>python之文件和异常</title>
     <url>/posts/f8bc5ee8.html</url>
     <content><![CDATA[<h4 id="从文件读取数据"><a href="#从文件读取数据" class="headerlink" title="从文件读取数据"></a>从文件读取数据</h4><h5 id="读取整个文件"><a href="#读取整个文件" class="headerlink" title="读取整个文件"></a>读取整个文件</h5><a id="more"></a>
@@ -51,7 +56,10 @@
 <h5 id="对比是否用yield实例"><a href="#对比是否用yield实例" class="headerlink" title="对比是否用yield实例"></a>对比是否用yield实例</h5><p>使用yield斐波那契</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fibonacci</span><span class="params">(n, w = <span class="number">0</span>)</span>:</span></span><br><span class="line">    a, b, counter = <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        <span class="keyword">if</span>(counter &gt; n):</span><br><span class="line">            <span class="keyword">return</span> </span><br><span class="line">        <span class="keyword">yield</span> a</span><br><span class="line">        a, b = b, a + b</span><br><span class="line">       print(<span class="string">'%d, %d'</span> %(a, b))</span><br><span class="line">       counter += <span class="number">1</span></span><br><span class="line">   f = fibonacci(<span class="number">10</span>,<span class="number">0</span>) <span class="comment"># f是一个由生成器返回的迭代器         </span></span><br><span class="line">   </span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">    print(next(f), end = <span class="string">" "</span>)</span><br><span class="line">    <span class="keyword">except</span> :</span><br><span class="line">    sys.exit()</span><br></pre></td></tr></table></figure>
 
+
 <p>不使用yield斐波那契，（注释掉yield）函数只是简单执行，没有返回迭代器f</p>
+
+
 <h5 id="什么情况需要使用yield"><a href="#什么情况需要使用yield" class="headerlink" title="什么情况需要使用yield"></a>什么情况需要使用yield</h5><p>划重点减少大内存的使用，举例：当我们调用函数返回一个很大的list时，一般情况是得到一个很大的list之后再去使用，这样就会非常占用内存，但是实际上我们使用的是list的遍历（list的迭代器），不需要得到完整的list，所以我们可以让这个函数每次只返回一个迭代器的一个计算结果，这个时候yield就很有用。<br>使用生成器不仅可以节省内存和CPU，还可以用更少的代码实现相似的功能</p>
 <p>题外话：还记得C++如何优化斐波那契求解，传统的C++求解斐波那契会递归很多次，产生递归栈，最后因为栈溢出崩溃，优化递归部分以解决重复计算问题，优化算法，从下往上计算，根据f(0),f(1)得到f(2),再有f(1)和f(2)得到f(3)</p>
 ]]></content>
@@ -64,7 +72,7 @@
     <url>/posts/33412124.html</url>
     <content><![CDATA[<p>装饰器与闭包的学习</p>
 <a id="more"></a>
-<h2 id="装饰器"><a href="#装饰器" class="headerlink" title="装饰器"></a>装饰器</h2><h3 id="初识装饰器"><a href="#初识装饰器" class="headerlink" title="初识装饰器"></a>初识装饰器</h3><p>装饰器(decorator)实际上是一个函数，用来改变其他函数的功能，如果我们有一个函数，功能为打印一句话</p>
+<h2 id="装饰器"><a href="#装饰器" class="headerlink" title="装饰器"></a>装饰器</h2><h3 id="初识装饰器"><a href="#初识装饰器" class="headerlink" title="初识装饰器"></a>初识装饰器</h3><p>装饰器(decorator)实际上是一个函数，用来改变其他函数的功能，如果我们有一个函数，功能为打印一句话<br>本文的代码格式炸了，我也很无力，明明是对的</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f1</span><span class="params">()</span>:</span></span><br><span class="line">	print(<span class="string">"hello, I am f1."</span>)</span><br></pre></td></tr></table></figure>
 
 <p>现在我们需要改变打印的内容，但是不能修改此函数中的打印语句，那么我们可以添加一个函数，修改f1这个引用指向的对象为新的函数</p>
