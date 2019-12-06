@@ -11,12 +11,16 @@
 <h3 id="Git管理的是文件的修改，而不是文件"><a href="#Git管理的是文件的修改，而不是文件" class="headerlink" title="Git管理的是文件的修改，而不是文件"></a>Git管理的是文件的修改，而不是文件</h3><p>所有的版本控制系统，其实只能跟踪文本文件的改动，比如TXT文件，网页，所有的程序代码等等，Git也不例外。版本控制系统可以告诉你每次的改动。</p>
 <p>而对于图片、视频这些二进制文件，虽然也能由版本控制系统管理，但没法跟踪文件的变化，只能把二进制文件每次改动串起来，也就是只知道图片从100KB改成了120KB，但到底改了啥，版本控制系统不知道，也没法知道。</p>
 <p>所以Git比其他版本控制系统设计得优秀，因为Git跟踪并管理的是修改，而非文件。</p>
-<h3 id="为什么Git添加文件需要add，commit一共两步呢？"><a href="#为什么Git添加文件需要add，commit一共两步呢？" class="headerlink" title="为什么Git添加文件需要add，commit一共两步呢？"></a>为什么Git添加文件需要add，commit一共两步呢？</h3><p>add是将修改提交到暂存区，commit是把暂存区的内容推送到代码仓库</p>
+<h3 id="为什么Git添加文件需要add，commit一共两步呢？"><a href="#为什么Git添加文件需要add，commit一共两步呢？" class="headerlink" title="为什么Git添加文件需要add，commit一共两步呢？"></a>为什么Git添加文件需要add，commit一共两步呢？</h3><img src="/posts/12950bc2/add.png" class title="add">
+
+<p>add是将修改提交到暂存区，commit是把暂存区的内容推送到代码仓库</p>
 <p>因为commit可以一次提交很多文件，所以你可以多次add不同的文件 commit后面的参数-m是本次提交的说明，输入说明对阅读很重要</p>
-<p>关于修改<br>第一次修改 -&gt; git add -&gt; 第二次修改 -&gt; git add -&gt; git commit<br>每次修改都要add到暂存区，最后才会commit</p>
-<p>那为什么要有暂存区呢？</p>
-<p>为了保证提交的原子性，让提交颗粒度分明<br>关于工作区，暂存区，版本库</p>
-<p>工作区相当于你电脑的工程文件夹，里面有一个.git的隐藏目录，是git的版本库，版本库包括两部分，一部分是add后的暂存区，一部分是commit后的代码仓库</p>
+<p><strong>关于修改</strong><br>第一次修改 -&gt; git add -&gt; 第二次修改 -&gt; git add -&gt; git commit<br>每次修改都要add到暂存区，最后才会commit</p>
+<p><strong>那为什么要有暂存区呢？</strong></p>
+<p>为了保证提交的原子性，让提交颗粒度分明</p>
+<h3 id="工作区，暂存区，版本库"><a href="#工作区，暂存区，版本库" class="headerlink" title="工作区，暂存区，版本库"></a>工作区，暂存区，版本库</h3><p>工作区相当于你电脑的工程文件夹，里面有一个.git的隐藏目录，是git的版本库，版本库包括两部分，一部分是add后的暂存区，一部分是commit后的代码仓库</p>
+<img src="/posts/12950bc2/repositary.png" class title="reposirary">
+
 <p>在Git中，用HEAD表示当前工作的分支，也就是最新的提交1094adb…，上一个版本就是HEAD^，上上一个版本就是HEAD^^，100版本写成HEAD~100。</p>
 ]]></content>
       <categories>
