@@ -1,9 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>git理解</title>
+    <url>/posts/12950bc2.html</url>
+    <content><![CDATA[<h3 id="什么是git"><a href="#什么是git" class="headerlink" title="什么是git"></a>什么是git</h3><p>git是一个C语言编写分布式版本控制系统。不需要中央服务器，不需要联网</p>
+<a id="more"></a>
+
+<p>对应的是：集中式的版本控制系统是需要中央服务器的，版本库是放在中央服务器的，而分布式的版本控制的优点就是没有中央服务器，每个电脑都是一个完整的版本库。这样，你工作的时候，就不需要联网了，因为版本库就在你自己的电脑上</p>
+<p>类似系统CVS、SVN、Perforce都是集中式版本控制系统，分布式系统有Git, Mercurial、Bazaar、Darcs、FOssil等</p>
+<h3 id="Git管理的是文件的修改，而不是文件"><a href="#Git管理的是文件的修改，而不是文件" class="headerlink" title="Git管理的是文件的修改，而不是文件"></a>Git管理的是文件的修改，而不是文件</h3><p>所有的版本控制系统，其实只能跟踪文本文件的改动，比如TXT文件，网页，所有的程序代码等等，Git也不例外。版本控制系统可以告诉你每次的改动。</p>
+<p>而对于图片、视频这些二进制文件，虽然也能由版本控制系统管理，但没法跟踪文件的变化，只能把二进制文件每次改动串起来，也就是只知道图片从100KB改成了120KB，但到底改了啥，版本控制系统不知道，也没法知道。</p>
+<p>所以Git比其他版本控制系统设计得优秀，因为Git跟踪并管理的是修改，而非文件。</p>
+<h3 id="为什么Git添加文件需要add，commit一共两步呢？"><a href="#为什么Git添加文件需要add，commit一共两步呢？" class="headerlink" title="为什么Git添加文件需要add，commit一共两步呢？"></a>为什么Git添加文件需要add，commit一共两步呢？</h3><p>add是将修改提交到暂存区，commit是把暂存区的内容推送到代码仓库</p>
+<p>因为commit可以一次提交很多文件，所以你可以多次add不同的文件 commit后面的参数-m是本次提交的说明，输入说明对阅读很重要</p>
+<p>关于修改<br>第一次修改 -&gt; git add -&gt; 第二次修改 -&gt; git add -&gt; git commit<br>每次修改都要add到暂存区，最后才会commit</p>
+<p>那为什么要有暂存区呢？</p>
+<p>为了保证提交的原子性，让提交颗粒度分明<br>关于工作区，暂存区，版本库</p>
+<p>工作区相当于你电脑的工程文件夹，里面有一个.git的隐藏目录，是git的版本库，版本库包括两部分，一部分是add后的暂存区，一部分是commit后的代码仓库</p>
+<p>在Git中，用HEAD表示当前工作的分支，也就是最新的提交1094adb…，上一个版本就是HEAD^，上上一个版本就是HEAD^^，100版本写成HEAD~100。</p>
+]]></content>
+      <categories>
+        <category>git</category>
+      </categories>
+  </entry>
+  <entry>
     <title>git的简单命令</title>
     <url>/posts/f99dd8d6.html</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<h3 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h3><p>Git 有几个概念哈，工作区，暂存区，版本库</p>
+<a id="more"></a>
+<p>首先对一个文件夹进行git初始化: git init，会生成一个.git文件，这就是版本库，git会自动在版本库里创建一个master分支和一个暂存区</p>
+<p><strong>工作区</strong>：该文件夹</p>
+<p><strong>版本库</strong>：整个.git文件夹</p>
+<p><strong>暂存区</strong>：版本库的一部分（另一部分是master分支）</p>
+<p><strong>远程仓库</strong>：github上的master分支</p>
+<p><strong>git add xxx</strong></p>
+<p>把修改的文件添加到暂存区</p>
+<p><strong>git commit -m  “”</strong></p>
+<p>把暂存区里所有的文件提交到master分支</p>
+<p><strong>git remote url</strong> </p>
+<p>将本地的版本库关联到远程仓库</p>
+<p><strong>git push</strong></p>
+<p>把本地版本库master分支里的内容提交到到远程github的master分支</p>
+<p><strong>git pull</strong></p>
+<p>从远程github的master分支更新本地版本库的master分支</p>
+<p><strong>git clone url</strong></p>
+<p>从远程仓库克隆到本地某处</p>
+<h6 id="创建一个新的仓库"><a href="#创建一个新的仓库" class="headerlink" title="创建一个新的仓库"></a>创建一个新的仓库</h6><ol>
+<li>点主页的绿色NEW</li>
+<li>命名，跟本地文件夹名字相同（下面的框框不要勾选）</li>
+<li>命令行进入本地文件夹 cd进入</li>
+<li>git init</li>
+<li>git add .</li>
+<li>git commit -m “first commit”</li>
+<li>git remote add origin URL (origin后面跟的url是刚创建完那个页面的url，复制过来)</li>
+<li>git push -u origin master</li>
+<li>完成</li>
+</ol>
+<h6 id="本地修改git"><a href="#本地修改git" class="headerlink" title="本地修改git"></a>本地修改git</h6><ol>
+<li>git add .</li>
+<li>git commit -m “名字”</li>
+<li>git push</li>
+</ol>
+<h6 id="Git鼓励大量使用分支："><a href="#Git鼓励大量使用分支：" class="headerlink" title="Git鼓励大量使用分支："></a>Git鼓励大量使用分支：</h6><ol>
+<li>查看分支：git branch</li>
+<li>创建分支：git branch <name></name></li>
+<li>切换分支：git checkout <name></name></li>
+<li>创建+切换分支：git checkout -b <name></name></li>
+<li>合并某分支到当前分支：git merge <name></name></li>
+<li>删除分支：git branch -d <name></name></li>
+</ol>
+<h6 id="其它命令"><a href="#其它命令" class="headerlink" title="其它命令"></a>其它命令</h6><p>git diff顾名思义就是查看difference</p>
+<p>git status命令可以让我们时刻掌握仓库当前的状态</p>
+<p>git reset版本回退</p>
+<h6 id="使用git在团队中的协作"><a href="#使用git在团队中的协作" class="headerlink" title="使用git在团队中的协作"></a>使用git在团队中的协作</h6><ol>
+<li>整个团队的最终分支是master</li>
+<li>然后每个开发都有一个dev的开发分支</li>
+<li>每个人都从master拉下一个属于自己的开发分支</li>
+<li>开发完成后要进行更改操作，就是提交，要输入有意义的提交信息</li>
+<li>找到自己的代码，右键暂存，就会放到暂存区,然后提交，同步</li>
+<li>然后在git的远程网站中点击合并请求，如果没有就创建一个merge request</li>
+<li>点击右上角的creat Merge Request</li>
+<li>创建的时候要选源分支，就是自己的分支，还要选你要合并到的分支，比如master</li>
+<li>选择代码审查人，审查结束就等待审查结果</li>
+<li>发现有discussion然后解决，解决之后就可以让审查人将代码合并</li>
+</ol>
+]]></content>
+      <categories>
+        <category>git</category>
+      </categories>
   </entry>
   <entry>
     <title>python之文件和异常</title>
@@ -58,7 +142,7 @@
 
 
 <p>不使用yield斐波那契，（注释掉yield）函数只是简单执行，没有返回迭代器f</p>
-
+<img src="/posts/6d39ca9a/%E4%B8%8D%E4%BD%BF%E7%94%A8yield.png" class title="不使用yield">
 
 <h5 id="什么情况需要使用yield"><a href="#什么情况需要使用yield" class="headerlink" title="什么情况需要使用yield"></a>什么情况需要使用yield</h5><p>划重点减少大内存的使用，举例：当我们调用函数返回一个很大的list时，一般情况是得到一个很大的list之后再去使用，这样就会非常占用内存，但是实际上我们使用的是list的遍历（list的迭代器），不需要得到完整的list，所以我们可以让这个函数每次只返回一个迭代器的一个计算结果，这个时候yield就很有用。<br>使用生成器不仅可以节省内存和CPU，还可以用更少的代码实现相似的功能</p>
 <p>题外话：还记得C++如何优化斐波那契求解，传统的C++求解斐波那契会递归很多次，产生递归栈，最后因为栈溢出崩溃，优化递归部分以解决重复计算问题，优化算法，从下往上计算，根据f(0),f(1)得到f(2),再有f(1)和f(2)得到f(3)</p>

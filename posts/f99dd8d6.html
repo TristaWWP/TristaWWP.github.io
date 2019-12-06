@@ -53,14 +53,14 @@
   };
 </script>
 
-  <meta name="description" content="热爱生活                 立志成为一名时代的建设者">
+  <meta name="description" content="GitGit 有几个概念哈，工作区，暂存区，版本库">
 <meta property="og:type" content="article">
 <meta property="og:title" content="git的简单命令">
 <meta property="og:url" content="http:&#x2F;&#x2F;tristawwp.github.io&#x2F;posts&#x2F;f99dd8d6.html">
 <meta property="og:site_name" content="美美、瓶子和鱼">
-<meta property="og:description" content="热爱生活                 立志成为一名时代的建设者">
+<meta property="og:description" content="GitGit 有几个概念哈，工作区，暂存区，版本库">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-06T07:29:52.019Z">
+<meta property="og:updated_time" content="2019-12-06T07:37:40.012Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://tristawwp.github.io/posts/f99dd8d6.html">
@@ -240,8 +240,20 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2019-12-06 15:29:52" itemprop="dateCreated datePublished" datetime="2019-12-06T15:29:52+08:00">2019-12-06</time>
+              <time title="创建时间：2019-12-06 15:29:52 / 修改时间：15:37:40" itemprop="dateCreated datePublished" datetime="2019-12-06T15:29:52+08:00">2019-12-06</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/git/" itemprop="url" rel="index">
+                    <span itemprop="name">git</span>
+                  </a>
+                </span>
             </span>
 
           
@@ -264,7 +276,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>0</span>
+              <span>1k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -283,7 +295,65 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        
+        <h3 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h3><p>Git 有几个概念哈，工作区，暂存区，版本库</p>
+<a id="more"></a>
+<p>首先对一个文件夹进行git初始化: git init，会生成一个.git文件，这就是版本库，git会自动在版本库里创建一个master分支和一个暂存区</p>
+<p><strong>工作区</strong>：该文件夹</p>
+<p><strong>版本库</strong>：整个.git文件夹</p>
+<p><strong>暂存区</strong>：版本库的一部分（另一部分是master分支）</p>
+<p><strong>远程仓库</strong>：github上的master分支</p>
+<p><strong>git add xxx</strong></p>
+<p>把修改的文件添加到暂存区</p>
+<p><strong>git commit -m  “”</strong></p>
+<p>把暂存区里所有的文件提交到master分支</p>
+<p><strong>git remote url</strong> </p>
+<p>将本地的版本库关联到远程仓库</p>
+<p><strong>git push</strong></p>
+<p>把本地版本库master分支里的内容提交到到远程github的master分支</p>
+<p><strong>git pull</strong></p>
+<p>从远程github的master分支更新本地版本库的master分支</p>
+<p><strong>git clone url</strong></p>
+<p>从远程仓库克隆到本地某处</p>
+<h6 id="创建一个新的仓库"><a href="#创建一个新的仓库" class="headerlink" title="创建一个新的仓库"></a>创建一个新的仓库</h6><ol>
+<li>点主页的绿色NEW</li>
+<li>命名，跟本地文件夹名字相同（下面的框框不要勾选）</li>
+<li>命令行进入本地文件夹 cd进入</li>
+<li>git init</li>
+<li>git add .</li>
+<li>git commit -m “first commit”</li>
+<li>git remote add origin URL (origin后面跟的url是刚创建完那个页面的url，复制过来)</li>
+<li>git push -u origin master</li>
+<li>完成</li>
+</ol>
+<h6 id="本地修改git"><a href="#本地修改git" class="headerlink" title="本地修改git"></a>本地修改git</h6><ol>
+<li>git add .</li>
+<li>git commit -m “名字”</li>
+<li>git push</li>
+</ol>
+<h6 id="Git鼓励大量使用分支："><a href="#Git鼓励大量使用分支：" class="headerlink" title="Git鼓励大量使用分支："></a>Git鼓励大量使用分支：</h6><ol>
+<li>查看分支：git branch</li>
+<li>创建分支：git branch <name></name></li>
+<li>切换分支：git checkout <name></name></li>
+<li>创建+切换分支：git checkout -b <name></name></li>
+<li>合并某分支到当前分支：git merge <name></name></li>
+<li>删除分支：git branch -d <name></name></li>
+</ol>
+<h6 id="其它命令"><a href="#其它命令" class="headerlink" title="其它命令"></a>其它命令</h6><p>git diff顾名思义就是查看difference</p>
+<p>git status命令可以让我们时刻掌握仓库当前的状态</p>
+<p>git reset版本回退</p>
+<h6 id="使用git在团队中的协作"><a href="#使用git在团队中的协作" class="headerlink" title="使用git在团队中的协作"></a>使用git在团队中的协作</h6><ol>
+<li>整个团队的最终分支是master</li>
+<li>然后每个开发都有一个dev的开发分支</li>
+<li>每个人都从master拉下一个属于自己的开发分支</li>
+<li>开发完成后要进行更改操作，就是提交，要输入有意义的提交信息</li>
+<li>找到自己的代码，右键暂存，就会放到暂存区,然后提交，同步</li>
+<li>然后在git的远程网站中点击合并请求，如果没有就创建一个merge request</li>
+<li>点击右上角的creat Merge Request</li>
+<li>创建的时候要选源分支，就是自己的分支，还要选你要合并到的分支，比如master</li>
+<li>选择代码审查人，审查结束就等待审查结果</li>
+<li>发现有discussion然后解决，解决之后就可以让审查人将代码合并</li>
+</ol>
+
     </div>
 
     
@@ -342,6 +412,9 @@
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
+                <a href="/posts/12950bc2.html" rel="prev" title="git理解">
+                  git理解 <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
       </footer>
@@ -381,6 +454,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Git"><span class="nav-number">1.</span> <span class="nav-text">Git</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#创建一个新的仓库"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">创建一个新的仓库</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#本地修改git"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">本地修改git</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Git鼓励大量使用分支："><span class="nav-number">1.0.0.3.</span> <span class="nav-text">Git鼓励大量使用分支：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#其它命令"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">其它命令</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#使用git在团队中的协作"><span class="nav-number">1.0.0.5.</span> <span class="nav-text">使用git在团队中的协作</span></a></li></ol></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -396,14 +470,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-count">14</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">

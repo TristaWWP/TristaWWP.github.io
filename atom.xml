@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://TristaWWP.github.io/"/>
-  <updated>2019-12-06T07:29:52.019Z</updated>
+  <updated>2019-12-06T07:40:05.116Z</updated>
   <id>http://TristaWWP.github.io/</id>
   
   <author>
@@ -17,16 +17,39 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>git理解</title>
+    <link href="http://TristaWWP.github.io/posts/12950bc2.html"/>
+    <id>http://TristaWWP.github.io/posts/12950bc2.html</id>
+    <published>2019-12-06T07:37:58.000Z</published>
+    <updated>2019-12-06T07:40:05.116Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;什么是git&quot;&gt;&lt;a href=&quot;#什么是git&quot; class=&quot;headerlink&quot; title=&quot;什么是git&quot;&gt;&lt;/a&gt;什么是git&lt;/h3&gt;&lt;p&gt;git是一个C语言编写分布式版本控制系统。不需要中央服务器，不需要联网&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="git" scheme="http://TristaWWP.github.io/categories/git/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>git的简单命令</title>
     <link href="http://TristaWWP.github.io/posts/f99dd8d6.html"/>
     <id>http://TristaWWP.github.io/posts/f99dd8d6.html</id>
     <published>2019-12-06T07:29:52.000Z</published>
-    <updated>2019-12-06T07:29:52.019Z</updated>
+    <updated>2019-12-06T07:37:40.012Z</updated>
     
     <summary type="html">
     
+      &lt;h3 id=&quot;Git&quot;&gt;&lt;a href=&quot;#Git&quot; class=&quot;headerlink&quot; title=&quot;Git&quot;&gt;&lt;/a&gt;Git&lt;/h3&gt;&lt;p&gt;Git 有几个概念哈，工作区，暂存区，版本库&lt;/p&gt;
+    
     </summary>
     
+    
+      <category term="git" scheme="http://TristaWWP.github.io/categories/git/"/>
     
     
   </entry>
@@ -55,7 +78,7 @@
     <link href="http://TristaWWP.github.io/posts/6d39ca9a.html"/>
     <id>http://TristaWWP.github.io/posts/6d39ca9a.html</id>
     <published>2019-12-06T07:05:32.000Z</published>
-    <updated>2019-12-06T07:35:24.269Z</updated>
+    <updated>2019-12-06T07:40:51.095Z</updated>
     
     <summary type="html">
     
