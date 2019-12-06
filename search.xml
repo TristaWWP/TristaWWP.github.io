@@ -1,21 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>python之文件和异常</title>
+    <url>/posts/f8bc5ee8.html</url>
+    <content><![CDATA[<h4 id="从文件读取数据"><a href="#从文件读取数据" class="headerlink" title="从文件读取数据"></a>从文件读取数据</h4><h5 id="读取整个文件"><a href="#读取整个文件" class="headerlink" title="读取整个文件"></a>读取整个文件</h5><a id="more"></a>
+
+<p>首先需要打开文件，使用函数open()打开文件，参数为要打开文件的名称(或者相对文件路径或绝对文件路径），pyhton在当前执行的文件所在的目录中查找指定的文件，因此要打开的文件应该放在当前文件的目录里。函数open返回一个表示文件的对象，将这个对象存在file_object中。（还记得C++打开文件的文件指针吗）</p>
+<p>with关键字在不再需要访问文件后将其关闭，这比直接使用close函数要好，因为1 如果程序出现bug，导致close语句未执行，文件就不会关闭。2 过早的调用了close，后面再使用文件时就会出现错误（无法访问），所以不能很好的确定关闭文件的正确时机，使用with可以让python自己判断自动再合适的时机关闭</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">with</span> open(<span class="string">"要打开文件的名称"</span>) <span class="keyword">as</span> file_object:</span><br><span class="line">     contents = file_object.read() <span class="comment">#拥有文件对象后，调用read方法</span></span><br><span class="line">     print(contents)    <span class="comment">#print(contents.rstrip())删除空行</span></span><br></pre></td></tr></table></figure>
+
+<p>打印结果会多一个空行，因为read函数到达文件末尾时返回一个空字符串，将这个空字符串显示出来就是一个空行，要删除多余的空行，使用rstrip()<br><strong>ATTENTION：在使用文件路径时，OS和linux采用/斜杠，windows采用\反斜杠</strong></p>
+<h5 id="逐行读取"><a href="#逐行读取" class="headerlink" title="逐行读取"></a>逐行读取</h5><p>使用for循环遍历文件中的每一行，同样直接打印的话，每一行都有一个换行符，使用rstrip删除空行</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">with</span> open(<span class="string">"要打开文件的名称"</span>) <span class="keyword">as</span> file_object:</span><br><span class="line">     <span class="keyword">for</span> line <span class="keyword">in</span> file_object：</span><br><span class="line">     print(line)    <span class="comment">#print(line.rstrip())删除空行</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="创建一个包含文件各行内容的列表"><a href="#创建一个包含文件各行内容的列表" class="headerlink" title="创建一个包含文件各行内容的列表"></a>创建一个包含文件各行内容的列表</h5><p>使用with关键字时，open返回的文件对象只在with代码中使用，如果想在with代码块外访问文件内容，可以在with代码块内将文件的各行存储在一个列表中，这样就可以在代码块外使用这个列表了。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">with</span> open(<span class="string">"要打开文件的名称"</span>) <span class="keyword">as</span> file_object:</span><br><span class="line">    lines = file_object.readlines() <span class="comment">#从文件中读取每一行，并把它存储在一个列表中</span></span><br><span class="line">    </span><br><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> lines:</span><br><span class="line">    print(line.rstrip())</span><br></pre></td></tr></table></figure>
+
+
+<h5 id="使用文件内容"><a href="#使用文件内容" class="headerlink" title="使用文件内容"></a>使用文件内容</h5><p>使用文本文件时，pyhton将其中的所有文本解读成字符串，如果读取的是数字，需要作为数值使用，就必须使用int函数将其转换为整数或者float将其转化为浮点数</p>
+<h4 id="写入文件"><a href="#写入文件" class="headerlink" title="写入文件"></a>写入文件</h4><h5 id="写入空文件"><a href="#写入空文件" class="headerlink" title="写入空文件"></a>写入空文件</h5><p>调用open函数提供两个实参，第一个是要打开文件的名称，第二个是以写入模式(‘w’)打开文件，另外还有读取模式(‘r’)附加模式(‘a’)以及这几种的混合模式，，省略第二个实参默认只读模式打开文件，如果写入文件不存在，open函数会自动创建。以写入模式打开文件需要注意，如果指定文件已经存在，python将在返回文件对象前清空该文件。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">with</span> open(filename, <span class="string">'w'</span>) <span class="keyword">as</span> file_object:</span><br><span class="line">     file_object.write(<span class="string">"I love programming"</span>)</span><br></pre></td></tr></table></figure>
+<p>注意：python只能将字符串写入文本文件，要将数值数据存储到文本文件中，必须使用函数str()将其转化为字符串格式</p>
+<h5 id="写入多行"><a href="#写入多行" class="headerlink" title="写入多行"></a>写入多行</h5><p>函数write()不会在写入的文本末尾添加换行符，因此写入多行时会挤到一起，因此在write语句中增加换行符，保证文件中的内容能够显示在不同行</p>
+<h5 id="附加到文件"><a href="#附加到文件" class="headerlink" title="附加到文件"></a>附加到文件</h5><p>以附加方式打开文件，python不会在返回文件对象前清空文件，写入文件的行都将添加到文件末尾，是给文件添加内容，而不是覆盖原有的内容，如果文件不存在将创建一个空文件</p>
+<h4 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h4><p>每当发生python错误时，都会创建一个异常对象，如果不对异常进行处理，程序就会停止，并显示一个traceback。异常是使用try-except代码块处理的。</p>
+<h5 id="处理ZeroDivisionError异常"><a href="#处理ZeroDivisionError异常" class="headerlink" title="处理ZeroDivisionError异常"></a>处理ZeroDivisionError异常</h5><p>对除0异常进行处理</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    print(<span class="number">5</span>/<span class="number">0</span>)</span><br><span class="line"><span class="keyword">except</span> ZeroDivisionError:</span><br><span class="line">    print(<span class="string">"U cannt divide by zero"</span>)</span><br></pre></td></tr></table></figure>
+
+<h5 id="处理FileNotFoundError异常"><a href="#处理FileNotFoundError异常" class="headerlink" title="处理FileNotFoundError异常"></a>处理FileNotFoundError异常</h5><p>使用文件时，找不到文件就会出现FileNotFoundError异常，这是python找不到要打开的文件时创建的异常，这个错误时open函数导致的，要处理这个错误，必须把try放到包含open函数的代码行之前。</p>
+<h5 id="pass语句什么都不做"><a href="#pass语句什么都不做" class="headerlink" title="pass语句什么都不做"></a>pass语句什么都不做</h5><p>正确的使用异常很多时候也靠项目经验，但是正确处理异常现象非常重要，比如上面打开文件的错误异常，在实际项目中严谨的代码是要处理这个异常的。尽量编写优雅的代码，经过详尽测试的不容易出现内部错误的代码，丰富的项目经验可以让我们判断出程序在哪里会出现异常以及出现错误时应该向用户提供哪些相关信息</p>
+]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>python之迭代器、生成器</title>
+    <url>/posts/6d39ca9a.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>python之装饰器和闭包</title>
     <url>/posts/33412124.html</url>
     <content><![CDATA[<p>装饰器与闭包的学习</p>
 <a id="more"></a>
 <h2 id="装饰器"><a href="#装饰器" class="headerlink" title="装饰器"></a>装饰器</h2><h3 id="初识装饰器"><a href="#初识装饰器" class="headerlink" title="初识装饰器"></a>初识装饰器</h3><p>装饰器(decorator)实际上是一个函数，用来改变其他函数的功能，如果我们有一个函数，功能为打印一句话</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f1</span><span class="params">()</span>:</span></span><br><span class="line">		print(<span class="string">"hello, I am f1."</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f1</span><span class="params">()</span>:</span></span><br><span class="line">	print(<span class="string">"hello, I am f1."</span>)</span><br></pre></td></tr></table></figure>
 
 <p>现在我们需要改变打印的内容，但是不能修改此函数中的打印语句，那么我们可以添加一个函数，修改f1这个引用指向的对象为新的函数</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">decorator</span><span class="params">(func)</span>:</span></span><br><span class="line">		<span class="function"><span class="keyword">def</span> <span class="title">inner</span><span class="params">()</span>:</span></span><br><span class="line">				print(<span class="string">"hello, I am NOT f1."</span>)</span><br><span class="line">		<span class="keyword">return</span> inner</span><br><span class="line">f1 = decorator(f1)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">decorator</span><span class="params">(func)</span>:</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">inner</span><span class="params">()</span>:</span></span><br><span class="line">			print(<span class="string">"hello, I am NOT f1."</span>)</span><br><span class="line">	<span class="keyword">return</span> inner</span><br><span class="line">f1 = decorator(f1)</span><br></pre></td></tr></table></figure>
 
 <p>运行f1，得到的结果如下</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>f1()</span><br><span class="line">hello, I am NOT f1.</span><br></pre></td></tr></table></figure>
 
 <p>可以看到，我们成功地改变了原函数的打印语句，上面的decorator函数即为python中的<strong>装饰器</strong>，我们可以使用语法糖@将上面的python代码简化</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">@decorator</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f1</span><span class="params">()</span>:</span></span><br><span class="line">		print(<span class="string">"hello, I am f1."</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">@decorator</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f1</span><span class="params">()</span>:</span></span><br><span class="line">	print(<span class="string">"hello, I am f1."</span>)</span><br></pre></td></tr></table></figure>
 
 
 
@@ -276,11 +315,6 @@
   <entry>
     <title>python之内存管理和垃圾回收机制</title>
     <url>/posts/b7597a18.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>python之迭代器、生成器</title>
-    <url>/posts/6d39ca9a.html</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>

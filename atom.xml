@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://TristaWWP.github.io/"/>
-  <updated>2019-11-22T11:54:34.464Z</updated>
+  <updated>2019-12-06T07:13:51.303Z</updated>
   <id>http://TristaWWP.github.io/</id>
   
   <author>
@@ -17,11 +17,45 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>python之文件和异常</title>
+    <link href="http://TristaWWP.github.io/posts/f8bc5ee8.html"/>
+    <id>http://TristaWWP.github.io/posts/f8bc5ee8.html</id>
+    <published>2019-12-06T07:06:03.000Z</published>
+    <updated>2019-12-06T07:13:51.303Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;从文件读取数据&quot;&gt;&lt;a href=&quot;#从文件读取数据&quot; class=&quot;headerlink&quot; title=&quot;从文件读取数据&quot;&gt;&lt;/a&gt;从文件读取数据&lt;/h4&gt;&lt;h5 id=&quot;读取整个文件&quot;&gt;&lt;a href=&quot;#读取整个文件&quot; class=&quot;headerlink&quot; title=&quot;读取整个文件&quot;&gt;&lt;/a&gt;读取整个文件&lt;/h5&gt;
+    
+    </summary>
+    
+    
+      <category term="python" scheme="http://TristaWWP.github.io/categories/python/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>python之迭代器、生成器</title>
+    <link href="http://TristaWWP.github.io/posts/6d39ca9a.html"/>
+    <id>http://TristaWWP.github.io/posts/6d39ca9a.html</id>
+    <published>2019-12-06T07:05:32.000Z</published>
+    <updated>2019-12-06T07:05:32.659Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>python之装饰器和闭包</title>
     <link href="http://TristaWWP.github.io/posts/33412124.html"/>
     <id>http://TristaWWP.github.io/posts/33412124.html</id>
     <published>2019-11-22T11:49:09.000Z</published>
-    <updated>2019-11-22T11:54:34.464Z</updated>
+    <updated>2019-12-06T07:15:13.369Z</updated>
     
     <summary type="html">
     
@@ -40,7 +74,7 @@
     <link href="http://TristaWWP.github.io/posts/5c354b05.html"/>
     <id>http://TristaWWP.github.io/posts/5c354b05.html</id>
     <published>2019-11-22T11:39:01.000Z</published>
-    <updated>2019-11-22T11:48:02.704Z</updated>
+    <updated>2019-11-22T11:54:46.326Z</updated>
     
     <summary type="html">
     
@@ -104,21 +138,6 @@
     <id>http://TristaWWP.github.io/posts/b7597a18.html</id>
     <published>2019-11-07T13:09:17.000Z</published>
     <updated>2019-11-07T13:47:21.907Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>python之迭代器、生成器</title>
-    <link href="http://TristaWWP.github.io/posts/6d39ca9a.html"/>
-    <id>http://TristaWWP.github.io/posts/6d39ca9a.html</id>
-    <published>2019-11-07T13:08:35.000Z</published>
-    <updated>2019-11-07T13:47:21.906Z</updated>
     
     <summary type="html">
     
