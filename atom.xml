@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://TristaWWP.github.io/"/>
-  <updated>2019-12-06T07:44:24.275Z</updated>
+  <updated>2019-12-22T03:48:28.278Z</updated>
   <id>http://TristaWWP.github.io/</id>
   
   <author>
@@ -15,6 +15,44 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>python之正则表达式re</title>
+    <link href="http://TristaWWP.github.io/posts/d93670b5.html"/>
+    <id>http://TristaWWP.github.io/posts/d93670b5.html</id>
+    <published>2019-12-22T02:53:27.000Z</published>
+    <updated>2019-12-22T03:48:28.278Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;概念&quot;&gt;&lt;a href=&quot;#概念&quot; class=&quot;headerlink&quot; title=&quot;概念&quot;&gt;&lt;/a&gt;概念&lt;/h4&gt;&lt;p&gt;正则表达式regular expression是一种描述字符序列的方法，是用于处理字符串的强大工具，检查字符串是否与某种模式匹配，比如用来检查一个串是否含有某种子串，将匹配子串替换，或者从某个串中取出符合某个条件的子串，正则表达式是由普通字符例如字母（a-z）和特殊字符组成的文字模式&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="python" scheme="http://TristaWWP.github.io/categories/python/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>python之lambda表达式</title>
+    <link href="http://TristaWWP.github.io/posts/863e37ea.html"/>
+    <id>http://TristaWWP.github.io/posts/863e37ea.html</id>
+    <published>2019-12-22T02:20:56.000Z</published>
+    <updated>2019-12-22T03:35:06.577Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;什么是lambda&quot;&gt;&lt;a href=&quot;#什么是lambda&quot; class=&quot;headerlink&quot; title=&quot;什么是lambda&quot;&gt;&lt;/a&gt;什么是lambda&lt;/h4&gt;&lt;p&gt;python中的关键字lambda是定义匿名函数用的，返回的是函数类型（一个新函数）&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="python" scheme="http://TristaWWP.github.io/categories/python/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>git理解</title>
@@ -59,7 +97,7 @@
     <link href="http://TristaWWP.github.io/posts/f8bc5ee8.html"/>
     <id>http://TristaWWP.github.io/posts/f8bc5ee8.html</id>
     <published>2019-12-06T07:06:03.000Z</published>
-    <updated>2019-12-10T07:41:07.443Z</updated>
+    <updated>2019-12-22T02:57:06.467Z</updated>
     
     <summary type="html">
     

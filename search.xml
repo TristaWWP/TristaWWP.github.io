@@ -1,6 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>python之正则表达式re</title>
+    <url>/posts/d93670b5.html</url>
+    <content><![CDATA[<h4 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h4><p>正则表达式regular expression是一种描述字符序列的方法，是用于处理字符串的强大工具，检查字符串是否与某种模式匹配，比如用来检查一个串是否含有某种子串，将匹配子串替换，或者从某个串中取出符合某个条件的子串，正则表达式是由普通字符例如字母（a-z）和特殊字符组成的文字模式</p>
+<a id="more"></a>
+<h5 id="表示数量的语法："><a href="#表示数量的语法：" class="headerlink" title="表示数量的语法："></a>表示数量的语法：</h5><h6 id><a href="#" class="headerlink" title="+"></a>+</h6><p> 123+4，可以匹配12334，1233334，123333334，其中+代表前一个字符必须至少出现一次（一次或多次）</p>
+<h6 id="-1"><a href="#-1" class="headerlink" title="*"></a>*</h6><p>123<em>4，可以匹配124，123334，123334，</em>号表示前一个字符可以不出现，也可以出现一次或多次，是任何的意思</p>
+<h6 id="？"><a href="#？" class="headerlink" title="？"></a>？</h6><p>123?4，可以匹配1234，124，？号表示前面的字符最多只可以出现一次（0次或1次）</p>
+<h6 id="-2"><a href="#-2" class="headerlink" title=".*"></a>.*</h6><p>表示任意匹配除换行符（\n,\r）之外的任何单个或多个字符</p>
+<h6 id="m"><a href="#m" class="headerlink" title="{m}"></a>{m}</h6><p>匹配前一个字符出现m次</p>
+<h6 id="m-1"><a href="#m-1" class="headerlink" title="{m,}"></a>{m,}</h6><p>匹配前一个字符至少出现m次</p>
+<h6 id="m-n"><a href="#m-n" class="headerlink" title="{m,n}"></a>{m,n}</h6><p>匹配前一个字符出现m到n次</p>
+<h6 id="-3"><a href="#-3" class="headerlink" title="[]"></a>[]</h6><p>表示范围，比如[a-zA-Z0-9] 匹配一个字母或者数字</p>
+<h6 id="a-zA-Z0-9"><a href="#a-zA-Z0-9" class="headerlink" title="[a-zA-Z0-9]*"></a>[a-zA-Z0-9]*</h6><p>匹配任意字母数字组成的字符串</p>
+<h6 id="a-b"><a href="#a-b" class="headerlink" title="a|b"></a>a|b</h6><p> 匹配a或者b</p>
+<h5 id="边界定位符："><a href="#边界定位符：" class="headerlink" title="边界定位符："></a>边界定位符：</h5><h6 id="-4"><a href="#-4" class="headerlink" title="^"></a>^</h6><p>匹配输入字符串开始的位置，</p>
+<h6 id="-5"><a href="#-5" class="headerlink" title="$"></a>$</h6><p>匹配输入字符串结尾的位置</p>
+<h6 id="b"><a href="#b" class="headerlink" title="\b"></a>\b</h6><p>匹配一个单词边界，即字与空格间的位置</p>
+<h6 id="B"><a href="#B" class="headerlink" title="\B"></a>\B</h6><p>非单词边界匹配</p>
+<h5 id="特殊字符类："><a href="#特殊字符类：" class="headerlink" title="特殊字符类："></a>特殊字符类：</h5><h6 id="-6"><a href="#-6" class="headerlink" title="."></a>.</h6><p>  匹配除\n之外的任何单个字符</p>
+<h6 id="d"><a href="#d" class="headerlink" title="\d"></a>\d</h6><p> 匹配一个数字字符，等价于[0-9]</p>
+<h6 id="D"><a href="#D" class="headerlink" title="\D"></a>\D</h6><p>匹配一个非数字字符，等价于[^0-9]</p>
+<h6 id="w"><a href="#w" class="headerlink" title="\w"></a>\w</h6><p>可以匹配一个字母或者数字下划线</p>
+<h6 id="W"><a href="#W" class="headerlink" title="\W"></a>\W</h6><p>非字母数字下划线，也就是上一个的相反情况</p>
+<h4 id="python正则表达式"><a href="#python正则表达式" class="headerlink" title="python正则表达式"></a>python正则表达式</h4><p>re模块使python语言拥有全部的正则表达式功能,import re</p>
+<h5 id="re-match"><a href="#re-match" class="headerlink" title="re.match"></a>re.match</h5><p>函数说明：从字符串的起始位置匹配一个模式，匹配成功返回一个匹配对象，否则返回none，通过group方法获取匹配的内容<br>函数语法：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">re.match(pattern, string, flags=<span class="number">0</span>) <span class="comment">#pattern要匹配的正则表达式，string要匹配的字符串，flags标志位</span></span><br></pre></td></tr></table></figure>
+<h5 id="re-search"><a href="#re-search" class="headerlink" title="re.search"></a>re.search</h5><p>函数说明：扫描整个字符串并返回第一个成功的匹配,匹配成功返回一个匹配对象，否则返回none<br>函数语法：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">re.search(pattern, string, flags=<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+<p>match只匹配字符串的开始，如果字符串开始不符合正则表达式，则匹配失败，返回none，search匹配的是整个字符串，知道找到一个匹配</p>
+<h5 id="re-sub"><a href="#re-sub" class="headerlink" title="re.sub"></a>re.sub</h5><p>函数说明：用于替换字符串中的匹配项<br>函数语法：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">re.sub(pattern, repl,string,count=<span class="number">0</span>,flags=<span class="number">0</span>)</span><br><span class="line"><span class="comment">#pattern正则中的模式字符串</span></span><br><span class="line"><span class="comment">#repl替换的字符串，也可以为一个函数，前三个是必选参数</span></span><br><span class="line"><span class="comment">#count模式匹配后替换的最大次数，默认0表示替换所有匹配</span></span><br></pre></td></tr></table></figure>
+<h5 id="re-complie"><a href="#re-complie" class="headerlink" title="re.complie"></a>re.complie</h5><p>函数说明：<br>compile函数用于编译正则表达式，生成一个正则表达式对象，供match和search函数使用。<br>compile根据一个模式字符串和可选的标志参数生成一个正则表达式对象，该对象拥有一系列方法用于正则表达式匹配和替换<br>函数用法：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">re.compile(pattern[, flags])<span class="comment">#flags是可选</span></span><br></pre></td></tr></table></figure>
+<h5 id="re-findall"><a href="#re-findall" class="headerlink" title="re.findall"></a>re.findall</h5><p>函数说明：在字符串中找到正则所匹配的所有子串，并返回一个列表，如果没有找到匹配，则返回空列表<br>函数用法：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">re.findall(string[, pos[, endpos]])</span><br></pre></td></tr></table></figure>
+<h5 id="re-finditer"><a href="#re-finditer" class="headerlink" title="re.finditer"></a>re.finditer</h5><p>函数说明：在字符串中找到正则所匹配的所有子串，并把他们作为一个迭代器返回<br>函数用法：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">re.finditer(pattern, string,flags=<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+<h5 id="re-split"><a href="#re-split" class="headerlink" title="re.split"></a>re.split</h5><p>函数说明：按照能够匹配的子串将字符串分割后返回列表<br>函数用法：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">re.split(pattern,string[,maxsplit=<span class="number">0</span>,flags=<span class="number">0</span>])<span class="comment">#maxsplit分隔次数，1代表分隔一次，默认0，不限制次数</span></span><br></pre></td></tr></table></figure>
+<h5 id="标志位"><a href="#标志位" class="headerlink" title="标志位"></a>标志位</h5><p>python中的正则表达式修饰符，多个标志位可以通过按位OR｜来指定</p>
+<h6 id="re-I"><a href="#re-I" class="headerlink" title="re.I"></a>re.I</h6><p>ignorecase 使匹配对大小写不敏感</p>
+<h6 id="re-L"><a href="#re-L" class="headerlink" title="re.L"></a>re.L</h6><p>locale 做本地化识别匹配,即特殊字符集以来当前环境</p>
+<h6 id="re-M"><a href="#re-M" class="headerlink" title="re.M"></a>re.M</h6><p>Multiline 多行匹配，影响^和$</p>
+<h6 id="re-S"><a href="#re-S" class="headerlink" title="re.S"></a>re.S</h6><p> 使.匹配包括换行在内的所有字符</p>
+<h6 id="re-U"><a href="#re-U" class="headerlink" title="re.U"></a>re.U</h6><p> 根据Unicode字符集解析字符，会影响\w,\W,\b,\B</p>
+<h6 id="re-X"><a href="#re-X" class="headerlink" title="re.X"></a>re.X</h6><p>通过给予更灵活的格式，以便似的正则表达式更加易于理解</p>
+<h5 id="分组"><a href="#分组" class="headerlink" title="分组"></a>分组</h5><p>正则表达式的强大功能就是提取子串，用（）表示要提取的分组<br>如果正则表达式中定义了组，可以在match对象上用group（）方法提取子串，其中group(0)是代表原始字符串group(1)group(2)依次表示第一个子串，第二个子串</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">test = <span class="string">'date 2019-12-20'</span></span><br><span class="line">res = re.search(<span class="string">r'(\d&#123;4&#125;)-(\d&#123;2&#125;)-(\d&#123;2&#125;)'</span>, test)</span><br><span class="line">res.group()<span class="comment">#'2019-12-20'</span></span><br><span class="line">res.group(<span class="number">1</span>)<span class="comment">#'2019'</span></span><br></pre></td></tr></table></figure>
+<p>使用名称提取分组，形式：(?P<name>)</name></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">test = <span class="string">'date 2019-12-20'</span></span><br><span class="line">res = re.search(<span class="string">r'(?P&lt;year&gt;\d&#123;4&#125;)-(?P&lt;mon&gt;\d&#123;2&#125;)-(?P&lt;day&gt;\d&#123;2&#125;)'</span>, test)</span><br><span class="line">res.group(<span class="string">'year'</span>)<span class="comment">#'2019'</span></span><br></pre></td></tr></table></figure>
+<h5 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h5><p>当我们使用正则表达式时，re模块内部会做两件事情<br>第一是编译正则表达式，如果正则表达式的字符串本身不合法，会报错<br>第二是用编译后的正则表达式去匹配字符串<br>一个正则表达式如果要重复使用多次，比如几千次，那出于效率的角度，可以先预编译正则表达式，这样使用的时候就不用编译这个步骤了</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="comment">#编译</span></span><br><span class="line">res = re.compile(<span class="string">r'(\d&#123;4&#125;)-(\d&#123;2&#125;)-(\d&#123;2&#125;)'</span>)</span><br><span class="line"><span class="comment"># 使用</span></span><br><span class="line">res.match(<span class="string">'2019-12-20'</span>).groups()</span><br></pre></td></tr></table></figure>
+
+<h4 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h4><p>匹配任意电子邮箱：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">re.match(<span class="string">r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9_-]+\.[a-zA-Z]+$'</span>, <span class="string">'aaaaaaaa@gmail.com'</span>):</span><br></pre></td></tr></table></figure>
+<p>匹配任意电话号码：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">re.match(<span class="string">r'^\d&#123;3&#125;\-\d&#123;3,8&#125;$'</span>, <span class="string">'010-12345'</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>通过使用正则表达式，可以：<br><strong>测试字符串内的模式</strong><br>可以测试输入字符串，以查看字符串内是否出现电话号码或者信用卡号码</p>
+<p><strong>替换文本</strong><br>可以使用正则表达式来识别文档中的特定文本，完全删除该文本或者用其他文本替换</p>
+<p><strong>从字符串中提取子字符串</strong><br>可以查找文档内或者输入域内特定的文本</p>
+]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>python之lambda表达式</title>
+    <url>/posts/863e37ea.html</url>
+    <content><![CDATA[<h4 id="什么是lambda"><a href="#什么是lambda" class="headerlink" title="什么是lambda"></a>什么是lambda</h4><p>python中的关键字lambda是定义匿名函数用的，返回的是函数类型（一个新函数）</p>
+<a id="more"></a>
+<p>问题一：何为匿名函数？<br>匿名函数就是不需要函数名的函数<br>问题二：匿名函数和def函数体有什么区别？<br>def创建的方法是有具体函数名称的，匿名函数没有具体的函数名称，详见后文<br>问题三：lambda表达式的优点<br>既然是表达式，那就是只有一行的函数，因此代码更加简洁。尤其当函数作为参数的时候，lambda非常有用，很简洁</p>
+<h4 id="lambda的形式"><a href="#lambda的形式" class="headerlink" title="lambda的形式"></a>lambda的形式</h4><p>在lambda语句中，冒号前是函数参数，可以有多个，用逗号隔开，如果没有则省略。冒号右边是返回值，lambda语句构建的是一个函数对象，如果将这个函数对象保存在变量中，再次使用变量时，使用这个引用变量就相当于使用函数对象，可以供其他函数调用，例如可以直接func(x)这样使用</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">func = <span class="keyword">lambda</span> x : x*x    <span class="comment">#lambda表达式</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(x)</span>:</span>      <span class="comment">#普通函数</span></span><br><span class="line">    <span class="keyword">return</span> x*x</span><br></pre></td></tr></table></figure>
+
+<h4 id="lambda的应用"><a href="#lambda的应用" class="headerlink" title="lambda的应用"></a>lambda的应用</h4><h5 id="filter函数"><a href="#filter函数" class="headerlink" title="filter函数"></a>filter函数</h5><p>用法：filter(None或者lambda表达式，变量)<br>作用：将可迭代的数据中经过条件筛选出结果为1或者结果为true的数据，结合lambda使用非常方便.<br>filter的第一个参数为None时，就会获取到原来的序列，记住不是省略，而是None</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#筛选出1-10之间的奇数</span></span><br><span class="line">mylist = list(filter(<span class="keyword">lambda</span> x : x%<span class="number">2</span>, range(<span class="number">0</span>,<span class="number">10</span>))) </span><br><span class="line"></span><br><span class="line">[<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>]</span><br></pre></td></tr></table></figure>
+
+<h5 id="map函数"><a href="#map函数" class="headerlink" title="map函数"></a>map函数</h5><p>用法：map(lambda表达式，要操作序列)<br>作用：遍历序列，对序列中的每个元素进行操作，最终获得新的序列</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">list = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">new_list = map(<span class="keyword">lambda</span> x : x+<span class="number">10</span>, list)</span><br></pre></td></tr></table></figure>
+
+<h5 id="reduce"><a href="#reduce" class="headerlink" title="reduce"></a>reduce</h5><p>用法：reduce(lambda表达式，要循环的队列，初始值)，函数必须要有两个参数<br>作用：对序列内所有的元素进行累计操作</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">list = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">result = reduce(<span class="keyword">lambda</span> x,y : x+y,list)</span><br></pre></td></tr></table></figure>
+
+<p>4 不使用lambda的情况<br>lambda其实只是一个表达式，所以他能够取代的函数逻辑有限。<br>如果一个列表生成式仅使用for，if ，in就能实现，那就不需要使用lambda<br>如果函数逻辑十分复杂，那么就会定义函数，让代码更具有可读性，也不需要使用lambda</p>
+<p>当你只需要一个简单的单行函数做一件简单的事情，甚至有时我们连函数的名字都不需要知道，那么此时的lambda就是一个不错的选择，毕竟不用冥思苦想函数名称用啥了，也不用担心命名冲突。</p>
+]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+  </entry>
+  <entry>
     <title>git理解</title>
     <url>/posts/12950bc2.html</url>
     <content><![CDATA[<h3 id="什么是git"><a href="#什么是git" class="headerlink" title="什么是git"></a>什么是git</h3><p>git是一个C语言编写分布式版本控制系统。不需要中央服务器，不需要联网</p>
@@ -117,6 +208,9 @@
 
 
 <h5 id="使用文件内容"><a href="#使用文件内容" class="headerlink" title="使用文件内容"></a>使用文件内容</h5><p>使用文本文件时，pyhton将其中的所有文本解读成字符串，如果读取的是数字，需要作为数值使用，就必须使用int函数将其转换为整数或者float将其转化为浮点数</p>
+<h5 id="f-readline-vs-f-readlines"><a href="#f-readline-vs-f-readlines" class="headerlink" title="f.readline() vs f.readlines()"></a>f.readline() vs f.readlines()</h5><p>readlines一次读入所有数据进内存，readline一行一行读，大数据用readline</p>
+<h5 id="io模块和codecs模块可以指定编码，读取中文文件需要指定utf-8编码："><a href="#io模块和codecs模块可以指定编码，读取中文文件需要指定utf-8编码：" class="headerlink" title="io模块和codecs模块可以指定编码，读取中文文件需要指定utf-8编码："></a>io模块和codecs模块可以指定编码，读取中文文件需要指定utf-8编码：</h5><p>import io<br>io.readlines(filename, ‘r’, encoding=’utf-8’)</p>
+<h5 id="读取二进制文件"><a href="#读取二进制文件" class="headerlink" title="读取二进制文件"></a>读取二进制文件</h5><p>f.readline(filename, ‘rb’)</p>
 <h4 id="写入文件"><a href="#写入文件" class="headerlink" title="写入文件"></a>写入文件</h4><h5 id="写入空文件"><a href="#写入空文件" class="headerlink" title="写入空文件"></a>写入空文件</h5><p>调用open函数提供两个实参，第一个是要打开文件的名称，第二个是以写入模式(‘w’)打开文件，另外还有读取模式(‘r’)附加模式(‘a’)以及这几种的混合模式，，省略第二个实参默认只读模式打开文件，如果写入文件不存在，open函数会自动创建。以写入模式打开文件需要注意，如果指定文件已经存在，python将在返回文件对象前清空该文件。</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">with</span> open(filename, <span class="string">'w'</span>) <span class="keyword">as</span> file_object:</span><br><span class="line">     file_object.write(<span class="string">"I love programming"</span>)</span><br></pre></td></tr></table></figure>
 <p>注意：python只能将字符串写入文本文件，要将数值数据存储到文本文件中，必须使用函数str()将其转化为字符串格式</p>
