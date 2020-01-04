@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://TristaWWP.github.io/"/>
-  <updated>2020-01-04T12:43:27.209Z</updated>
+  <updated>2020-01-04T14:11:30.422Z</updated>
   <id>http://TristaWWP.github.io/</id>
   
   <author>
@@ -17,11 +17,30 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>我的NO.1小小飞mavic mini</title>
+    <link href="http://TristaWWP.github.io/posts/b913c8d0.html"/>
+    <id>http://TristaWWP.github.io/posts/b913c8d0.html</id>
+    <published>2020-01-04T14:09:45.000Z</published>
+    <updated>2020-01-04T14:11:30.422Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;2019年的圣诞节，收到了我的第一款无人机—-小小飞，大疆mavic mini&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="随笔" scheme="http://TristaWWP.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>python之线程初级</title>
     <link href="http://TristaWWP.github.io/posts/f5808ee4.html"/>
     <id>http://TristaWWP.github.io/posts/f5808ee4.html</id>
     <published>2020-01-04T12:38:21.000Z</published>
-    <updated>2020-01-04T12:43:27.209Z</updated>
+    <updated>2020-01-04T12:45:57.245Z</updated>
     
     <summary type="html">
     
