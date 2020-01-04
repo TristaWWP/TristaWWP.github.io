@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://TristaWWP.github.io/"/>
-  <updated>2019-12-22T03:48:28.278Z</updated>
+  <updated>2020-01-04T12:43:27.209Z</updated>
   <id>http://TristaWWP.github.io/</id>
   
   <author>
@@ -17,11 +17,30 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>python之线程初级</title>
+    <link href="http://TristaWWP.github.io/posts/f5808ee4.html"/>
+    <id>http://TristaWWP.github.io/posts/f5808ee4.html</id>
+    <published>2020-01-04T12:38:21.000Z</published>
+    <updated>2020-01-04T12:43:27.209Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;全局解释器锁-Global-Interpreter-Lock&quot;&gt;&lt;a href=&quot;#全局解释器锁-Global-Interpreter-Lock&quot; class=&quot;headerlink&quot; title=&quot;全局解释器锁(Global Interpreter Lock)&quot;&gt;&lt;/a&gt;全局解释器锁(Global Interpreter Lock)&lt;/h4&gt;&lt;p&gt;GIL是计算机程序设计语言解释器用于同步线程的工具（解释器级别）（Cpython）GIL能够保证同一时刻只有一个线程在运行&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="python" scheme="http://TristaWWP.github.io/categories/python/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>python之正则表达式re</title>
     <link href="http://TristaWWP.github.io/posts/d93670b5.html"/>
     <id>http://TristaWWP.github.io/posts/d93670b5.html</id>
     <published>2019-12-22T02:53:27.000Z</published>
-    <updated>2019-12-22T03:48:28.278Z</updated>
+    <updated>2019-12-22T03:48:38.248Z</updated>
     
     <summary type="html">
     
@@ -40,7 +59,7 @@
     <link href="http://TristaWWP.github.io/posts/863e37ea.html"/>
     <id>http://TristaWWP.github.io/posts/863e37ea.html</id>
     <published>2019-12-22T02:20:56.000Z</published>
-    <updated>2019-12-22T03:35:06.577Z</updated>
+    <updated>2019-12-22T03:48:38.247Z</updated>
     
     <summary type="html">
     

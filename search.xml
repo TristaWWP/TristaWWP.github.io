@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>python之线程初级</title>
+    <url>/posts/f5808ee4.html</url>
+    <content><![CDATA[<h4 id="全局解释器锁-Global-Interpreter-Lock"><a href="#全局解释器锁-Global-Interpreter-Lock" class="headerlink" title="全局解释器锁(Global Interpreter Lock)"></a>全局解释器锁(Global Interpreter Lock)</h4><p>GIL是计算机程序设计语言解释器用于同步线程的工具（解释器级别）（Cpython）GIL能够保证同一时刻只有一个线程在运行</p>
+<a id="more"></a>
+<p>因此python解释器同时只能执行一个线程，即使多线程的环境，也只有一个线程能获得GIL，每个线程执行一段时间后释放GIL给其他线程使用，<br>python的多线程只能利用cpu的一个核，GIL会在IO调用前被释放，利于IO密集型任务，（当一个线程遇到I/O任务时会释放GIL，CPU密集型线程大约执行100次解释器的计步时，会释放GIL？？这个具体没有了解）<br>锁是为了应对多线程的数据同步问题，同样GIL也是，但是GIL和Lock是不同的锁（后期具体分析）</p>
+<h4 id="如何创建一个线程"><a href="#如何创建一个线程" class="headerlink" title="如何创建一个线程"></a>如何创建一个线程</h4><h5 id="python里面的Thread类"><a href="#python里面的Thread类" class="headerlink" title="python里面的Thread类"></a>python里面的Thread类</h5><p>threading.Thread(target=None,name=Node,args=(),kwargs={},*,daemon=None)<br>#target表示run方法将要调用的对象，就是这个新线程的目标功能函数，不带小括号，默认none是不调用任何东西<br>#name是线程的名字，<br>#args是给要调用函数的参数元组，默认（）<br>#kwargs是给要调用目标的关键字参数的字典，默认{}<br>#daemon是否是守护线程<br>举例：threading.Thread(target=函数名)这个方法是创建一个线程，并给这个线程分配功能</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">threads=[]<span class="comment">#定义一个线程池</span></span><br><span class="line">t1 = threading.Thread(target=one)<span class="comment">#创建一个线程赋给t1，这个线程指定调用方法one，one是一个函数</span></span><br><span class="line">threads.append(t1)<span class="comment">#把线程t1装到线程池</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="三种创建线程的方法"><a href="#三种创建线程的方法" class="headerlink" title="三种创建线程的方法"></a>三种创建线程的方法</h5><p>1 创建线程实例，传给他一个函数，包括函数参数，这是常用方法，如上代码<br>2 创建线程实例，传给一个可调用的类实例，将调用<strong>call</strong>方法（不常用，但是更接近面向对象编程）<br>3 派生线程子类，创建子类的实例，必须重写run方法(必须继承threading.Thread这个父类)，这个run相当于方法1的线程函数，在start后会调用</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyThread</span><span class="params">(Thread)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name=<span class="string">'XX'</span>)</span>:</span></span><br><span class="line">        super().__init__()</span><br><span class="line">        self.name = name</span><br><span class="line">   </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">run</span><span class="params">(self)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>):</span><br><span class="line">        print(<span class="string">'XX'</span>, self.name)</span><br></pre></td></tr></table></figure>
+<h5 id="线程开始运行"><a href="#线程开始运行" class="headerlink" title="线程开始运行"></a>线程开始运行</h5><p>thread.start()，启动新线程</p>
+<h4 id="线程模块的基本方法"><a href="#线程模块的基本方法" class="headerlink" title="线程模块的基本方法"></a>线程模块的基本方法</h4><h5 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h5><p>threading.active_count()<br>返回当前活跃的Thread对象数量，返回值和通过enumerate（）返回的列表长度是相等（打印当前激活的线程数量，包含主线程）</p>
+<p>threading.enumerate()<br>返回当前活跃的所有线程对象的列表，该列表包括守护线程，被current_thread()创建的虚拟线程对象和主线程，它不包括终止的线程和还没有启动的线程</p>
+<p>threading.current_thread()获取当前线程，返回当前的thread对象，后面若加上.getName()则是获取当前线程名称<br>threading.current_thread().ident返回当前线程的id<br>threading.main_thread()返回主thread对象，在正常情况下，主线程是从python解释器中启动的线程<br>threading.getident()返回当前线程的线程标识符，线程启动后才有ID，否则为None，但是在线程退出后这个id可以再利用<br>thread.setName()给线程设置名称<br>Thread.is_alive()返回线程是否活着</p>
+<h5 id="退出线程："><a href="#退出线程：" class="headerlink" title="退出线程："></a>退出线程：</h5><p>python中的线程没有优先级，不能被销毁、停止或者挂起，所以就没有恢复和中断，所以可以启动线程，但是却不能停止，线程自己在完成代码运行后会退出，或者可以调用thread.exit()可以退出，但是也不能像kill进程一样直接关闭<br>线程退出的两种情况：<br>1 线程函数内的语句执行完毕<br>2 线程函数中抛出未处理的异常</p>
+<h5 id="join函数："><a href="#join函数：" class="headerlink" title="join函数："></a>join函数：</h5><p>join函数线程阻塞，设置在start之后，等所有阻塞线程运行完，再运行主线程(主线程被停止执行)，相当于把线程加入到当前线程，等加入的线程运行完成后，再继续运行当前线程<br>阻塞主线程必须在start方法之后执行，t.join()等线程t运行完再运行主线程<br>如果想让主线程等到子线程结束后再运行，就需要用到子线程.join(),这个是在start之后，与setDaemon相反<br>Thread.join(timeout)这个方法有个timeout参数，是线程超时时间设置，直至启动的线程之前一直挂起，除非给出timeout时间，否则一直阻塞，阻塞当前程序，直到Thread程序运行完成，如果设置timeout就是最多阻塞多少秒，没有设置，默认永久阻塞</p>
+<h4 id="守护线程"><a href="#守护线程" class="headerlink" title="守护线程"></a>守护线程</h4><p> _thread模块不支持守护线程，当主线程退出的时候，其他线程自动退出，不论是否在工作<br> threading模块支持守护线程，为子线程设置守护标记，当标记为true，thread.daemon = true，整个python程序会在所有非守护线程退出后才退出，</p>
+<p>设置在start之前，设置子线程 A为守护线程，主线程所在的进程内所有非守护线程全部运行完毕，无论子线程A是否结束，程序都要结束<br>主线程退出时，不等到那些子线程完成，那么就设置子线程为守护线程，t1.setDaemon(True)，这个是设置守护线程，也可以使用thread.daemon = true这样可以检测数据合法性<br>如果设置一个线程为守护线程，就说明你这个线程不重要，在进程退出时，不用等待这个线程完成<br>如果程序不需要设置守护线程，就是等待所有子线程结束后才退出，不需要设置线程守护，或者显式调用t1.setDaemon(False)，这个是不设置守护线程<br>主线程是非守护线程，只要还存在一个非守护线程，程序就不会退出<br>一个新线程会继承父线程的守护标记</p>
+<p>守护线程的应用场景：<br>1 后台任务，发送心跳包，监控<br>2 主线程工作才有用的线程，比如主线程中维护公共资源，主线程已经清理了，准备退出，而工作线程使用这些资源工作也没有意义，就会一起退出<br>3 随时可以被终止的线程<br>守护线程简化了程序员手动关闭线程的工作，如果主线程退出，想其他工作线程一起退出，就用守护线程创建工作线程，主线程退出，工作线程也没有必要存在，就会随着主线程的退出一起退出</p>
+]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+  </entry>
+  <entry>
     <title>python之正则表达式re</title>
     <url>/posts/d93670b5.html</url>
     <content><![CDATA[<h4 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h4><p>正则表达式regular expression是一种描述字符序列的方法，是用于处理字符串的强大工具，检查字符串是否与某种模式匹配，比如用来检查一个串是否含有某种子串，将匹配子串替换，或者从某个串中取出符合某个条件的子串，正则表达式是由普通字符例如字母（a-z）和特殊字符组成的文字模式</p>
