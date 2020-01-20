@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.2">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.2">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.2">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.2" color="#222">
+  <link rel="alternate" href="/atom.xml" title="美美、瓶子和鱼" type="application/atom+xml">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.2">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2">
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '7.4.2',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":true,"style":"mac"},
+    back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="CollectionsPython collections模块是一个非常实用且高效的模块，今天我们就来一起探索。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python之collections">
+<meta property="og:url" content="http:&#x2F;&#x2F;tristawwp.github.io&#x2F;posts&#x2F;b63a9447.html">
+<meta property="og:site_name" content="美美、瓶子和鱼">
+<meta property="og:description" content="CollectionsPython collections模块是一个非常实用且高效的模块，今天我们就来一起探索。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-01-20T06:49:48.394Z">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://tristawwp.github.io/posts/b63a9447.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>python之collections | 美美、瓶子和鱼</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container">
+    <div class="headband"></div>
+
+    <a href="https://github.com/TristaWWP" target="_blank" rel="noopener" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#fff; color:#151513; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a ><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">美美、瓶子和鱼</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">王文平的个人博客</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home       //首页"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th  //分类"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user   //关于"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags //标签"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive  //归档"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://TristaWWP.github.io/posts/b63a9447.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Wenping WANG">
+      <meta itemprop="description" content="热爱生活                 立志成为一名时代的建设者">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="美美、瓶子和鱼">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          python之collections
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-01-20 14:47:11 / 修改时间：14:49:48" itemprop="dateCreated datePublished" datetime="2020-01-20T14:47:11+08:00">2020-01-20</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/posts/b63a9447.html#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/posts/b63a9447.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.6k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="Collections"><a href="#Collections" class="headerlink" title="Collections"></a>Collections</h2><p>Python collections模块是一个非常实用且高效的模块，今天我们就来一起探索。</p>
+<a id="more"></a>
+
+<p>###Counter</p>
+<p>Counter是一个简单的计数器，传入的Counter的对象可以为字符串，list或者dict，返回的Counter对象对字符串，list或者dict里的元素进行简单的计数。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>Counter(<span class="string">'helloworld!'</span>)</span><br><span class="line">Counter(&#123;<span class="string">'l'</span>: <span class="number">3</span>, <span class="string">'o'</span>: <span class="number">2</span>, <span class="string">'!'</span>: <span class="number">1</span>, <span class="string">'e'</span>: <span class="number">1</span>, <span class="string">'d'</span>: <span class="number">1</span>, <span class="string">'h'</span>: <span class="number">1</span>, <span class="string">'r'</span>: <span class="number">1</span>, <span class="string">'w'</span>: <span class="number">1</span>&#125;)</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>Counter([<span class="string">'Tom'</span>, <span class="string">'Jerry'</span>, <span class="string">'Tom'</span>, <span class="string">'Alice'</span>])</span><br><span class="line">Counter(&#123;<span class="string">'Tom'</span>: <span class="number">2</span>, <span class="string">'Jerry'</span>: <span class="number">1</span>, <span class="string">'Alice'</span>: <span class="number">1</span>&#125;)</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>Counter(&#123;<span class="string">'cat'</span>: <span class="number">2</span>, <span class="string">'dog'</span>: <span class="number">4</span>&#125;)</span><br><span class="line">Counter(&#123;<span class="string">'dog'</span>: <span class="number">4</span>, <span class="string">'cat'</span>: <span class="number">2</span>&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>可以看到，一个Counter对象是字典的一个子类，传入任意iterable时，会按key出现次数的顺序对Counter对象里的元素排序。当访问元素的时候，如果引用的key不存在于字典中，不会弹出keyerror而是返回0。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>c = Counter(&#123;<span class="string">'cat'</span>: <span class="number">2</span>, <span class="string">'dog'</span>: <span class="number">4</span>&#125;)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>c[<span class="string">'duck'</span>]</span><br><span class="line"><span class="number">0</span></span><br></pre></td></tr></table></figure>
+
+<p>此外，Counter对象还有一些常用的方法</p>
+<ul>
+<li>elements()</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>c = Counter(<span class="string">'helloworld!'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>list(c.elements())</span><br><span class="line">[<span class="string">'!'</span>, <span class="string">'e'</span>, <span class="string">'d'</span>, <span class="string">'h'</span>, <span class="string">'l'</span>, <span class="string">'l'</span>, <span class="string">'l'</span>, <span class="string">'o'</span>, <span class="string">'o'</span>, <span class="string">'r'</span>, <span class="string">'w'</span>]</span><br></pre></td></tr></table></figure>
+
+<p>该方法返回Counter中的所有key，按照一定顺序排序</p>
+<ul>
+<li>most_common()</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>Counter(<span class="string">'dsfhbfshddas'</span>).most_common(<span class="number">3</span>)</span><br><span class="line">[(<span class="string">'d'</span>, <span class="number">3</span>), (<span class="string">'s'</span>, <span class="number">3</span>), (<span class="string">'f'</span>, <span class="number">2</span>)]</span><br></pre></td></tr></table></figure>
+
+<p>该方法返回Counter中出现次数最多的k个(key, value) pair对</p>
+<p>###deque</p>
+<p>list对象通过索引访问元素的时间复杂度为O(1)，但是append和pop操作只能从尾部进行，当数据量很大时，我们想对头部元素进行操作时就会很耗时。deque是Collections模块里一个双向队列，支持从两端pop或者append元素，且两端的时间开销都为O(1)</p>
+<p>deque对象支持从list或者字符串创建</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>deque(<span class="string">'abcde'</span>)</span><br><span class="line">deque([<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>])</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>append, appendleft</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>d = deque(<span class="string">'bcde'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>d.append(<span class="string">'f'</span>)</span><br><span class="line">deque([<span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>, <span class="string">'f'</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>d.appendleft(<span class="string">'a'</span>)</span><br><span class="line">deque([<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>, <span class="string">'f'</span>])</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>pop, popleft</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>d = deque(<span class="string">'bcde'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>d.pop()</span><br><span class="line"><span class="string">'e'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>d.popleft()</span><br><span class="line"><span class="string">'b'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>d</span><br><span class="line">deque([<span class="string">'c'</span>, <span class="string">'d'</span>])</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>extend, extendleft</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>d = deque(<span class="string">'cde'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>d.extend(<span class="string">'fgh'</span>)</span><br><span class="line">deque([<span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>, <span class="string">'f'</span>, <span class="string">'g'</span>, <span class="string">'h'</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>d.extendleft(<span class="string">'ab'</span>)</span><br><span class="line">deque([<span class="string">'b'</span>, <span class="string">'a'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>, <span class="string">'f'</span>, <span class="string">'g'</span>, <span class="string">'h'</span>])</span><br></pre></td></tr></table></figure>
+
+<p>可见，在extendleft方法中，iterable参数中的顺序将被反过来添加。</p>
+<ul>
+<li>rotate</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>d = deque(<span class="string">'cde'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>d.rotate(<span class="number">2</span>)   <span class="comment"># right rotation</span></span><br><span class="line">deque([<span class="string">'d'</span>, <span class="string">'e'</span>, <span class="string">'c'</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>d.rotate(<span class="number">-1</span>)  <span class="comment"># left rotation</span></span><br><span class="line">deque([<span class="string">'e'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>])</span><br></pre></td></tr></table></figure>
+
+
+
+<p>###namedtuple</p>
+<p>namedtuple用来创建自定义的tuple对象，<strong>支持用属性和索引访问tuple里的元素</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>clock = namedtuple(<span class="string">'clock'</span>, [<span class="string">'hour'</span>, <span class="string">'minute'</span>, <span class="string">'second'</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>t1 = clock(<span class="number">12</span>, <span class="number">0</span>, <span class="number">0</span>)  <span class="comment"># 12点0分0秒</span></span><br><span class="line">clock(hour=<span class="number">12</span>, minute=<span class="number">0</span>, second=<span class="number">0</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>t1.hour</span><br><span class="line"><span class="number">12</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>t1[<span class="number">0</span>]</span><br><span class="line"><span class="number">12</span></span><br></pre></td></tr></table></figure>
+
+<p>我们用namedtuple很方便地定义了一种时钟类型的数据结构，且具有tuple的不变形，十分好用</p>
+<p>###OrderedDict</p>
+<p>我们在使用dict时，key是无序的，因此在遍历dict的过程中无法确定key的顺序</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>d = &#123;<span class="string">'b'</span>: <span class="number">2</span>, <span class="string">'a'</span>: <span class="number">1</span>, <span class="string">'c'</span>: <span class="number">3</span>&#125;</span><br><span class="line">&#123;<span class="string">'a'</span>: <span class="number">1</span>, <span class="string">'c'</span>: <span class="number">3</span>, <span class="string">'b'</span>: <span class="number">2</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<p>要确定key的顺序可以使用OrderedDict，<strong>它会按照插入key的顺序排列</strong>，注意不是key本身的顺序</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>d = OrderedDict([(<span class="string">'b'</span>, <span class="number">2</span>), (<span class="string">'a'</span>, <span class="number">1</span>), (<span class="string">'c'</span>, <span class="number">3</span>)])</span><br><span class="line">OrderedDict([(<span class="string">'b'</span>, <span class="number">2</span>), (<span class="string">'a'</span>, <span class="number">1</span>), (<span class="string">'c'</span>, <span class="number">3</span>)])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>d[<span class="string">'d'</span>] = <span class="number">5</span></span><br><span class="line">OrderedDict([(<span class="string">'b'</span>, <span class="number">2</span>), (<span class="string">'a'</span>, <span class="number">1</span>), (<span class="string">'c'</span>, <span class="number">3</span>), (<span class="string">'d'</span>, <span class="number">5</span>)])</span><br></pre></td></tr></table></figure>
+
+<p>此外，新版OrderedDict还支持key顺序移动</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>d = OrderedDict.fromkeys(<span class="string">'abcde'</span>)</span><br><span class="line">OrderedDict([(<span class="string">'a'</span>, <span class="literal">None</span>), (<span class="string">'b'</span>, <span class="literal">None</span>), (<span class="string">'c'</span>, <span class="literal">None</span>), (<span class="string">'d'</span>, <span class="literal">None</span>), (<span class="string">'e'</span>, <span class="literal">None</span>)])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>d.move_to_end(<span class="string">'b'</span>)  <span class="comment"># 将b移动到末尾</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">""</span>.join(d.keys())</span><br><span class="line"><span class="string">'acdeb'</span></span><br></pre></td></tr></table></figure>
+
+
+    </div>
+
+    
+    
+    
+      
+        <div class="reward-container">
+  <div>休息一下，喝杯咖啡，继续创作</div>
+  <button disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="Wenping WANG 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.png" alt="Wenping WANG 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Wenping WANG
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://tristawwp.github.io/posts/b63a9447.html" title="python之collections">http://tristawwp.github.io/posts/b63a9447.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/null" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/posts/b913c8d0.html" rel="next" title="我的NO.1小小飞mavic mini">
+                  <i class="fa fa-chevron-left"></i> 我的NO.1小小飞mavic mini
+                </a>
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+                <a href="/posts/42e5ab5d.html" rel="prev" title="python之字符串格式化">
+                  python之字符串格式化 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="comments"></div>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Collections"><span class="nav-number">1.</span> <span class="nav-text">Collections</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="site-author-image" itemprop="image" alt="Wenping WANG"
+    src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Wenping WANG</p>
+  <div class="site-description" itemprop="description">热爱生活                 立志成为一名时代的建设者</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">20</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/TristaWWP" title="GitHub &amp;rarr; https:&#x2F;&#x2F;github.com&#x2F;TristaWWP" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://blog.csdn.net/Trista_wang" title="CSDN &amp;rarr; https:&#x2F;&#x2F;blog.csdn.net&#x2F;Trista_wang" rel="noopener" target="_blank"><i class="fa fa-fw fa-crosshairs"></i>CSDN</a>
+      </span>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<!-- <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Wenping WANG</span>
+
+ <!-- <div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_pv">
+  来访客数:<span id="busuanzi_value_site_pv"></span>
+</span>
+</div>
+-->
+</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='0,0,255' opacity='0.5' zIndex='-1' count='90' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+<script src="/js/utils.js?v=7.4.2"></script>
+<script src="/js/schemes/muse.js?v=7.4.2"></script>
+<script src="/js/next-boot.js?v=7.4.2"></script>
+
+
+
+  
+
+
+
+
+
+
+  <script src="/js/local-search.js?v=7.4.2"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+
+<script>
+NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(item => {
+    return GUEST.includes(item);
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: '8lNxAul7JTs905OOdFQvT8Jf-gzGzoHsz',
+    appKey: '76DkhVK8GO2ahde1Yc42DP7j',
+    placeholder: "Just go go",
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false,
+    lang: '' || 'zh-cn',
+    path: location.pathname,
+    recordIP: false,
+    serverURLs: ''
+  });
+}, window.Valine);
+</script>
+
+</body>
+</html>

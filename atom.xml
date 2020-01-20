@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://TristaWWP.github.io/"/>
-  <updated>2020-01-04T14:11:30.422Z</updated>
+  <updated>2020-01-20T06:51:02.383Z</updated>
   <id>http://TristaWWP.github.io/</id>
   
   <author>
@@ -17,11 +17,55 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>python之字符串格式化</title>
+    <link href="http://TristaWWP.github.io/posts/42e5ab5d.html"/>
+    <id>http://TristaWWP.github.io/posts/42e5ab5d.html</id>
+    <published>2020-01-20T06:47:30.000Z</published>
+    <updated>2020-01-20T06:51:02.383Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Python字符串格式化&quot;&gt;&lt;a href=&quot;#Python字符串格式化&quot; class=&quot;headerlink&quot; title=&quot;Python字符串格式化&quot;&gt;&lt;/a&gt;Python字符串格式化&lt;/h2&gt;&lt;h3 id&gt;&lt;a href=&quot;#&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="python" scheme="http://TristaWWP.github.io/categories/python/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>python之collections</title>
+    <link href="http://TristaWWP.github.io/posts/b63a9447.html"/>
+    <id>http://TristaWWP.github.io/posts/b63a9447.html</id>
+    <published>2020-01-20T06:47:11.000Z</published>
+    <updated>2020-01-20T06:49:48.394Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Collections&quot;&gt;&lt;a href=&quot;#Collections&quot; class=&quot;headerlink&quot; title=&quot;Collections&quot;&gt;&lt;/a&gt;Collections&lt;/h2&gt;&lt;p&gt;Python collections模块是一个非常实用且高效的模块，今天我们就来一起探索。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="python" scheme="http://TristaWWP.github.io/categories/python/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>我的NO.1小小飞mavic mini</title>
     <link href="http://TristaWWP.github.io/posts/b913c8d0.html"/>
     <id>http://TristaWWP.github.io/posts/b913c8d0.html</id>
     <published>2020-01-04T14:09:45.000Z</published>
-    <updated>2020-01-04T14:11:30.422Z</updated>
+    <updated>2020-01-04T14:11:46.271Z</updated>
     
     <summary type="html">
     

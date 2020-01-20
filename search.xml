@@ -1,6 +1,203 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>python之字符串格式化</title>
+    <url>/posts/42e5ab5d.html</url>
+    <content><![CDATA[<h2 id="Python字符串格式化"><a href="#Python字符串格式化" class="headerlink" title="Python字符串格式化"></a>Python字符串格式化</h2><h3 id><a href="#" class="headerlink" title="%"></a>%</h3><p>用<strong>格式化符号%</strong>进行格式化字符串时，Python使用一个字符串作为模板。模板中有格式符，这些格式符为真实值预留位置，并说明真实数值应该呈现的格式。Python用一个tuple将多个值传递给模板，每个值对应一个格式符。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">"%s has %d dollars"</span> % (<span class="string">'Tom'</span>, <span class="number">200</span>))</span><br><span class="line">Tom has <span class="number">200</span> dollars</span><br></pre></td></tr></table></figure>
+
+<p>当我们的模板中含有过多的格式符时，仅仅依靠格式符的顺序传入真实值，有可能会出现衣服扣子扣错位置的现象</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">"%s is %d years old and %s was born in %s"</span> % (<span class="string">'Tom'</span>, <span class="string">'15'</span>, <span class="string">'Sanfrancisco'</span>))</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">TypeError: %d format: a number <span class="keyword">is</span> required, <span class="keyword">not</span> str</span><br></pre></td></tr></table></figure>
+
+<p>为了避免这种现象，我们可以给格式符指定名称，用字典来传递真实值</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">"%(name1)s is %(age)d years old and %(name2)s was born in %(place)s"</span> % &#123;<span class="string">'name1'</span>: <span class="string">'Tom'</span>, <span class="string">'age'</span>: <span class="number">15</span>, <span class="string">'name2'</span>: <span class="string">'Alice'</span>, <span class="string">'place'</span>: <span class="string">'Sanfrancisco'</span>&#125;)</span><br><span class="line">Tom <span class="keyword">is</span> <span class="number">15</span> years old <span class="keyword">and</span> Alice was born <span class="keyword">in</span> Sanfrancisco</span><br></pre></td></tr></table></figure>
+
+<p>除了%d和%s外，还有如下字符串格式符的类型码</p>
+<table>
+<thead>
+<tr>
+<th>格式符</th>
+<th>类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>%s</td>
+<td>字符串</td>
+</tr>
+<tr>
+<td>%c</td>
+<td>单个字符</td>
+</tr>
+<tr>
+<td>%d, %i</td>
+<td>十进制整数</td>
+</tr>
+<tr>
+<td>%o</td>
+<td>八进制整数</td>
+</tr>
+<tr>
+<td>%x</td>
+<td>十六进制整数</td>
+</tr>
+<tr>
+<td>%f</td>
+<td>浮点数</td>
+</tr>
+<tr>
+<td>%e</td>
+<td>指数(e为底)</td>
+</tr>
+</tbody></table>
+<p>除此之外，我们还可以对格式符的格式进行控制，模板：%[(name)][flags][width].[precision]typecode</p>
+<ul>
+<li><p>其中name是名字</p>
+</li>
+<li><p>flags是标志位，可以有+，-，’ ‘， 0，+表示右对齐。-表示左对齐。’ ‘为一个空格，表示在正数的左侧填充一个空格，从而与负数对齐，0表示使用0填充</p>
+</li>
+<li><p>width表示显示宽度</p>
+</li>
+<li><p>precision表示小数点后精度</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">"%.3f"</span> % <span class="number">3.1415926</span>)</span><br><span class="line"><span class="number">3.142</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">"%03d"</span> % <span class="number">1</span>)</span><br><span class="line"><span class="number">001</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="format"><a href="#format" class="headerlink" title="format"></a>format</h3><p>相对基本格式化输出采用‘%’的方法，format功能更强大，该函数把字符串当成一个模板，通过传入的参数进行格式化，并且使用大括号‘{}’作为特殊字符代替‘%’</p>
+<p>该函数提供了多种位置匹配方式</p>
+<ul>
+<li>不带编号</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">"My name is &#123;&#125;"</span>.format(<span class="string">'Jerry'</span>))</span><br><span class="line">My name <span class="keyword">is</span> Jerry</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>带数字编号</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">"&#123;0&#125; is &#123;1&#125; years old"</span>.format(<span class="string">'Tom'</span>, <span class="number">12</span>))</span><br><span class="line">Tom <span class="keyword">is</span> <span class="number">12</span> years old</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>带名称匹配</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">"&#123;name&#125; is &#123;age&#125; years old"</span>.format(name=<span class="string">'Tom'</span>, age=<span class="number">12</span>))</span><br><span class="line">Tom <span class="keyword">is</span> <span class="number">12</span> years old</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>通过list匹配</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>list = [<span class="string">'Tom'</span>, <span class="number">12</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">"&#123;l[0]&#125; is &#123;l[1]&#125; years old"</span>.format(l=list))</span><br><span class="line">Tom <span class="keyword">is</span> <span class="number">12</span> years old</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>通过字典匹配</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>dict = &#123;<span class="string">'name'</span>: <span class="string">'Tom'</span>, <span class="string">'age'</span>: <span class="number">12</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">"&#123;d[name]&#125; is &#123;d[age]&#125; years old"</span>.format(d=dict))</span><br><span class="line">Tom <span class="keyword">is</span> <span class="number">12</span> years old</span><br></pre></td></tr></table></figure>
+
+<p>和%不同的是，format函数不需要提前指定真实值的类型，这样的设定更符合python语言的特性，且使用起来更加方便，当我们需要格式化输出指定的内容时，只需要在{}里添加内容即可</p>
+<ul>
+<li>保留小数点位数</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">"&#123;:.3f&#125;"</span>.format(<span class="number">3.1415926</span>))</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>转为二进制</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">"&#123;:b&#125;"</span>.format(<span class="number">2</span>))</span><br><span class="line"><span class="number">10</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>转为十六进制</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">"&#123;:x&#125;"</span>.format(<span class="number">15</span>))</span><br><span class="line">f</span><br></pre></td></tr></table></figure>
+
+<p>其他功能</p>
+<ul>
+<li>格式化时间</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">from</span> datetime <span class="keyword">import</span> datetime</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>now = datetime.now()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">'&#123;:%Y-%m-%d %X&#125;'</span>.format(now))</span><br><span class="line"><span class="number">2020</span><span class="number">-01</span><span class="number">-19</span> <span class="number">22</span>:<span class="number">39</span>:<span class="number">51</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>format函数定义的字符串模板还可以当做函数使用</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>print_fnc = <span class="string">"&#123;&#125; is the biggest company in the world"</span>.format  <span class="comment"># 此处print_fnc为一个函数</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print_fnc(<span class="string">'Apple'</span>)</span><br><span class="line"><span class="string">'Apple is the biggest company in the world'</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>python之collections</title>
+    <url>/posts/b63a9447.html</url>
+    <content><![CDATA[<h2 id="Collections"><a href="#Collections" class="headerlink" title="Collections"></a>Collections</h2><p>Python collections模块是一个非常实用且高效的模块，今天我们就来一起探索。</p>
+<a id="more"></a>
+
+<p>###Counter</p>
+<p>Counter是一个简单的计数器，传入的Counter的对象可以为字符串，list或者dict，返回的Counter对象对字符串，list或者dict里的元素进行简单的计数。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>Counter(<span class="string">'helloworld!'</span>)</span><br><span class="line">Counter(&#123;<span class="string">'l'</span>: <span class="number">3</span>, <span class="string">'o'</span>: <span class="number">2</span>, <span class="string">'!'</span>: <span class="number">1</span>, <span class="string">'e'</span>: <span class="number">1</span>, <span class="string">'d'</span>: <span class="number">1</span>, <span class="string">'h'</span>: <span class="number">1</span>, <span class="string">'r'</span>: <span class="number">1</span>, <span class="string">'w'</span>: <span class="number">1</span>&#125;)</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>Counter([<span class="string">'Tom'</span>, <span class="string">'Jerry'</span>, <span class="string">'Tom'</span>, <span class="string">'Alice'</span>])</span><br><span class="line">Counter(&#123;<span class="string">'Tom'</span>: <span class="number">2</span>, <span class="string">'Jerry'</span>: <span class="number">1</span>, <span class="string">'Alice'</span>: <span class="number">1</span>&#125;)</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>Counter(&#123;<span class="string">'cat'</span>: <span class="number">2</span>, <span class="string">'dog'</span>: <span class="number">4</span>&#125;)</span><br><span class="line">Counter(&#123;<span class="string">'dog'</span>: <span class="number">4</span>, <span class="string">'cat'</span>: <span class="number">2</span>&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>可以看到，一个Counter对象是字典的一个子类，传入任意iterable时，会按key出现次数的顺序对Counter对象里的元素排序。当访问元素的时候，如果引用的key不存在于字典中，不会弹出keyerror而是返回0。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>c = Counter(&#123;<span class="string">'cat'</span>: <span class="number">2</span>, <span class="string">'dog'</span>: <span class="number">4</span>&#125;)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>c[<span class="string">'duck'</span>]</span><br><span class="line"><span class="number">0</span></span><br></pre></td></tr></table></figure>
+
+<p>此外，Counter对象还有一些常用的方法</p>
+<ul>
+<li>elements()</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>c = Counter(<span class="string">'helloworld!'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>list(c.elements())</span><br><span class="line">[<span class="string">'!'</span>, <span class="string">'e'</span>, <span class="string">'d'</span>, <span class="string">'h'</span>, <span class="string">'l'</span>, <span class="string">'l'</span>, <span class="string">'l'</span>, <span class="string">'o'</span>, <span class="string">'o'</span>, <span class="string">'r'</span>, <span class="string">'w'</span>]</span><br></pre></td></tr></table></figure>
+
+<p>该方法返回Counter中的所有key，按照一定顺序排序</p>
+<ul>
+<li>most_common()</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>Counter(<span class="string">'dsfhbfshddas'</span>).most_common(<span class="number">3</span>)</span><br><span class="line">[(<span class="string">'d'</span>, <span class="number">3</span>), (<span class="string">'s'</span>, <span class="number">3</span>), (<span class="string">'f'</span>, <span class="number">2</span>)]</span><br></pre></td></tr></table></figure>
+
+<p>该方法返回Counter中出现次数最多的k个(key, value) pair对</p>
+<p>###deque</p>
+<p>list对象通过索引访问元素的时间复杂度为O(1)，但是append和pop操作只能从尾部进行，当数据量很大时，我们想对头部元素进行操作时就会很耗时。deque是Collections模块里一个双向队列，支持从两端pop或者append元素，且两端的时间开销都为O(1)</p>
+<p>deque对象支持从list或者字符串创建</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>deque(<span class="string">'abcde'</span>)</span><br><span class="line">deque([<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>])</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>append, appendleft</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>d = deque(<span class="string">'bcde'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>d.append(<span class="string">'f'</span>)</span><br><span class="line">deque([<span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>, <span class="string">'f'</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>d.appendleft(<span class="string">'a'</span>)</span><br><span class="line">deque([<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>, <span class="string">'f'</span>])</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>pop, popleft</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>d = deque(<span class="string">'bcde'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>d.pop()</span><br><span class="line"><span class="string">'e'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>d.popleft()</span><br><span class="line"><span class="string">'b'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>d</span><br><span class="line">deque([<span class="string">'c'</span>, <span class="string">'d'</span>])</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>extend, extendleft</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>d = deque(<span class="string">'cde'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>d.extend(<span class="string">'fgh'</span>)</span><br><span class="line">deque([<span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>, <span class="string">'f'</span>, <span class="string">'g'</span>, <span class="string">'h'</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>d.extendleft(<span class="string">'ab'</span>)</span><br><span class="line">deque([<span class="string">'b'</span>, <span class="string">'a'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>, <span class="string">'f'</span>, <span class="string">'g'</span>, <span class="string">'h'</span>])</span><br></pre></td></tr></table></figure>
+
+<p>可见，在extendleft方法中，iterable参数中的顺序将被反过来添加。</p>
+<ul>
+<li>rotate</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>d = deque(<span class="string">'cde'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>d.rotate(<span class="number">2</span>)   <span class="comment"># right rotation</span></span><br><span class="line">deque([<span class="string">'d'</span>, <span class="string">'e'</span>, <span class="string">'c'</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>d.rotate(<span class="number">-1</span>)  <span class="comment"># left rotation</span></span><br><span class="line">deque([<span class="string">'e'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>])</span><br></pre></td></tr></table></figure>
+
+
+
+<p>###namedtuple</p>
+<p>namedtuple用来创建自定义的tuple对象，<strong>支持用属性和索引访问tuple里的元素</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>clock = namedtuple(<span class="string">'clock'</span>, [<span class="string">'hour'</span>, <span class="string">'minute'</span>, <span class="string">'second'</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>t1 = clock(<span class="number">12</span>, <span class="number">0</span>, <span class="number">0</span>)  <span class="comment"># 12点0分0秒</span></span><br><span class="line">clock(hour=<span class="number">12</span>, minute=<span class="number">0</span>, second=<span class="number">0</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>t1.hour</span><br><span class="line"><span class="number">12</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>t1[<span class="number">0</span>]</span><br><span class="line"><span class="number">12</span></span><br></pre></td></tr></table></figure>
+
+<p>我们用namedtuple很方便地定义了一种时钟类型的数据结构，且具有tuple的不变形，十分好用</p>
+<p>###OrderedDict</p>
+<p>我们在使用dict时，key是无序的，因此在遍历dict的过程中无法确定key的顺序</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>d = &#123;<span class="string">'b'</span>: <span class="number">2</span>, <span class="string">'a'</span>: <span class="number">1</span>, <span class="string">'c'</span>: <span class="number">3</span>&#125;</span><br><span class="line">&#123;<span class="string">'a'</span>: <span class="number">1</span>, <span class="string">'c'</span>: <span class="number">3</span>, <span class="string">'b'</span>: <span class="number">2</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<p>要确定key的顺序可以使用OrderedDict，<strong>它会按照插入key的顺序排列</strong>，注意不是key本身的顺序</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>d = OrderedDict([(<span class="string">'b'</span>, <span class="number">2</span>), (<span class="string">'a'</span>, <span class="number">1</span>), (<span class="string">'c'</span>, <span class="number">3</span>)])</span><br><span class="line">OrderedDict([(<span class="string">'b'</span>, <span class="number">2</span>), (<span class="string">'a'</span>, <span class="number">1</span>), (<span class="string">'c'</span>, <span class="number">3</span>)])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>d[<span class="string">'d'</span>] = <span class="number">5</span></span><br><span class="line">OrderedDict([(<span class="string">'b'</span>, <span class="number">2</span>), (<span class="string">'a'</span>, <span class="number">1</span>), (<span class="string">'c'</span>, <span class="number">3</span>), (<span class="string">'d'</span>, <span class="number">5</span>)])</span><br></pre></td></tr></table></figure>
+
+<p>此外，新版OrderedDict还支持key顺序移动</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>d = OrderedDict.fromkeys(<span class="string">'abcde'</span>)</span><br><span class="line">OrderedDict([(<span class="string">'a'</span>, <span class="literal">None</span>), (<span class="string">'b'</span>, <span class="literal">None</span>), (<span class="string">'c'</span>, <span class="literal">None</span>), (<span class="string">'d'</span>, <span class="literal">None</span>), (<span class="string">'e'</span>, <span class="literal">None</span>)])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>d.move_to_end(<span class="string">'b'</span>)  <span class="comment"># 将b移动到末尾</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">""</span>.join(d.keys())</span><br><span class="line"><span class="string">'acdeb'</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+  </entry>
+  <entry>
     <title>我的NO.1小小飞mavic mini</title>
     <url>/posts/b913c8d0.html</url>
     <content><![CDATA[<p>2019年的圣诞节，收到了我的第一款无人机—-小小飞，大疆mavic mini</p>
