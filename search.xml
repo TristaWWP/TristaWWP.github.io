@@ -131,8 +131,7 @@
     <content><![CDATA[<h2 id="Collections"><a href="#Collections" class="headerlink" title="Collections"></a>Collections</h2><p>Python collections模块是一个非常实用且高效的模块，今天我们就来一起探索。</p>
 <a id="more"></a>
 
-<p>###Counter</p>
-<p>Counter是一个简单的计数器，传入的Counter的对象可以为字符串，list或者dict，返回的Counter对象对字符串，list或者dict里的元素进行简单的计数。</p>
+<h3 id="Counter"><a href="#Counter" class="headerlink" title="Counter"></a>Counter</h3><p>Counter是一个简单的计数器，传入的Counter的对象可以为字符串，list或者dict，返回的Counter对象对字符串，list或者dict里的元素进行简单的计数。</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>Counter(<span class="string">'helloworld!'</span>)</span><br><span class="line">Counter(&#123;<span class="string">'l'</span>: <span class="number">3</span>, <span class="string">'o'</span>: <span class="number">2</span>, <span class="string">'!'</span>: <span class="number">1</span>, <span class="string">'e'</span>: <span class="number">1</span>, <span class="string">'d'</span>: <span class="number">1</span>, <span class="string">'h'</span>: <span class="number">1</span>, <span class="string">'r'</span>: <span class="number">1</span>, <span class="string">'w'</span>: <span class="number">1</span>&#125;)</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>Counter([<span class="string">'Tom'</span>, <span class="string">'Jerry'</span>, <span class="string">'Tom'</span>, <span class="string">'Alice'</span>])</span><br><span class="line">Counter(&#123;<span class="string">'Tom'</span>: <span class="number">2</span>, <span class="string">'Jerry'</span>: <span class="number">1</span>, <span class="string">'Alice'</span>: <span class="number">1</span>&#125;)</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>Counter(&#123;<span class="string">'cat'</span>: <span class="number">2</span>, <span class="string">'dog'</span>: <span class="number">4</span>&#125;)</span><br><span class="line">Counter(&#123;<span class="string">'dog'</span>: <span class="number">4</span>, <span class="string">'cat'</span>: <span class="number">2</span>&#125;)</span><br></pre></td></tr></table></figure>
 
 <p>可以看到，一个Counter对象是字典的一个子类，传入任意iterable时，会按key出现次数的顺序对Counter对象里的元素排序。当访问元素的时候，如果引用的key不存在于字典中，不会弹出keyerror而是返回0。</p>
@@ -151,8 +150,7 @@
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>Counter(<span class="string">'dsfhbfshddas'</span>).most_common(<span class="number">3</span>)</span><br><span class="line">[(<span class="string">'d'</span>, <span class="number">3</span>), (<span class="string">'s'</span>, <span class="number">3</span>), (<span class="string">'f'</span>, <span class="number">2</span>)]</span><br></pre></td></tr></table></figure>
 
 <p>该方法返回Counter中出现次数最多的k个(key, value) pair对</p>
-<p>###deque</p>
-<p>list对象通过索引访问元素的时间复杂度为O(1)，但是append和pop操作只能从尾部进行，当数据量很大时，我们想对头部元素进行操作时就会很耗时。deque是Collections模块里一个双向队列，支持从两端pop或者append元素，且两端的时间开销都为O(1)</p>
+<h3 id="deque"><a href="#deque" class="headerlink" title="deque"></a>deque</h3><p>list对象通过索引访问元素的时间复杂度为O(1)，但是append和pop操作只能从尾部进行，当数据量很大时，我们想对头部元素进行操作时就会很耗时。deque是Collections模块里一个双向队列，支持从两端pop或者append元素，且两端的时间开销都为O(1)</p>
 <p>deque对象支持从list或者字符串创建</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>deque(<span class="string">'abcde'</span>)</span><br><span class="line">deque([<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>])</span><br></pre></td></tr></table></figure>
 
@@ -179,13 +177,11 @@
 
 
 
-<p>###namedtuple</p>
-<p>namedtuple用来创建自定义的tuple对象，<strong>支持用属性和索引访问tuple里的元素</strong></p>
+<h3 id="namedtuple"><a href="#namedtuple" class="headerlink" title="namedtuple"></a>namedtuple</h3><p>namedtuple用来创建自定义的tuple对象，<strong>支持用属性和索引访问tuple里的元素</strong></p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>clock = namedtuple(<span class="string">'clock'</span>, [<span class="string">'hour'</span>, <span class="string">'minute'</span>, <span class="string">'second'</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>t1 = clock(<span class="number">12</span>, <span class="number">0</span>, <span class="number">0</span>)  <span class="comment"># 12点0分0秒</span></span><br><span class="line">clock(hour=<span class="number">12</span>, minute=<span class="number">0</span>, second=<span class="number">0</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>t1.hour</span><br><span class="line"><span class="number">12</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>t1[<span class="number">0</span>]</span><br><span class="line"><span class="number">12</span></span><br></pre></td></tr></table></figure>
 
 <p>我们用namedtuple很方便地定义了一种时钟类型的数据结构，且具有tuple的不变形，十分好用</p>
-<p>###OrderedDict</p>
-<p>我们在使用dict时，key是无序的，因此在遍历dict的过程中无法确定key的顺序</p>
+<h3 id="OrderedDict"><a href="#OrderedDict" class="headerlink" title="OrderedDict"></a>OrderedDict</h3><p>我们在使用dict时，key是无序的，因此在遍历dict的过程中无法确定key的顺序</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>d = &#123;<span class="string">'b'</span>: <span class="number">2</span>, <span class="string">'a'</span>: <span class="number">1</span>, <span class="string">'c'</span>: <span class="number">3</span>&#125;</span><br><span class="line">&#123;<span class="string">'a'</span>: <span class="number">1</span>, <span class="string">'c'</span>: <span class="number">3</span>, <span class="string">'b'</span>: <span class="number">2</span>&#125;</span><br></pre></td></tr></table></figure>
 
 <p>要确定key的顺序可以使用OrderedDict，<strong>它会按照插入key的顺序排列</strong>，注意不是key本身的顺序</p>
