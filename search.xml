@@ -3,7 +3,8 @@
   <entry>
     <title>python之字符串格式化</title>
     <url>/posts/42e5ab5d.html</url>
-    <content><![CDATA[<!--more今天来学习字符串格式化-->
+    <content><![CDATA[<p>今天来学习字符串格式化</p>
+<a id="more"></a>
 <h2 id="Python字符串格式化"><a href="#Python字符串格式化" class="headerlink" title="Python字符串格式化"></a>Python字符串格式化</h2><h3 id><a href="#" class="headerlink" title="%"></a>%</h3><p>用<strong>格式化符号%</strong>进行格式化字符串时，Python使用一个字符串作为模板。模板中有格式符，这些格式符为真实值预留位置，并说明真实数值应该呈现的格式。Python用一个tuple将多个值传递给模板，每个值对应一个格式符。</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">"%s has %d dollars"</span> % (<span class="string">'Tom'</span>, <span class="number">200</span>))</span><br><span class="line">Tom has <span class="number">200</span> dollars</span><br></pre></td></tr></table></figure>
 

@@ -242,7 +242,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-01-20 14:47:30 / 修改时间：14:58:46" itemprop="dateCreated datePublished" datetime="2020-01-20T14:47:30+08:00">2020-01-20</time>
+              <time title="创建时间：2020-01-20 14:47:30 / 修改时间：15:02:42" itemprop="dateCreated datePublished" datetime="2020-01-20T14:47:30+08:00">2020-01-20</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -295,123 +295,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <!--more今天来学习字符串格式化-->
-<h2 id="Python字符串格式化"><a href="#Python字符串格式化" class="headerlink" title="Python字符串格式化"></a>Python字符串格式化</h2><h3 id><a href="#" class="headerlink" title="%"></a>%</h3><p>用<strong>格式化符号%</strong>进行格式化字符串时，Python使用一个字符串作为模板。模板中有格式符，这些格式符为真实值预留位置，并说明真实数值应该呈现的格式。Python用一个tuple将多个值传递给模板，每个值对应一个格式符。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">"%s has %d dollars"</span> % (<span class="string">'Tom'</span>, <span class="number">200</span>))</span><br><span class="line">Tom has <span class="number">200</span> dollars</span><br></pre></td></tr></table></figure>
-
-<p>当我们的模板中含有过多的格式符时，仅仅依靠格式符的顺序传入真实值，有可能会出现衣服扣子扣错位置的现象</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">"%s is %d years old and %s was born in %s"</span> % (<span class="string">'Tom'</span>, <span class="string">'15'</span>, <span class="string">'Sanfrancisco'</span>))</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">TypeError: %d format: a number <span class="keyword">is</span> required, <span class="keyword">not</span> str</span><br></pre></td></tr></table></figure>
-
-<p>为了避免这种现象，我们可以给格式符指定名称，用字典来传递真实值</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">"%(name1)s is %(age)d years old and %(name2)s was born in %(place)s"</span> % &#123;<span class="string">'name1'</span>: <span class="string">'Tom'</span>, <span class="string">'age'</span>: <span class="number">15</span>, <span class="string">'name2'</span>: <span class="string">'Alice'</span>, <span class="string">'place'</span>: <span class="string">'Sanfrancisco'</span>&#125;)</span><br><span class="line">Tom <span class="keyword">is</span> <span class="number">15</span> years old <span class="keyword">and</span> Alice was born <span class="keyword">in</span> Sanfrancisco</span><br></pre></td></tr></table></figure>
-
-<p>除了%d和%s外，还有如下字符串格式符的类型码</p>
-<table>
-<thead>
-<tr>
-<th>格式符</th>
-<th>类型</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>%s</td>
-<td>字符串</td>
-</tr>
-<tr>
-<td>%c</td>
-<td>单个字符</td>
-</tr>
-<tr>
-<td>%d, %i</td>
-<td>十进制整数</td>
-</tr>
-<tr>
-<td>%o</td>
-<td>八进制整数</td>
-</tr>
-<tr>
-<td>%x</td>
-<td>十六进制整数</td>
-</tr>
-<tr>
-<td>%f</td>
-<td>浮点数</td>
-</tr>
-<tr>
-<td>%e</td>
-<td>指数(e为底)</td>
-</tr>
-</tbody></table>
-<p>除此之外，我们还可以对格式符的格式进行控制，模板：%[(name)][flags][width].[precision]typecode</p>
-<ul>
-<li><p>其中name是名字</p>
-</li>
-<li><p>flags是标志位，可以有+，-，’ ‘， 0，+表示右对齐。-表示左对齐。’ ‘为一个空格，表示在正数的左侧填充一个空格，从而与负数对齐，0表示使用0填充</p>
-</li>
-<li><p>width表示显示宽度</p>
-</li>
-<li><p>precision表示小数点后精度</p>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">"%.3f"</span> % <span class="number">3.1415926</span>)</span><br><span class="line"><span class="number">3.142</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">"%03d"</span> % <span class="number">1</span>)</span><br><span class="line"><span class="number">001</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="format"><a href="#format" class="headerlink" title="format"></a>format</h3><p>相对基本格式化输出采用‘%’的方法，format功能更强大，该函数把字符串当成一个模板，通过传入的参数进行格式化，并且使用大括号‘{}’作为特殊字符代替‘%’</p>
-<p>该函数提供了多种位置匹配方式</p>
-<ul>
-<li>不带编号</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">"My name is &#123;&#125;"</span>.format(<span class="string">'Jerry'</span>))</span><br><span class="line">My name <span class="keyword">is</span> Jerry</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>带数字编号</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">"&#123;0&#125; is &#123;1&#125; years old"</span>.format(<span class="string">'Tom'</span>, <span class="number">12</span>))</span><br><span class="line">Tom <span class="keyword">is</span> <span class="number">12</span> years old</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>带名称匹配</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">"&#123;name&#125; is &#123;age&#125; years old"</span>.format(name=<span class="string">'Tom'</span>, age=<span class="number">12</span>))</span><br><span class="line">Tom <span class="keyword">is</span> <span class="number">12</span> years old</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>通过list匹配</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>list = [<span class="string">'Tom'</span>, <span class="number">12</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">"&#123;l[0]&#125; is &#123;l[1]&#125; years old"</span>.format(l=list))</span><br><span class="line">Tom <span class="keyword">is</span> <span class="number">12</span> years old</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>通过字典匹配</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>dict = &#123;<span class="string">'name'</span>: <span class="string">'Tom'</span>, <span class="string">'age'</span>: <span class="number">12</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">"&#123;d[name]&#125; is &#123;d[age]&#125; years old"</span>.format(d=dict))</span><br><span class="line">Tom <span class="keyword">is</span> <span class="number">12</span> years old</span><br></pre></td></tr></table></figure>
-
-<p>和%不同的是，format函数不需要提前指定真实值的类型，这样的设定更符合python语言的特性，且使用起来更加方便，当我们需要格式化输出指定的内容时，只需要在{}里添加内容即可</p>
-<ul>
-<li>保留小数点位数</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">"&#123;:.3f&#125;"</span>.format(<span class="number">3.1415926</span>))</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>转为二进制</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">"&#123;:b&#125;"</span>.format(<span class="number">2</span>))</span><br><span class="line"><span class="number">10</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>转为十六进制</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">"&#123;:x&#125;"</span>.format(<span class="number">15</span>))</span><br><span class="line">f</span><br></pre></td></tr></table></figure>
-
-<p>其他功能</p>
-<ul>
-<li>格式化时间</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">from</span> datetime <span class="keyword">import</span> datetime</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>now = datetime.now()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">'&#123;:%Y-%m-%d %X&#125;'</span>.format(now))</span><br><span class="line"><span class="number">2020</span><span class="number">-01</span><span class="number">-19</span> <span class="number">22</span>:<span class="number">39</span>:<span class="number">51</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>format函数定义的字符串模板还可以当做函数使用</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>print_fnc = <span class="string">"&#123;&#125; is the biggest company in the world"</span>.format  <span class="comment"># 此处print_fnc为一个函数</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print_fnc(<span class="string">'Apple'</span>)</span><br><span class="line"><span class="string">'Apple is the biggest company in the world'</span></span><br></pre></td></tr></table></figure>
-
-
+          <p>今天来学习字符串格式化</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/42e5ab5d.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
