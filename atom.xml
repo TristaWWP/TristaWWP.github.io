@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://TristaWWP.github.io/"/>
-  <updated>2020-01-20T07:02:42.143Z</updated>
+  <updated>2020-05-17T12:55:45.540Z</updated>
   <id>http://TristaWWP.github.io/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>软件开发过程模型及测试模型</title>
+    <link href="http://TristaWWP.github.io/posts/a102dba1.html"/>
+    <id>http://TristaWWP.github.io/posts/a102dba1.html</id>
+    <published>2020-05-17T12:42:04.000Z</published>
+    <updated>2020-05-17T12:55:45.540Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本文将学习软件开发过程模型和测试模型&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="软件测试" scheme="http://TristaWWP.github.io/categories/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>python之字符串格式化</title>
@@ -378,27 +397,6 @@
     
       <category term="随笔" scheme="http://TristaWWP.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>两小时一起快速搭建个人博客</title>
-    <link href="http://TristaWWP.github.io/posts/8f145c5e.html"/>
-    <id>http://TristaWWP.github.io/posts/8f145c5e.html</id>
-    <published>2019-10-20T12:26:00.000Z</published>
-    <updated>2019-11-06T02:33:19.231Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;两个小时的时间我一般用来鉴赏影片，不过搭一个博客刚好也OK。&lt;br&gt;搭建一个自己的博客需三部曲：&lt;strong&gt;&lt;em&gt;下载安装包，部署环境，美化博客页面&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="软件类使用" scheme="http://TristaWWP.github.io/categories/%E8%BD%AF%E4%BB%B6%E7%B1%BB%E4%BD%BF%E7%94%A8/"/>
-    
-    
-      <category term="软件类使用" scheme="http://TristaWWP.github.io/tags/%E8%BD%AF%E4%BB%B6%E7%B1%BB%E4%BD%BF%E7%94%A8/"/>
     
   </entry>
   
