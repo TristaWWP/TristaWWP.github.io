@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://TristaWWP.github.io/"/>
-  <updated>2020-05-17T12:58:41.968Z</updated>
+  <updated>2020-05-17T13:18:19.494Z</updated>
   <id>http://TristaWWP.github.io/</id>
   
   <author>
@@ -15,6 +15,44 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>白盒测试</title>
+    <link href="http://TristaWWP.github.io/posts/e609c8f4.html"/>
+    <id>http://TristaWWP.github.io/posts/e609c8f4.html</id>
+    <published>2020-05-17T13:14:11.000Z</published>
+    <updated>2020-05-17T13:18:19.494Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;白盒测试&quot;&gt;&lt;a href=&quot;#白盒测试&quot; class=&quot;headerlink&quot; title=&quot;白盒测试&quot;&gt;&lt;/a&gt;白盒测试&lt;/h3&gt;&lt;p&gt;白盒测试又称逻辑驱动测试或结构测试，允许检查内部的结构，基于应用程序内部逻辑的知识，通过语句、分支、路径和条件的覆盖率。&lt;br&gt;同黑盒测试的穷举输入类似，如果将程序中每条语句至少执行一次，即穷举路径测试，不切实际，即便实现还是有错误&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="软件测试" scheme="http://TristaWWP.github.io/categories/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>静态测试和动态测试</title>
+    <link href="http://TristaWWP.github.io/posts/5b2bc680.html"/>
+    <id>http://TristaWWP.github.io/posts/5b2bc680.html</id>
+    <published>2020-05-17T13:00:42.000Z</published>
+    <updated>2020-05-17T13:03:48.663Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;根据程序是否运行，测试分为静态测试和动态测试。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="软件测试" scheme="http://TristaWWP.github.io/categories/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>软件开发过程模型及测试模型</title>
@@ -356,46 +394,6 @@
     
     
       <category term="python" scheme="http://TristaWWP.github.io/categories/python/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>W老师语录</title>
-    <link href="http://TristaWWP.github.io/posts/4c3f0d3b.html"/>
-    <id>http://TristaWWP.github.io/posts/4c3f0d3b.html</id>
-    <published>2019-10-26T10:44:30.000Z</published>
-    <updated>2019-10-31T01:56:45.873Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;研究生进入我们实验室，并受到了W老师学习上和思想上的多次教导，受益匪浅。&lt;br&gt;特此记录，以勉励自己未来继续努力。&lt;br&gt;W老师是我见过最好的老师，最棒的老师，真正的科研思维。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="随笔" scheme="http://TristaWWP.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
-    
-    
-      <category term="“随笔”" scheme="http://TristaWWP.github.io/tags/%E2%80%9C%E9%9A%8F%E7%AC%94%E2%80%9D/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>写在嘉陵江畔</title>
-    <link href="http://TristaWWP.github.io/posts/2bc0ac71.html"/>
-    <id>http://TristaWWP.github.io/posts/2bc0ac71.html</id>
-    <published>2019-10-21T11:16:20.000Z</published>
-    <updated>2019-10-26T10:57:39.372Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;本该秋雨绵绵的时节，不过重庆向来与秋无缘，昨天嘉陵江畔烧烤我们还大汗淋漓，今早起床感觉一秒入冬。这种天气本该不喜，不过想想这该是我最后享受重庆的湿冷，享受重庆的风土人情，果断出门，冬风细雨也难以阻挡这最后的步伐&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="随笔" scheme="http://TristaWWP.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
     
     
   </entry>
