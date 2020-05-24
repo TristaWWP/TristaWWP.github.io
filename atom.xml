@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://TristaWWP.github.io/"/>
-  <updated>2020-05-17T13:28:13.724Z</updated>
+  <updated>2020-05-24T12:58:07.202Z</updated>
   <id>http://TristaWWP.github.io/</id>
   
   <author>
@@ -15,6 +15,44 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>单元测试&amp;集成测试</title>
+    <link href="http://TristaWWP.github.io/posts/a81eede5.html"/>
+    <id>http://TristaWWP.github.io/posts/a81eede5.html</id>
+    <published>2020-05-24T12:39:12.000Z</published>
+    <updated>2020-05-24T12:58:07.202Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;单元测试&quot;&gt;&lt;a href=&quot;#单元测试&quot; class=&quot;headerlink&quot; title=&quot;单元测试&quot;&gt;&lt;/a&gt;单元测试&lt;/h3&gt;&lt;p&gt;单元测试又叫模块测试，是对程序中的单个子程序或过程进行测试的过程，也就是说一开始并不是对整个程序进行测试，而是将注意力集中在程序的较小单元。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="软件测试" scheme="http://TristaWWP.github.io/categories/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>黑盒测试</title>
+    <link href="http://TristaWWP.github.io/posts/84a9cea2.html"/>
+    <id>http://TristaWWP.github.io/posts/84a9cea2.html</id>
+    <published>2020-05-24T12:38:55.000Z</published>
+    <updated>2020-05-24T12:55:59.476Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;黑盒测试又称数据驱动的测试或者输入输出驱动的测试，不基于内部代码和设计的知识，而是基于需求和功能。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="软件测试" scheme="http://TristaWWP.github.io/categories/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>白盒测试</title>
@@ -356,44 +394,6 @@
     
     </summary>
     
-    
-    
-  </entry>
-  
-  <entry>
-    <title>python编码规范</title>
-    <link href="http://TristaWWP.github.io/posts/62c2e1c5.html"/>
-    <id>http://TristaWWP.github.io/posts/62c2e1c5.html</id>
-    <published>2019-11-06T04:16:00.000Z</published>
-    <updated>2019-11-07T09:30:58.945Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;目标：写出优雅的代码&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="python" scheme="http://TristaWWP.github.io/categories/python/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>python之字符串、列表、字典和元组</title>
-    <link href="http://TristaWWP.github.io/posts/2ccc3457.html"/>
-    <id>http://TristaWWP.github.io/posts/2ccc3457.html</id>
-    <published>2019-11-05T01:58:34.000Z</published>
-    <updated>2019-11-08T03:18:01.355Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;python学习第一步了解四大数据结构，他们分别为list、tuple、dict、set，初级目标是了解基本用法，进阶学习是了解底层如何实现。BUT 在这之前&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="python" scheme="http://TristaWWP.github.io/categories/python/"/>
     
     
   </entry>
